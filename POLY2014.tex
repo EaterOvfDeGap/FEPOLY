@@ -1,0 +1,913 @@
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/6551}{perfect_radio}]
+	Prove that any polynomial $\in \mathbb{R} [X]$ can be written as a difference of two strictly increasing polynomials.
+
+The problem is not very hard, but it states an interesting fact.
+	\flushright \href{https://artofproblemsolving.com/community/c6h66713}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/26}{grobber}]
+	:) Cute.
+
+Let $f$ be our polynomial, which we assume has degree $n$, and let $m$ be an even number larger than $n-1$. The polynomial $x^m-f'$has limit $\infty$ at both $\pm\infty$, so there is a positive constant $c$ such that $g(x)=x^m+c-f'(x)>0,\ \forall x\in\mathbb R$. This means that we have succeeded in writing $f'(x)$ as the difference between two polynomials $x^m+c$ and $g(x)$ which take only positive values. Now $f$ will be the difference between a primitive of $x^m+c$, which is strictly increasing, and a primitive of $g$ which is strictly increasing as well.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/6551}{perfect_radio}]
+	Congratulations, grobber. One of the most elegant proofs I have ever seen.
+
+This shows me that I'm far from using analysis at its (full) potential.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/285}{harazi}]
+	Other method: write $f'$ as the half difference between the integrals of $(f')^2+f'+1$ and $(f')^2-f'+1$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/226093}{Taussig}]
+	Is there a way to prove this without the use of calculus? My knowledge of it is extremely limited.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Prove that any polynomial $\in \mathbb{R} [X]$ can be written as a difference of two strictly increasing polynomials.\end{tcolorbox}
+$P(x)=\left(x+P(0)+\int_0^x\left(\frac{P'(t)+1}2\right)^2dt\right)$ $-\left(x+\int_0^x\left(\frac{P'(t)-1}2\right)^2dt\right)$
+\end{solution}
+
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/25405}{AndrewTom}]
+	Find all polynomials
+
+$f(x) = a_{0} + a_{1}x + ... + a_{n}x^{n}$
+
+satisfying the equation 
+
+$f(x^{2}) = (f(x))^{2}$
+
+for all real numbers $x$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h571651}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/31915}{Batominovski}]
+	Hint: Any root of $f$, if exists, must be $0$.  
+
+EDIT: This hint assumes that $f$ is not identically zero.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Hint: Any root of $f$, if exists, must be $0$.\end{tcolorbox}
+What about $-1, 1, i, -i,$ ... and a lot of others ....
+
+This is not the good hint. Good hint is "identification of two highest degrees coefficients"
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/31915}{Batominovski}]
+	If $z \neq 0$ is a root of $f$, then, for any integer $k \geq 0$, \begin{bolded}every\end{bolded} $\left(2^k\right)$-th root of $z$ will be a root of $f$ as well.  Why is my hint not good?  The only omission in my original comment is that $f$ is assumed to be nonzero.  By the way, my hint works even if $f$ is an entire function satisfying the same functional equation.  So, in a sense, it is better than equating coefficients.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}If $z \neq 0$ is a root of $f$, then, for any integer $k \geq 0$, \begin{bolded}every\end{bolded} $\left(2^k\right)$-th root of $z$ will be a root of $f$ as well.  ...\end{tcolorbox}
+You're quite right. I considered only $x^{2^n}$ while, as you suggest, $x^{2^{-n}}$ kills it.
+
+And your hint indeed is better than mine.
+
+Sorry :blush:
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/183939}{panther000}]
+	Find all polynomials $P(x)$ such that $P(a)\in Z\Rightarrow a\in Z$
+	\flushright \href{https://artofproblemsolving.com/community/c6h578390}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/183939}{panther000}]
+	any solution?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}any solution?\end{tcolorbox}
+$\boxed{P(x)=c}$ $\forall x$ is a solution, whatever is $c\in\mathbb Z$
+
+If $P(x)$ is not constant, choosing $x$ great enough, we get that $P(x)$ is monotonous and tends toward $\infty$, WLOG $+\infty$
+
+Choosing $n$ great enough, and $u<v$ such that $f(u)=n$ and $f(v)=n+1$, we get $\frac{f(v)-f(u)}{v-u}\le 1$ which is impossible if degree is $\ge 2$
+
+So $f(x)=ax+b$ for some $a,b$ and we easily get $\boxed{P(x)=\frac{x+p}q}$ whatever are $p\in\mathbb Z$, $q\in\mathbb Z\setminus\{0\}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/125513}{hal9v4ik}]
+	Is it true that for  polynomials $P,Q,R$:
+a) if $P$ and $Q$ are polynomials(with leading coefficint 1) of degree $n$ with n real roots each,then for $P+Q=2*R$, $R$ have $n$ real roots.
+b)if $P$ and $Q$ don't have real roots then $R$ also don't have real root.
+	\flushright \href{https://artofproblemsolving.com/community/c6h578944}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Is it true that for  polynomials $P,Q,R$:
+a) if $P$ and $Q$ are polynomials(with leading coefficint 1) of degree $n$ with n real roots each,then for $P+Q=2*R$, $R$ have $n$ real roots.\end{tcolorbox}
+Wrong. Choose as counter-example :
+$P(x)=x^2-x$
+$Q(x)=x^2-5x+6$
+$R(x)=x^2-3x+3$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Is it true that for  polynomials $P,Q,R$:
+b)if $P$ and $Q$ don't have real roots then $R$ also don't have real root.\end{tcolorbox}
+Trivially true if monic property is true also for question b) : $P(x)>0$ $\forall x$ and $Q(x)>0$ $\forall x$ and so $R(x)>0$ $\forall x$
+Trivially false if monic property is not true for question b) : $P(x)=x^2+1$ and $Q(x)=-x^2-1$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/32404}{epsilon07}]
+	$\overline{abc}$ is a three digit number, the roots of the polynomial $ ax^2 + bx +c $  are integers, and these integer roots divide the $3$-digit number $\overline{abc}$. How many different $\overline{abc}$ can you find?
+	\flushright \href{https://artofproblemsolving.com/community/c6h581335}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$\overline{abc}$ is a three digit number, the roots of the polynomial $ ax^2 + bx +c $  are integers, and these integer roots divide the $3$-digit number $\overline{abc}$. How many different $\overline{abc}$ can you find?\end{tcolorbox}
+So quadratic is $px^2+p(m+n)x+pmn$ where $-m,-n$ are the two negative integers root.
+
+Constraints are $p(m+n),pmn\in\{1,2,3,4,5,6,7,8,9\}$ and $m|10p(n+10)$ and $n|10p(m+10)$
+WLOG $m\ge n$
+
+First constraint gives very few values $(m,n,p)$ : 
+$(9,1,1),(8,1,1),(7,1,1),(6,1,1),(5,1,1)$,
+$(4,2,1),(4,1,1)$,
+$(3,3,1),(3,2,1),(3,1,1),(3,1,2)$,
+$(2,2,1),(2,2,2),(2,1,1)(2,1,2),(2,1,3)$,
+$(1,1,1),(1,1,2),(1,1,3),(1,1,4)$
+
+Second constraint reduces this short list to :
+$(5,1,1),(4,2,1),(3,2,1),(2,2,1),(1,1,1),(1,1,2),(1,1,3),(1,1,4),(2,1,1),(2,1,2),(2,2,2),(2,1,3)$
+
+And so $\boxed{\overline{abc}\in\{165,168,156,144,121,242,363,484,132,264,288,396\}}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/211457}{rod16}]
+	$a,b,c$ are real numbers with $ac<0$ and $\sqrt{2}a+\sqrt{3}b+\sqrt{5}c=0$. Prove that the second degree equation $ax^2+bx+c=0$ has roots in the interval of $\left(\frac{3}{4}, 1 \right)$
+	\flushright \href{https://artofproblemsolving.com/community/c6h585464}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$a,b,c$ are real numbers with $ac<0$ and $\sqrt{2}a+\sqrt{3}b+\sqrt{5}c=0$. Prove that the second degree equation $ax^2+bx+c=0$ has roots in the interval of $\left(\frac{3}{4}, 1 \right)$\end{tcolorbox}
+$a\ne 0$ and, setting $u=-\frac ca>0$, equation is $f(x)=x^2+\frac{u\sqrt 5-\sqrt 2}{\sqrt 3}x-u=0$
+
+$f(1)=u\frac{\sqrt 5-\sqrt 3}{\sqrt 3}+\frac{\sqrt 3-\sqrt 2}{\sqrt 3}>0$
+
+$f(\frac 34)=u\frac{3\sqrt 5-4\sqrt 3}{4\sqrt 3}+3\frac{3\sqrt 3-4\sqrt 2}{16\sqrt 3} <0$
+
+Hence the result.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/202190}{Blitzkrieg97}]
+	find all $ P(x) $ polynoms with real coefficients,such that,for every $x$, $ (x+1)P(x-1)-(x-1)P(x) $ is const.
+	\flushright \href{https://artofproblemsolving.com/community/c6h586443}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}find all $ P(x) $ polynoms with real coefficients,such that,for every $x$, $ (x+1)P(x-1)-(x-1)P(x) $ is const.\end{tcolorbox}
+
+1) If $P(x)$ has no summands, then $P(x)=0$ $\forall x$ is a solution.
+
+2) If $P(x)$ has just one summand, then $P(x)=a_nx^n$ and we get $n=0$ and so  $P(x)=c$ $\forall x$, which indeed is a solution, whatever is $c\in\mathbb R$
+
+3) If $P(x)$ has at least two summands, the two highest degrees being $a_nx^n+a_px^p$, identification of highest degrees summands in equation implies $n=2$ and $p=1$ and $a_n=a_p$ 
+
+Hence the answer : $\boxed{P(x)=ax^2+ax+c\text{   }\forall x}$ which indeed is a solution, whatever are $a,c\in\mathbb R$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/180735}{mmaht}]
+	prove that all the roots of the following polynomial can't be real:\[p(x)=x^n+2nx^{n-1}+2n^2x^{n-2}+a_{n-3}x^{n-3}+...+a_{0}\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h586453}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}prove that all the roots of the following polynomial can't be real:\[p(x)=x^n+2nx^{n-1}+2n^2x^{n-2}+a_{n-3}x^{n-3}+...+a_{0}\]\end{tcolorbox}
+I suppose we need $n\ge 3$ in order to have the definition consistant.
+Take the $(n-2)^{th}$ derivative and you get $n!(\frac {x^2}2+2x+\frac {2n}{n-1})$ whose discriminant is negative.
+
+So $(n-3)^{th}$ derivative has at most one real root
+So $(n-4)^{th}$ derivative has at most two real roots
+...
+So first derivative has at most $n-3$ real roots
+So $P(x)$ has at most $n-2$ real roots.
+
+Hence the claim
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/180735}{mmaht}]
+	find all polynomials \[(p_{1}(x),p_{2}(x),p_{3}(x),p_{4}(x))\] s.t for every natural numbers x,y,z,t with xy-zt=1 we have  \[p_{1}(x)p_{2}(x)-p_{3}(x)p_{4}(x)=1\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h586461}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/199091}{maryam_m}]
+	\begin{tcolorbox}find all polynomials \[(p_{1}(x),p_{2}(x),p_{3}(x),p_{4}(x))\] s.t for every natural numbers x,y,z,t with xy-zt=1 we have  \[p_{1}(x)p_{2}(x)-p_{3}(x)p_{4}(x)=1\]\end{tcolorbox}
+
+youre sure the problem's true?
+
+isnt it \[p_{1}(x)p_{2}(y)-p_{3}(z)p_{4}(t)=1\]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/180735}{mmaht}]
+	yes you are right
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}find all polynomials \[(p_{1}(x),p_{2}(x),p_{3}(x),p_{4}(x))\] s.t for every natural numbers x,y,z,t with xy-zt=1 we have  \[p_{1}(x)p_{2}(y)-p_{3}(z)p_{4}(t)=1\]\end{tcolorbox}
+Let $P(x,y,z,t)$ be the asserton $p_1(x)p_2(y)-p_3(z)p_4(t)=1$, true $\forall x,y,z,t\in\mathbb N$ such that $xy-zt=1$
+
+If one of the four polynomials is the zero polynomial, WLOG $p_1(x)=0$ $\forall x$, then $P(xy+1,1,x,y)$ $\implies$ $p_3(x)p_4(y)=-1$ $\forall x,y\in\mathbb N$
+Hence the solutions
+$\boxed{\text{S1 : }(K(x),0,u,v)}$ where $K(x)$ is any polynomial$\in\mathbb R[X]$ and $u,v$ any real numbers such that $uv=-1$
+$\boxed{\text{S2 : }(0,K(x),u,v)}$ where $K(x)$ is any polynomial$\in\mathbb R[X]$ and $u,v$ any real numbers such that $uv=-1$
+$\boxed{\text{S3 : }(u,v,K(x),0)}$ where $K(x)$ is any polynomial$\in\mathbb R[X]$ and $u,v$ any real numbers such that $uv=1$
+$\boxed{\text{S4 : }(u,v,0,K(x))}$ where $K(x)$ is any polynomial$\in\mathbb R[X]$ and $u,v$ any real numbers such that $uv=1$
+
+If no polynomial is the zero polynomial, then let $m,n>1$ :
+Comparing $P(m,n,mn-1,1)$ with $P(n,m,mn-1,1)$, we get $p_1(m)p_2(n)=p_1(n)p_2(m)$ and so $p_1,p_2$ are the same (with a multiplicative coefficient)
+Comparing $P(mn+1,1,m,n)$ with $P(mn+1,1,n,m)$, we get $p_3(m)p_4(n)=p_3(n)p_4(m)$ and so $p_3,p_4$ are the same (with a multiplicative coefficient)
+So $P(x,y,z,t)$ may be written $\alpha p(x)p(y)-\beta q(z)q(t)=1$ with $\alpha\beta\ne 0$
+
+If $p(x)$ is a nonzero constant, then $P(mn+1,1,m,n)$ implies $q(m)q(n)$ is constant and so $q(x)$ is constant
+If $q(x)$ is a nonzero constant, then $P(m,n,mn-1,1)$ implies $p(m)p(n)$ is constant and so $p(x)$ is constant
+And so the solution $\boxed{\text{S5 : }(u,v,w,t)}$ where  $u,v,w,t$ are any real numbers such that $uv-wt=1$
+
+If $p(x),q(x)$ are nonconstant polynomials and $\alpha\beta\ne 0$ :
+
+$P(n+1,1,n,1)$ $\implies$ $\alpha p(n+1)p(1)-\beta q(n)q(1)=1$ and so $q(n)=a + b p(n+1)$
+But, for symetry reasons, we also have $p(n)=a'+b'q(n+1)$ and so $p(n+2)=r+sp(n)$ and so $p(n),q(n)$ both have degree 1.
+
+Then $P(m,n,mn-1,1)$ $\implies$ $p(mn)=u p(m)p(n)+v$ and so $p(x)=c x$ and, same $q(x)=d x$
+And it's then easy to get the last solution :
+$\boxed{\text{S6 : }(ux,vx,wx,tx)}$ where  $u,v,w,t$ are any real numbers such that $uv=wt=1$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/199091}{maryam_m}]
+	tnx pco ! nothin better n more complete can be written!
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/194411}{EdsonBR}]
+	let $x_1<x_2<x_3 $ be the three real ratios of the equation $x^3-3x-1=0 $ . Prove that $x_3^2 - x_2^2=x_3-x_1$
+	\flushright \href{https://artofproblemsolving.com/community/c6h587812}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}let $x_1<x_2<x_3 $ be the three real ratios of the equation $x^3-3x-1=0 $ . Prove that $x_3^2 - x_2^2=x_3-x_1$\end{tcolorbox}
+One simple way (not the one your teacher is looking for, I think) is just to solve the equation.
+
+We easily get $x_1=2\cos \frac{7\pi}9$ and $x_2=2\cos \frac{13\pi}9$ and $x_3=2\cos\frac{\pi}9$
+
+And required equation becomes $4\sin\frac{8\pi}9\sin\frac{6\pi}9=$ $4\sin\frac{28\pi}9\sin\frac{24\pi}9$
+
+which is trivially true.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/68025}{Pirkuliyev Rovsen}]
+	Prove that for any polynomial $P$ there exists a polynomial $Q$ such that $P(x)=Q(x+1)-Q(x)$ for all $x$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h589250}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/31919}{tenniskidperson3}]
+	We have that if $P$ is degree $n$, then
+
+$P(x)=\sum_{i=0}^n\left(\binom{x}{i}\cdot\sum_{j=0}^iP(i-j)(-1)^j\binom{i}{j}\right)$,
+
+since it's a degree $n$ polynomial agreeing with $P$ on $0, 1, 2\ldots n$.  So by Pascal's Identity we can take
+
+$Q(x)=C+\sum_{i=0}^n\left(\binom{x}{i+1}\cdot\sum_{j=0}^iP(i-j)(-1)^j\binom{i}{j}\right)$.
+
+The reason $P$ agrees with the sum on $0, 1, 2\ldots n$ is because of a formula known as [url=http://en.wikipedia.org\/wiki\/Binomial_transform]the binomial transform[\/url]: if $s_i=\sum_{j=0}^i\binom{i}{j}a_j$, then $a_i=\sum_{j=0}^i(-1)^{i-j}\binom{i}{j}s_j$.  Here we use $s_i=P(i)$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	You can also use induction and derivatives :
+
+If $P'(x)=Q(x+1)-Q(x)$, then $P(x)=R(x+1)-R(x)$ with $R(x)=\left(P(0)-\int_{-1}^0Q(t)dt\right)x+\int_0^xQ(t)dt$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/167924}{utkarshgupta}]
+	Show that if $a$ and $b$ are real, and the polynomial $p(x)=x^4+ax^3+2x^2+bx+1$ has a real solution,
+then, $a^2+b^2 \ge 8$
+	\flushright \href{https://artofproblemsolving.com/community/c6h590855}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Show that if $a$ and $b$ are real, and the polynomial $p(x)=x^4+ax^3+2x^2+bx+1$ has a real solution,
+then, $a^2+b^2 \ge 8$\end{tcolorbox}
+If $a^2+b^2<8$, then $a^2<8$ and we can write 
+
+$p(x)=x^2\left(x+\frac a2\right)^2+\frac{8-a^2}4\left(x+\frac{2b}{8-a^2}\right)^2+\frac{8-a^2-b^2}{8-a^2}$ $\ge \frac{8-a^2-b^2}{8-a^2}$ $>0$
+
+Hence the claim.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/145173}{Aiscrim}]
+	For two quadratic trinomials $P(x)$ and $Q(x)$ there is a linear function $\ell(x)$ such that $P(x)=Q(\ell(x))$ for all real $x$. How many such linear functions $\ell(x)$ can exist?
+
+\begin{italicized}(A. Golovanov)\end{italicized}
+	\flushright \href{https://artofproblemsolving.com/community/c6h597517}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}For two quadratic trinomials $P(x)$ and $Q(x)$ there is a linear function $l(x)$ such that $P(x)=Q(l(x))$ for all real $x$. How many such linear functions $l(x)$ can exist?
+
+\begin{italicized}(A. Golovanov)\end{italicized}\end{tcolorbox}
+I suppose that "quadratic trinomial" suppose that cofficient of $x^2$ is nonzero. If so :
+$P(x)=Q(l_1(x))$ and $P(x)=Q(l_2(x))$ implies $Q(l_1(x))=Q(l_2(x))$ and so :
+either $l_1(x)=l_2(x)$
+either $l_1(x)+l_2(x)=c$ constant.
+
+Hence at most two such functions, and trivially at least two exist. Hence the answer : $\boxed{2}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/64716}{mavropnevma}]
+	A more complicated, but relevant approach.
+
+Clearly a linear function $\ell(x) = ax+b$ (with $a\neq 0$) admit a (also linear) inverse $\ell^{-1}(x) = \dfrac {1} {a} x - \dfrac {b} {a}$. Then, if $P(x)=Q(\ell_1(x)) = Q(\ell_2(x))$, we also have $Q(x) = Q(\lambda(x))$, where $\lambda = \ell_2\circ \ell_1^{-1}$ is linear, thus $\lambda(x) = \alpha x + \beta$ (with $\alpha \neq 0$).
+
+By identification of the dominant coefficients follows $|\alpha|=1$. (Then, for $\deg Q = n\geq 2$, and working with complex coefficients, we may have as many as $n$ such functions $\lambda$, for example $\lambda_k(x) = \textrm{e}^{2k\pi\textrm{i}\/n} x$ for $Q(x) = x^n$). In the sequel, assume real coefficients.
+
+With $\deg Q = n\geq 2$, then for odd $n$ we have $\alpha=1$, leading to $Q(x) = Q(x+\beta)$, thus by simple iteration $Q(x) = Q(x+k\beta)$ for all natural $k$; this clearly forces $\beta = 0$, for which $\lambda = \operatorname{id}$. For even $n$ we may also have $\alpha=-1$, leading to $Q(x) = Q(-x+\beta)$, thus $\lambda \circ \lambda = \operatorname{id}$. But we cannot have $Q(x) = Q(-x+\gamma)$ for $\gamma \neq \beta$, since then $Q(-x+\beta) =  Q(-x+\gamma)$, so $Q(x) =  Q(x+(\beta -\gamma))$, with the obvious contradiction pointed at in the above. It follows in this case may exist at most two such functions $\lambda$, with an immediate example given by $Q$ made only of monomials of even degree, when $\lambda = \pm \operatorname{id}$ work.
+
+In the case at hand, $\deg Q = 2$, which allows the simpler and more direct solution based on the symmetries of the graph of a quadratic trinomial.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/218339}{bnmh}]
+	Find all non-constant real polynomials $f (x)$ such that for any real $x$ the following equality
+holds:
+\[f (\sin x + \cos x) = f (\sin x) + f (\cos x)\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h598639}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/213278}{shmm}]
+	I think the answer:$f(x)=ax$ for all real $a$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}I think the answer:$f(x)=ax$ for all real $a$\end{tcolorbox}
+No. $a=0$ is not a solution.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/49556}{xxp2000}]
+	\begin{tcolorbox}Find all non-constant real polynomials $f (x)$ such that for any real $x$ the following equality
+holds:
+\[f (\sin x + \cos x) = f (\sin x) + f (\cos x)\]\end{tcolorbox}
+
+Suppose $f(x)=\sum a_nx^n$ with $n\ge2$.
+We have $f(x\pm\sqrt{1-x^2})=f(x)+f(\pm\sqrt{1-x^2}),|x|\le1$.
+We can write $f(x\pm\sqrt{1-x^2})-f(x)-f(\pm\sqrt{1-x^2})=h(x)\pm g(x)\sqrt{1-x^2}=0,|x|\le1$, where $h,g$ are some polynomials.
+Obviously $h(x)=g(x)=0,|x|\le1$. So $h(x)=g(x)=0,\forall x$. 
+In other words, $f(x\pm\sqrt{1-x^2})=f(x)+f(\pm\sqrt{1-x^2}),\forall x$.
+Divide both sides with $a_nx^n$ and take limit when $x$ goes to infinity,
+$(1+i)^n=1+i^n$. 
+It is easy to check this equation does not hold for $n\ge2$. So $f$ is linear.
+
+Since $f(1)=f(1)+f(0)$, $f(0)=0$. So the only solution is $f(x)=ax$ where $a\ne0$.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/213456}{ambiguity}]
+	Determin all polynomials $f$ such that:
+
+$f(xy)-y=f(x)f(y)+x$
+
+I have tried to let $x=y=0$ and $x=y=1$ but I can't make any conclusions about all $f$ that satisfy the equation.
+Maybe I should use that $f(xy)=f(x)f(y)$ throuhg some substituion? Any ideas?
+	\flushright \href{https://artofproblemsolving.com/community/c6h608180}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Determin all polynomials $f$ such that:
+
+$f(xy)-y=f(x)f(y)+x$
+\end{tcolorbox}
+Let $P(x,y)$ be the assertion $f(xy)-y=f(x)f(y)+x$
+Let $a=f(0)$
+
+$P(1,0)$ $\implies$ $a(1-f(1))=1$ and so $a\ne 0$
+$P(0,0)$ $\implies$ $a=1$ (since $a\ne 0$)
+$P(x,0)$ $\implies$ $f(x)=1-x$ which unfortunately is not a solution.
+
+So no solution.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/226116}{icosine}]
+	Determine all polynomials $Q$ with real coefficients such that:
+
+$Q(Q(x))+Q(x)=x^9+9x^3+9$
+	\flushright \href{https://artofproblemsolving.com/community/c6h608835}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/213456}{ambiguity}]
+	Hint:
+If there exists a solution, Q(x) must be of degree 3.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Determine all polynomials $Q$ with real coefficients such that:
+
+$Q(Q(x))+Q(x)=x^9+9x^3+9$\end{tcolorbox}
+
+Degree of $Q(x)$ is $3$ and so $Q(x)=ax^3+bx^2+cx+d$
+
+Identification of $x^9$ summands implies $a^4=1$ and so $a=\pm 1$
+Identification of $x^8$ summands implies $3a^3b=0$ and so $b=0$
+Identification of $x^7$ summands implies $3a^3c=0$ and so $c=0$
+Identification of $x^6$ summands implies $3a^3d=0$ and so $d=0$
+
+So $Q(x)=x^3$ or $Q(x)=-x^3$, none of them being a solution.
+
+So no solution.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/125553}{lehungvietbao}]
+	Let $f(x)=x^{3} -3x - 1$ for all $x \in \mathbb{R}$. Find the number of roots in  $f(f(x))=0$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h609835}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/3640}{Dr Sonnhard Graubner}]
+	\begin{tcolorbox}Let $f(x)=x^{3} -3x - 1$ for all $x \in \mathbb{R}$. Find the number of roots in  $f(f(x))=0$.\end{tcolorbox}
+hello, you will get
+${x}^{9}-9\,{x}^{7}-3\,{x}^{6}+27\,{x}^{5}+18\,{x}^{4}-27\,{x}^{3}-27\,
+{x}^{2}+1
+=0$ and the number of roots is nine.
+Sonnhard.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/64716}{mavropnevma}]
+	The \begin{bolded}total\end{bolded} number of roots is clearly $9$, due to the degree. The issue clearly is what is the number of \begin{bolded}real\end{bolded} roots, which incidentally is $7$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/3640}{Dr Sonnhard Graubner}]
+	\begin{tcolorbox}The \begin{bolded}total\end{bolded} number of roots is clearly $9$, due to the degree. The issue clearly is what is the number of \begin{bolded}real\end{bolded} roots, which incidentally is $7$.\end{tcolorbox}
+hello, the proposer asked really "find the number of roots" i can not read what is in his mind.
+Sonnhard.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/64716}{mavropnevma}]
+	So you hasten to answer a trivial question. Say $P$ is a polynomial of degree $n$. What is the number of roots of $P(P(x)) = 0$? And what is the number of roots of $P(P(P(x))) = 0$? And so on ...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/105169}{Nikpour}]
+	$f(x)$ mus be a root of $f(x)={{x}^{3}}-3x-1$. First we find the roots of  $f(x)={{x}^{3}}-3x-1$.
+
+\begin{align}
+  & {{x}^{3}}-3x-1=0 \\ 
+ & x=u+v\Rightarrow {{(u+v)}^{3}}-3(u+v)-1=0 \\ 
+ & \Rightarrow {{u}^{3}}+{{v}^{3}}+3uv(u+v)-3(u+v)-1=0 \\ 
+ & \Rightarrow {{u}^{3}}+{{v}^{3}}+(3uv-3)(u+v)-1=0 \\ 
+ & 3uv-3=0\Rightarrow v=\frac{1}{u}\Rightarrow {{u}^{3}}+\frac{1}{{{u}^{3}}}-1=0 \\ 
+ & \Rightarrow {{({{u}^{3}})}^{2}}-{{u}^{3}}+1=0\Rightarrow {{u}^{3}}=\frac{1\pm i\sqrt{3}}{2} \\ 
+\end{align}
+ 
+$u$ is any third roots of 
+\[\frac{1\pm i\sqrt{3}}{2}\]
+.
+Let $\alpha $ be a root of  $f(x)$. It coffiest to solve $f(x)=\alpha $.
+Any such equation has exatly $3$ roots.
+but some of these roots are not real.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/64716}{mavropnevma}]
+	Compute the values of $f(-2),f(-1),f(0),f(1),f(2)$ to see the real roots of $f$ are localized in $(-2,-1),(-1,0),(1,2)$. On the other hand, since $f'(x)=3(x^2-1)$, $f$ has a local minimum of $-3$ at $1$ and a local maximum of $1$ at $-1$. To have $f(f(x))=0$ we need $f(x)=r$, for some root $r$ of $f$. According with the above, for the smaller two we have three possibilities each, while for the larger one we have one possibility only, for a total of $7$.
+
+The relation (5) of above is gibberish, right? You just select some values $u$ and $v$ in order to express a root of $f$, without any knowledge of its value or position.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $f(x)=x^{3} -3x - 1$ for all $x \in \mathbb{R}$. Find the number of \begin{bolded}distinct real\end{underlined}\end{bolded} roots in  $f(f(x))=0$.\end{tcolorbox}
+(I modified a bit the problem statement)
+$f(x)=0$ has  three real roots $2\cos\frac{\pi}9$, $2\cos\frac{7\pi}9$ and $2\cos\frac{13\pi}9$.
+
+So we need to solve :
+$x^3-3x=1+2\cos\frac{\pi}9$ which has one real root, since $RHS>2$
+$x^3-3x=1+2\cos\frac{7\pi}9$ which has three real roots, since $RHS\in(-2,+2)$
+$x^3-3x=1+2\cos\frac{13\pi}9$ which has three real roots, since $RHS\in(-2,+2)$
+
+Hence the answer : $\boxed{7\text{ distinct real roots}}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/29381}{james digol}]
+	Let $f$ be a polynomial function with integer coefficients and $p$ be a prime number. Suppose there are at least four distinct integers satisfying $f(x) = p$. Show that $f$ does not have integer zeros.
+	\flushright \href{https://artofproblemsolving.com/community/c6h609876}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $f$ be a polynomial function with integer coefficients and $p$ be a prime number. Suppose there are at least four distinct integers satisfying $f(x) = p$. Show that $f$ does not have integer zeros.\end{tcolorbox}
+If $f(x)$ has an integer root, WLOG consider $f(0)=0$ and so $f(x)=xg(x)$
+
+$f(t)=p$ implies then $t|p$ and so $t\in\{-p,-1,1,p\}$
+
+$f(-p)=p$ $\implies$ $g(-p)=-1$ and $f(p)=p$ $\implies$ $g(p)=1$ and so $2p|2$, impossible
+
+Hence the result
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/216299}{adgj1234}]
+	Show that there are infintely many pairs (a,b) of relatively prime integers (not necessarily positive) such that both the equations \begin{eqnarray*} x^2 +ax +b &=& 0 \\ x^2 + 2ax + b &=& 0 \\ \end{eqnarray*} have integer roots.
+	\flushright \href{https://artofproblemsolving.com/community/c6h615950}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Show that there are infintely many pairs (a,b) of relatively prime integers (not necessarily positive) such that both the equations \begin{eqnarray*} x^2 +ax +b &=& 0 \\ x^2 + 2ax + b &=& 0 \\ \end{eqnarray*} have integer roots.\end{tcolorbox}
+Let $t\in\mathbb Z\setminus\{-2,-1,0,1\}$, $t\not\equiv 1\pmod 3$ :
+
+$x^2+(2t+1)x-(t-1)t(t+1)(t+2)=(x-(t-1)(t+1))(x+t(t+2))$
+$x^2+2(2t+1)x-(t-1)t(t+1)(t+2)=(x-(t-1)t)(x+(t+1)(t+2))$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/216299}{adgj1234}]
+	How did you reach to this solution?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}How did you reach to this solution?\end{tcolorbox}
+$a^2-4b=u^2$
+$a^2-b=v^2$
+So (second line) $b=a^2-v^2$ and so (first line) $u^2-4v^2=-3a^2$ and so for example $u-2v=-3$ and $u+2v=a^2$
+
+So $u=2v-3$ and $4v-3=a^2$ and $v=\frac{a^2+3}4$ and so $a$ is odd and we can write $a=2t+1$
+
+This gives $a=2t+1$ and $b=a^2-v^2=a^2-\left(\frac{a^2+3}4\right)^2=-(t-1)t(t+1)(t+2)$
+
+$a,b\ne 0$ $\implies$ $t\in\mathbb Z\setminus\{-2,-1,0,1\}$
+$|a|,|b|$ coprime $\implies$ $t\not\equiv 1\pmod 3$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18418}{\u0391\u03c1\u03c7\u03b9\u03bc\u03ae\u03b4\u03b7\u03c2 6}]
+	\begin{tcolorbox}Show that there are infintely many pairs (a,b) of relatively prime integers (not necessarily positive) such that both the equations \begin{eqnarray*} x^2 +ax +b &=& 0 \\ x^2 + 2ax + b &=& 0 \\ \end{eqnarray*} have integer roots.\end{tcolorbox}
+
+As i see it is true for every integer d.
+
+$x^2+ax+b=0$
+
+$x^2+dax+b=0$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/167924}{utkarshgupta}]
+	[url=http://www.artofproblemsolving.com/Forum/viewtopic.php?p=341871&sid=bedc386f5e3bd29a4c58c7485ed6b57d#p341871]India 1995[\/url]
+
+The topic should be locked or rather merged :)
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/152589}{rightways}]
+	Zeros of a fourth-degree polynomial $f (x)$ form an arithmetic progression. Prove that the zeros of $f '(x)$ also form an arithmetic progression.
+	\flushright \href{https://artofproblemsolving.com/community/c6h617386}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/223754}{Submathematics}]
+	if the roots of the $f(x)$ are $a-3d, a-d, a+d, a+3d$ then  $f(x)=x^4-4ax^3+(6a^2-10d^2)x^2-2ax(a^2-10d^2)+c$ then its easy to see that roots of f'(x) are $a, a-sqrt(5)d, a+sqrt(5)$
+looking forward to an elegant solution
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Zeros of a fourth-degree polynomial $f (x)$ form an arithmetic progression. Prove that the zeros of $f '(x)$ also form an arithmetic progression.\end{tcolorbox}
+Wrong. Chose as counter-example $f(x)=x^4-3x^3+2x^2$ whose zeroes are $\{0,1,2\}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/152589}{rightways}]
+	Patrick
+
+but $\{0,0,2,1\}$ does not form a.p
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/89198}{chaotic_iak}]
+	The \begin{italicized}distinct\end{italicized} zeroes do. The problem is unclear on this, whether the zeroes must be counted with multiplicity or not.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}The \begin{italicized}distinct\end{italicized} zeroes do. The problem is unclear on this, whether the zeroes must be counted with multiplicity or not.\end{tcolorbox}
+Indeed. As too often, badly written problem.
+
+A very simple effort could have been something like : "Let a degree-4 polynomial with four distincts real zeroes ...."
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Zeros of a fourth-degree polynomial $f (x)$ form an arithmetic progression. Prove that the zeros of $f '(x)$ also form an arithmetic progression.\end{tcolorbox}
+Let us consider only the case with \begin{bolded}four real distinct\end{underlined}\end{bolded} zeroes $a,a+r;a+2r,a+3r$ with $r>0$
+
+Then $P(x)=\alpha(x-a)(x-a-r)(x-a-2r)(x-a-3r)$ for some $\alpha,r\ne 0$
+
+Then $P(\frac r2x+a-\frac{3r}2)=\frac{\alpha r^4}{16}(x-3)(x-1)(x+1)(x+3)$ $=\frac{\alpha r^4}{16}(x^4-10x^2+9)$
+
+Then $\frac r2P'(\frac r2x+a-\frac{3r}2)=\frac{\alpha r^4}{16}(4x^3-20x)$ $=\frac{\alpha r^4}{4}x(x^2-5)$ $=\frac{\alpha r^4}{4}(x-\sqrt 5)x(x+\sqrt 5)$
+
+And since $P'(\frac r2x+a-\frac{3r}2)$ has three real distinct zeroes in AP, it's immediate to get that $P'(x)$ also has.
+
+Q.E.D.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/231016}{dothef1}]
+	Prove that \[ \sum_{k=1}^n\frac{1}{P'(x_k)}=0 \]
+where $ P(x) $ is a polynomial with n distinct real roots , namely $ x_i $ for i=1,2....,n
+	\flushright \href{https://artofproblemsolving.com/community/c6h617722}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Prove that \[ \sum_{k=1}^n\frac{1}{P'(x_k)}=0 \]
+where $ P(x) $ is a polynomial with n distinct real roots , namely $ x_i $ for i=1,2....,n\end{tcolorbox}
+Wrong. Choose as trivial counter-example $P(x)=x$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/231016}{dothef1}]
+	Sorry this is not what i wanted to type , i'll fix it as soon as i get the correct one .
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Prove that \[ \sum_{k=1}^n\frac{1}{P'(x_k)}=0 \]
+where $ P(x) $ is a polynomial with n distinct real roots , namely $ x_i $ for i=1,2....,n\end{tcolorbox}
+You just need to add the condition $n\ge 2$ : let $n\ge 2$ distinct real numbers $x_1,x_2,...x_n$
+Let $P(x)=\alpha\prod_{i=1}^{n}(x-x_i)$ with $\alpha\ne 0$ and $Q(x)=\alpha\prod_{i=1}^{n-1}(x-x_i)$ so that $P(x)=Q(x)(x-x_{n})$ 
+
+Let $R(x)=\sum_{i=1}^{n-1}\frac{Q(x)}{Q'(x_i)(x-x_i)}$ (considered as prolongated thru continuity for $x=x_i$). Note that here we need $n\ge 2$.
+$R(x)$ is a polynomial with degree at most $n-2$ and $R(x_i)=1$ for $i=1,2,...,n-1$ and so $R(x)=1$ $\forall x$
+
+So $\sum_{i=1}^{n-1}\frac 1{Q'(x_i)(x-x_i)}=\frac 1{Q(x)}$ $\forall x\notin\{x_1,x_2,...x_{n-1}\}$ and so $\sum_{i=1}^{n-1}\frac 1{Q'(x_i)(x_i-x_{n})}+\frac 1{Q(x_{n})}=0$
+
+Which is exactly $\sum_{i=1}^{n}\frac 1{P'(x_i)}=0$
+Hence the result.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/226936}{junior2001}]
+	Find all polynomials of degree 3, such that for each $x,y\geq 0$: \[p(x+y)\geq p(x)+p(y)\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h618613}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all polynomials of degree 3, such that for each $x,y\geq 0$: \[p(x+y)\geq p(x)+p(y)\]\end{tcolorbox}
+Writing $P(x)=ax^3+bx^2+cx+d$ with $a\ne 0$, we get $xy(3a(x+y)+2b)\ge d$ and so $a>0$ and $d\le 0$
+
+If $b\ge 0$, conditions $a>0$ and $d\le 0$ are enough
+If $b<0$ and $xy=0$, conditions $a>0$ and $d\le 0$ are enough
+If $b<0$ and $x,y>0$, condition is $3a(x+y)+2b\ge \frac d{xy}$ which implies $d<0$
+writing then $x+y=z$, we get $xy\le \frac {z^2}4$ and, for a given $z$, LHS reaches its maximum when $xy=\frac {z^2}4$
+And so we need $3az+2b\ge \frac {4d}{z^2}$ $\forall z>0$ and so $z^3+\frac{2b}{3a}z^2-\frac{4d}{3a}\ge 0$ $\forall z>0$
+
+This cubic reaches it's minimum over $\mathbb R^+$ when $z=-\frac{4b}{9a}$ and so we need (and it's enough) $\left(-\frac{4b}{9a}\right)^3+\frac{2b}{3a}\left(-\frac{4b}{9a}\right)^2-\frac{4d}{3a}\ge 0$
+And so $d\le \frac{8b^3}{243 a^2}$
+
+Hence the result : $\boxed{P(x)=ax^3+bx^2+cx+d\text{ with }a>0\text{ and }d\le\min\left(0, \frac{8b^3}{243 a^2}\right)}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/218396}{vi1lat}]
+	Find value $a$ , where sum of real roots of equation $\frac{f(a)x^2 +1}{x^2+g(a)}=\sqrt{\frac{xg(a)-1}{f(a)-x}}$ was minimum value , and $f(a)=a^2-a\sqrt{20} +23$ , $g(a)=1,5a^2-a\sqrt{20}+24$
+	\flushright \href{https://artofproblemsolving.com/community/c6h618688}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/218396}{vi1lat}]
+	does anyone have solutions?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}does anyone have solutions?\end{tcolorbox}
+Since you posted in this "proposed and own" category, this means that you have a solution and are just looking for another one.
+Please, post your own solution, please.
+
+Hereunder is mine
+
+\begin{tcolorbox}Find value $a$ , where sum of real roots of equation $\frac{f(a)x^2 +1}{x^2+g(a)}=\sqrt{\frac{xg(a)-1}{f(a)-x}}$ was minimum value , and $f(a)=a^2-a\sqrt{20} +23$ , $g(a)=1,5a^2-a\sqrt{20}+24$\end{tcolorbox}
+For easier writing, let $u=f(a)=a^2-a\sqrt{20}+23$ and $v=g(a)=\frac 32a^2-a\sqrt{20}+24$
+1) some preliminary results
+1.1 : $u=(a-\sqrt 5)^2+18\ge 18$
+1.2 : $v=\frac 32(a-\frac{2\sqrt 5}3)^2+\frac{62}3\ge \frac{62}3$
+1.3 : using previous results, we trivially have $uv\ge 3$ and so $\frac 1v<\frac 2v<\frac {2u}3<u$
+1.4 : $4u < v^2$
+$4v^2-16u=(3a^2-4a\sqrt{5}+48)^2-16(a^2-2a\sqrt{5}+23)$ $=9a^4-24\sqrt 5a^3+352a^2-352\sqrt 5a+1936$
+$=(3a^2-4a\sqrt 5+44)^2+8a^2$ $>0$
+Q.E.D.
+1.5 : $2u^2 > 9v$
+$4u^2-18v=4(a^2-2a\sqrt 5+23)^2-9(3a^2-4a\sqrt 5+48)$ $=4a^4-16\sqrt 5a^3+237a^2-332\sqrt 5a+1684$
+$=(2a^2-4a\sqrt 5+37)^2+9(a-2\sqrt 5)^2+135$ $>0$
+Q.E.D
+
+2) solution
+2.1 get an equivalent cubic
+Equation is $\frac{ux^2+1}{x^2+v}=\sqrt{\frac{vx-1}{u-x}}$ and is only defined when $x\in[\frac 1v,u)$ (remember $uv>3>1$)
+
+$\iff$ $x-\frac{ux^2+1}{x^2+v}=x-\sqrt{\frac{vx-1}{u-x}}$
+
+$\iff$ $\frac{x^3-ux^2+vx-1}{x^2+v}$ $=\frac{x^2-\frac{vx-1}{u-x}}{x+\sqrt{\frac{vx-1}{u-x}}}$ $=-\frac{x^3-ux^2+vx-1}{(u-x)(x+\sqrt{\frac{vx-1}{u-x}})}$
+
+$\iff$ $(x^3-ux^2+vx-1)\left(\frac 1{x^2+v}+\frac{1}{(u-x)(x+\sqrt{\frac{vx-1}{u-x}})}\right)=0$
+
+$\iff$ $x\in[\frac 1v,u)$ and $x^3-ux^2+vx-1=0$ (other factor is $>0$)
+
+2.2 Prove that equivalent cubic has no complex root and that all real roots are in the good interval
+Let $P(x)=x^3-ux^2+vx-1$
+
+$P(\frac 1v)=\frac 1{v^3}-\frac u{v^2}=\frac{1-uv}{v^3}$ $<0$ (see 1.3 above)
+
+$P(\frac 2v)=\frac 8{v^3}-\frac{4u}{v^2}+1$ $=\frac 8{v^3}+\frac {v^2-4u}{v^2}$ $>0$ (see 1.4 above)
+
+$P(\frac{2u}3)=\frac{8u^3}{27}-\frac{4u^3}9+\frac{2uv}3-1$ $=\frac{2u(9v-2u^2)}{27}-1$ $<0$ (see 1.5 above)
+
+$P(u)=uv-1$ $>0$ (see 1.3 above)
+
+So we have indeed three distinct real roots in the suitable interval and so the sum of all real roots is exactly the sum of all roots and  is $u$ whose minimum is $18$ when $\boxed{a=\sqrt 5}$ (see 1.1 above)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/218396}{vi1lat}]
+	Sorry, but I haven't solution.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Sorry, but I haven't solution.\end{tcolorbox}
+You are welcome.
+Glad to have helped you.
+
+And please, respect the usage of each forum. Posting in "proposed and own" means that you have a solution.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/233748}{Pasimbung}]
+	Find all polynomial that is not a zero polynomial $P(x)$ and $Q(x)$ with real coefficient and minimal degree such that
+$P(x^2)+ Q(x) = P(x) + x^5Q(x)$
+for every real number $x$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h619099}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all polynomial that is not a zero polynomial $P(x)$ and $Q(x)$ with real coefficient and minimal degree such that
+$P(x^2)+ Q(x) = P(x) + x^5Q(x)$
+for every real number $x$.\end{tcolorbox}
+Setting $x=0$, we get $Q(0)=0$ and so $Q(x)=xR(x)$ and equation is $P(x^2)-P(x)=x(x^5-1)R(x)$
+LHS has an even degree and so must be degree of $R(x)$
+
+Trying degree 0 for $R(x)$ and so $R(x)=u$ and $P(x)=ax^3+bx^2+cx+d$ leads to an impossibility (look at coefficient of $x^3$)
+
+Trying degree 2 for $R(x)$ and so $R(x)=ux^2+vx+w$ and $P(x)=ax^4+bx^3+cx^2+dx+e$ gives the minimal degree solution :
+
+$\boxed{P(x)=a(x^4+x^3+x^2+x+b)\text{  and  }Q(x)=a(x^3+x)}$ which indeed is a solution whatever are $a\ne 0$ and $b\in\mathbb R$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/64716}{mavropnevma}]
+	With $P(x^2)-P(x) = (x^5-1)Q(x)$, consider the primitive $5$-root of unity $\omega = \cos \dfrac {2\pi}{5} + \textrm{i}\sin \dfrac {2\pi}{5}$; we then have $P(\omega^2)=P(\omega)$, $P(\omega^4)=P(\omega^2)$, $P(\omega)=P(\omega^6) = P(\omega^3)$, $P(\omega^3)=P(\omega^8) = P(\omega^4)$, thus $P(\omega)=P(\omega^2) = P(\omega^3)=P(\omega^4)$, equal to some value $v$. Therefore $\dfrac {x^5-1}{x-1} = x^4+x^3+x^2+x+1 \mid P(x) - v$, so there exists a polynomial $f$ such that $P(x) = (x^4+x^3+x^2+x+1)f(x) + v$. Since obviously then $x^5-1 \mid P(x^2)-P(x)$ (with the quotient being $Q(x)$), it means these are also \begin{bolded}all\end{bolded} the solutions (and the condition that $P$ is a real polynomial also forces $v$ to be real).
+
+For minimal degree, since $Q$ is asked not to be the nil polynomial, it follows we need take $f$ non-zero constant, thus $f(x)=a\neq 0$, and so \begin{bolded}pco\end{bolded}'s $b$ constant will be $b=1+\dfrac {v}{a}$.
+\end{solution}
+*******************************************************************************

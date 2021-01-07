@@ -1,0 +1,39 @@
+\documentclass[]{article}
+\usepackage{tcolorbox}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{mathdots}
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem{solution}{Solution}
+\usepackage{soulutf8,environ}
+
+
+\newenvironment{mysolution}[1][\proofname]{%
+	\begin{solution}[#1]$ $\par\nobreak\ignorespaces
+	}{%
+	\end{solution}
+}
+
+
+
+\chardef\_=`_
+
+\NewEnviron{underlined}{\expandafter\ul\expandafter{\BODY}}
+\NewEnviron{bolded}{\expandafter\bf\expandafter{\BODY}}
+\NewEnviron{italicized}{\expandafter\it\expandafter{\BODY}}
+
+%opening
+
+
+\begin{document}
+
+
+\input{FE2007.tex}
+
+
+\end{document}

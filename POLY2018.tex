@@ -1,0 +1,1443 @@
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/106944}{Golbez}]
+	$\sqrt[3]{\cos( \frac{2\pi}{7})}+\sqrt[3]{\cos( \frac{4\pi}{7})}+\sqrt[3]{\cos( \frac{8\pi}{7})}=?$
+I tried polynomial 
+$\sqrt[3]{\cos( \frac{2\pi}{7})},\sqrt[3]{\cos( \frac{4\pi}{7})},\sqrt[3]{\cos( \frac{8\pi}{7})}$ fit the equation
+$8x^9+4x^6-4x^3-1=0$
+but I don't know what to do next
+	\flushright \href{https://artofproblemsolving.com/community/c6h421252}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/116768}{Shu}]
+	Did you mean $\frac{6\pi}{7}$ instead of $\frac{8\pi}{7}$? In that case, it's a famous identity of Ramanujan:
+\[ \sqrt[3]{\cos\frac{2\pi}{7}}+\sqrt[3]{\cos\frac{4\pi}{7}}+\sqrt[3]{\cos\frac{6\pi}{7}}
+=\sqrt[3]{\frac{5-3\sqrt[3]{7}}{2}}.\]Other amazing looking trigonometric identities with multiples of $\frac{\pi}{7}$ are
+\[ \sqrt[3]{\sec\frac{2\pi}{7}}+\sqrt[3]{\sec\frac{4\pi}{7}}+\sqrt[3]{\sec\frac{6\pi}{7}}
+=\sqrt[3]{8-6\sqrt[3]{7}} \]and
+\[ \sqrt[3]{\cos^2\frac{2\pi}{7}}+\sqrt[3]{\cos^2\frac{4\pi}{7}}+\sqrt[3]{\cos^2\frac{6\pi}{7}}
+=\frac{\sqrt[3]{22+12\sqrt[3]{7}+6\sqrt[3]{49}}}{2}.\]Attached is a paper giving an elementary method for making such calculations.
+
+If you did mean $\frac{8\pi}{7}$, then ignore this comment.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/84604}{RisingMathStar}]
+	$\cos \frac {8\pi} 7 = \cos \frac {6\pi} 7$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/116768}{Shu}]
+	How embarrassing. :blush:
+
+Thanks, RisingMathStar.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/148231}{sqing}]
+	https:\/\/artofproblemsolving.com\/community\/c4h449537p2529393:
+\[\cos{\left(\frac{2\pi}{7}\right)}+\cos{\left(\frac{4\pi}{7}\right)}+\cos{\left(\frac{6\pi}{7}\right)}=-\frac{1}{2}\]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/365891}{Paradoxes}]
+	How did you find this old problem?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/346843}{jrc1729}]
+	\begin{tcolorbox}How did you find this old problem?[\/quote]
+
+There exists something called "search function". ;)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Did you mean $\frac{6\pi}{7}$ instead of $\frac{8\pi}{7}$? In that case, it's a famous identity of Ramanujan:
+\[ \sqrt[3]{\cos\frac{2\pi}{7}}+\sqrt[3]{\cos\frac{4\pi}{7}}+\sqrt[3]{\cos\frac{6\pi}{7}}
+=\sqrt[3]{\frac{5-3\sqrt[3]{7}}{2}}.\][\/quote]
+About this equality, see a general case here :
+http://artofproblemsolving.com\/community\/c6h1079891p4739612
+
+
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/332813}{targo___}]
+	The polynomial $p(x)=a_0+a_1x+a_2x^2+\cdots +a_8x^8+2009x^9$ has the property that $p(\frac{1}{k})=\frac{1}{k}$ for $k=1,2,3,4,5,6,7,8,9$.There are relatively prime positive integers $m,$ and $n$ such that $p(\frac{1}{10})=\frac{m}{n}$.Find $n-10m$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1564986}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/387033}{maXplanK}]
+	any solution to this problem :\/
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/395246}{slayermath6}]
+	I can't solve it!
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}The polynomial $p(x)=a_0+a_1x+a_2x^2+\cdots +a_8x^8+2009x^9$ has the property that $p(\frac{1}{k})=\frac{1}{k}$ for $k=1,2,3,4,5,6,7,8,9$.There are relatively prime positive integers $m,$ and $n$ such that $p(\frac{1}{10})=\frac{m}{n}$.Find $n-10m$.[\/quote]
+$P(x)-x=2009(x-1)(x-\frac 12)(x-\frac 13)...(x-\frac 19)$
+
+So $P(\frac 1{10})=\frac 1{10}+2009(-\frac 9{10})(-\frac 8{20})(-\frac 7{30})...(-\frac 1{90})$
+
+So $P(\frac 1{10})=\frac{10^8-2009}{10^9}$, which is irreducible
+
+So $\boxed{n-10m=20090}$
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/395246}{slayermath6}]
+	Can anyone show me how?
+How to get?
+$P(x)-x=2009(x-1)(x-\frac 12)(x-\frac 13)...(x-\frac 19)$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Can anyone show me how?
+How to get?
+$P(x)-x=2009(x-1)(x-\frac 12)(x-\frac 13)...(x-\frac 19)$[\/quote]
+$P(x)-x$ :
+1) is a polynomial with degree $9$
+2) has at least roots $1,\frac 12,\frac 13,...,\frac 19$
+3) has leading coefficient $2009$
+
+Hence the unique possibility given.
+
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/327080}{vickyricky}]
+	Show that the equation $x^3 +7x-14(n^2+1)=0$ has no integral root for all integral values  of n?
+	\flushright \href{https://artofproblemsolving.com/community/c6h1570741}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Show that the equation $x^3 +7x-14(n^2+1)=0$ has no integral root for all values of n?[\/quote]
+Wrong. 
+Choose as counter-example $n=\frac 2{\sqrt 7}$ and equation has integral root $x=2$
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/313451}{pro_4_ever}]
+	\begin{tcolorbox}[quote=vickyricky]Show that the equation $x^3 +7x-14(n^2+1)=0$ has no integral root for all values of n?[\/quote]
+Wrong. 
+Choose as counter-example $n=\frac 2{\sqrt 7}$ and equation has integral root $x=2$[\/quote]
+
+I think he means natural $n$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}I think he means natural $n$.[\/quote]
+I dont bother what he thinks
+I bother what he wrote.
+
+He wrote nothing about $n $ natural number or integer
+Tags are "algebra" and "polynomial" (nothing about "number theory")
+
+My opinon is that writing in an olympiad exam "I think that you thought in reality bla bla bla and so I'll solve bla bla bla instead of what you wrote" is a really bad idea.
+Just my opinion ...
+
+
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/391407}{Hamel}]
+	[hide]$7^2y^3+7y-2(n^2+1)=0$ $7|n^2+1$, contradiction[\/hide]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/327080}{vickyricky}]
+	\begin{tcolorbox}[quote=vickyricky]Show that the equation $x^3 +7x-14(n^2+1)=0$ has no integral root for all values of n?[\/quote]
+Wrong. 
+Choose as counter-example $n=\frac 2{\sqrt 7}$ and equation has integral root $x=2$[\/quote]
+
+I have edited it now try .
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/327080}{vickyricky}]
+	\begin{tcolorbox}[hide]$7^2y^3+7y-2(n^2+1)=0$ $7|n^2+1$, contradiction[\/hide][\/quote]
+
+why is it contradiction is it possible to show that $(n^2+1)$ is not divisible by7
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/391407}{Hamel}]
+	Yes it is
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/327080}{vickyricky}]
+	\begin{tcolorbox}Yes it is[\/quote]
+
+can u show it why?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/391407}{Hamel}]
+	$p \equiv 3 \mod 4$ $p|a^2+b^2$ then $p|a$ and $p|b$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/390573}{Idea_lover}]
+	We can use Eisenstien's Criterion to show this polynomial is Irreducible in \begin{bolded}INTEGER DOMAIN\end{bolded} look at prime 7 :D (just learnt it today, hence correct me if Iam wrong.)
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/362877}{lifeisgood03}]
+	The zeroes of a fourth degree polynomial $f(x)$ form an arithmetic progression. Prove that the three zeroes of the polynomial $f'(x)$ also form an arithmetic progression.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1570794}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}The zeroes of a fourth degree polynomial $f(x)$ form an arithmetic progression. Prove that the three zeroes of the polynomial $f'(x)$ also form an arithmetic progression.[\/quote]
+$f(x)=a(x-b)(x-b-r)(x-b-2r)(x-b-3r)$
+
+So $f(x)=f(3r+2b-x)$
+
+So $f'(x)+f'(3r+2b-x)=0$
+
+So the three real roots of $f'(x)$ are $b+\frac{3r}2-t,b+\frac{3r}2,b+\frac{3r}2+t$ for some $t$
+Q.E.D.
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/212018}{Tintarn}]
+	Or just argue by symmetry:
+W.l.o.g. we may shift the polynomial so that the roots are symmetric w.r.t. the $y$-axis. Then $f(x)$ and $f(-x)$ have the same roots and the same leading coefficient and hence coincide. So $f(x)=f(-x)$ for all $x$ and hence $f'(x)=-f'(-x)$ for all $x$. So $f'$ is odd and hence has a root at $0$ and the other two roots are symmetric as well.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/363632}{mathisreal}]
+	1)Prove that if $y = \sqrt[3]{2} + \sqrt[3]{3}$ is a root of cubic polynomial(with integers coefficients), therefore $y$ is the unique root of this polynomial.
+
+2)Find all $(k, n, p)$ positive integers such that:
+$5^k - 3^n = p^2$
+	\flushright \href{https://artofproblemsolving.com/community/c6h1572030}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}1)Prove that if $y = \sqrt[3]{2} + \sqrt[3]{3}$ is a root of cubic polynomial(with integers coefficients), therefore $y$ is the unique root of this polynomial.[\/quote]
+Wrong problem.
+$y$ is root of $x^9-15x^6-87x^3-125=0$  which is irreducible.
+So $y$ is root of no cubic of $\mathbb Z[X]$
+
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/368751}{Dattier}]
+	2\/study mod 4 show : $n \mod 2=0$ so equation give $5^k-9^n=p^2$
+study mod 9 show : $k \mod 2=0$ so equation give $25^k-9^n=p^2$
+study mod 8 show : $p^2 \mod 8=0$ so equation give $25^k-9^n=16p^2$
+study mod 16 show :  $k=n \mod 2$ ... to be continued
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/327080}{vickyricky}]
+	Let $a$ and $b$ be two non-zero rational numbers such that the equation $ax^2+by^2=0$ has a non-zero solution in rational numbers . Prove that for any rational number $t$ , there is a solution of the equation $ax^2+by^2=t$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1573761}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/327080}{vickyricky}]
+	try it out guys.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $a$ and $b$ be two non-zero rational numbers such that the equation $ax^2+by^2=0$ has a non-zero solution in rational numbers . Prove that for any rational number $t$ , there is a solution of the equation $ax^2+by^2=t$.[\/quote]
+$au^2+bv^2=0$ $\implies$ $a\left(\frac{t+a}{2a}\right)^2+b\left(\frac{(t-a)v}{2au}\right)^2=t$
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/391068}{TuZo}]
+	Oh, that' s brilliant!
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/390361}{shashank30122000}]
+	\begin{tcolorbox}[quote=vickyricky]Let $a$ and $b$ be two non-zero rational numbers such that the equation $ax^2+by^2=0$ has a non-zero solution in rational numbers . Prove that for any rational number $t$ , there is a solution of the equation $ax^2+by^2=t$.[\/quote]
+$au^2+bv^2=0$ $\implies$ $a\left(\frac{t+a}{2a}\right)^2+b\left(\frac{(t-a)v}{2au}\right)^2=t$[\/quote]
+
+Can you explain how you did it ?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Can you explain how you did it ?[\/quote]
+From $au^2+bv^2=0$, I extracted $b=-a\frac{u^2}{v^2}$ and so equation $ax^2+by^2=t$ became
+
+$x^2-\left(\frac uvy\right)^2=\frac ta$ which has infinitely many rational roots.
+
+I just choosed the simplest one (in my opinion) : $x-\frac uvy=1$ and $x+\frac uvy=\frac ta$
+
+
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/390361}{shashank30122000}]
+	\begin{tcolorbox}[quote=shashank30122000]Can you explain how you did it ?[\/quote]
+From $au^2+bv^2=0$, I extracted $b=-a\frac{u^2}{v^2}$ and so equation $ax^2+by^2=t$ became
+
+$x^2-\left(\frac uvy\right)^2=\frac ta$ which has infinitely many rational roots.
+
+I just choosed the simplest one (in my opinion) : $x-\frac uvy=1$ and $x+\frac uvy=\frac ta$[\/quote]
+
+Thanks
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/347605}{SDMM}]
+	Prove that any polynomial with real 
+coeffcients that takes only nonnegative values can be written as the sum of the squares of two polynomials.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1576488}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/390573}{Idea_lover}]
+	At last a polynomial ! :blush: 
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Prove that any polynomial with real 
+coeffcients that takes only nonnegative values can be written as the sum of the squares of two polynomials.[\/quote]
+Polynomial can we written as $P(x)=aR(x)C(x)$ where :
+$a\ge 0$
+$C(x)$ and $R(x)$ are monic
+All roots of $R(x)$ are real numbers
+All roots of $C(x)$ are nonreal numbers
+
+Since $P(x)$ is nonnegative, all roots of $R(x)$ have an even order and $R(x)=S(x)^2$ for some polynomial $S(x)$
+For each root $z$ of $C(x)$, we have another different root $\overline z$ and so we can write
+$C(x)=\prod(x-a_k-ib_k)(x-a_k+ib_k)$
+$=(A(x)-iB(x))(A(x)+iB(x))$
+$=A(x)^2+B(x)^2$
+
+And so $P(x)=\sqrt a^2S(x)^2(A(x)^2+B(x)^2)$
+Q.E.D.
+
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/390573}{Idea_lover}]
+	\begin{tcolorbox}[quote=SDMM]Prove that any polynomial with real 
+coeffcients that takes only nonnegative values can be written as the sum of the squares of two polynomials.[\/quote]
+Polynomial can we written as $P(x)=aR(x)C(x)$ where :
+$a\ge 0$
+$C(x)$ and $R(x)$ are monic
+All roots of $R(x)$ are real numbers
+All roots of $C(x)$ are nonreal numbers
+
+Since $P(x)$ is nonnegative, all roots of $R(x)$ have an even order and $R(x)=S(x)^2$ for some polynomial $S(x)$
+For each root $z$ of $C(x)$, we have another different root $\overline z$ and so we can write
+$C(x)=\prod(x-a_k-ib_k)(x-a_k+ib_k)$
+$=(A(x)-iB(x))(A(x)+iB(x))$
+$=A(x)^2+B(x)^2$
+
+And so $P(x)=\sqrt a^2S(x)^2(A(x)^2+B(x)^2)$
+Q.E.D.[\/quote]
+
+Good sol. pco, thanks !
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/347605}{SDMM}]
+	\begin{tcolorbox}[quote=SDMM]Prove that any polynomial with real 
+coeffcients that takes only nonnegative values can be written as the sum of the squares of two polynomials.[\/quote]
+Polynomial can we written as $P(x)=aR(x)C(x)$ where :
+$a\ge 0$
+$C(x)$ and $R(x)$ are monic
+All roots of $R(x)$ are real numbers
+All roots of $C(x)$ are nonreal numbers
+
+Since $P(x)$ is nonnegative, all roots of $R(x)$ have an even order and $R(x)=S(x)^2$ for some polynomial $S(x)$
+For each root $z$ of $C(x)$, we have another different root $\overline z$ and so we can write
+$C(x)=\prod(x-a_k-ib_k)(x-a_k+ib_k)$
+$=(A(x)-iB(x))(A(x)+iB(x))$
+$=A(x)^2+B(x)^2$
+
+And so $P(x)=\sqrt a^2S(x)^2(A(x)^2+B(x)^2)$
+Q.E.D.[\/quote]
+
+Yeah,this is the common line of attack...
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/327080}{vickyricky}]
+	Let$ f(x)=ax^2+bx+c$where a,b,c are real nos .suppose$ f(x) \ne x$ for any real no x. Then the no .of solutions of $f(f(x))=x$ in real no x.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1577049}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let$ f(x)=ax^2+bx+c$where a,b,c are real nos .suppose$ f(x) \ne x$ for any real no x. Then the no .of solutions of $f(f(x))=x$ in real no x.[\/quote]
+Since continuous, $f(x)\ne x$ $\forall x$ means :
+Either $f(x)>x$ $\forall x$; and so $f(f(x))>f(x)>x$ $\forall x$
+Either $f(x)<x$ $\forall x$; and so $f(f(x))<f(x)<x$ $\forall x$
+
+And so $f(f(x))=x$ has no real solution, in either case.
+
+
+
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/327080}{vickyricky}]
+	How to find the real roots of $8t^3-4t^2-4t+1=0$ in most easy way (not by large method )
+	\flushright \href{https://artofproblemsolving.com/community/c6h1577060}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}How to find the real roots of $8t^3-4t^2-4t+1=0$ in most easy way (not by large method )[\/quote]
+Posted (and solved) many many times.
+
+Dont hesitate to use the search function (see [url=http://www.artofproblemsolving.com\/community\/c6h1330604p7173058] here [\/url]).
+Set (for example copy\/paste) in the "search term" field the exact following string : 
+
++"8x^3-4x^2-4x+1"
+
+You'll get in the \begin{bolded}five first results\end{underlined}\end{bolded} (excluded your own post and this post itself) all the help you are requesting for.
+
+[hide=(Some excuses)][size=70]I'm sorry not providing you the direct link to this result but I encountered users who never tried the search function, thinking quite easier to have other users make the search for them. So now I prefer to point to the search function and to give the appropriate search term (I checked that it indeed will give you the expected result) instead of the link itself [\/size]([url=https:\/\/en.wiktionary.org\/wiki\/give_a_man_a_fish_and_you_feed_him_for_a_day;_teach_a_man_to_fish_and_you_feed_him_for_a_lifetime]wink[\/url])[\/hide]
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/327080}{vickyricky}]
+	\begin{tcolorbox}[quote=vickyricky]How to find the real roots of $8t^3-4t^2-4t+1=0$ in most easy way (not by large method )[\/quote]
+Posted (and solved) many many times.
+
+Dont hesitate to use the search function (see [url=http://www.artofproblemsolving.com\/community\/c6h1330604p7173058] here [\/url]).
+Set (for example copy\/paste) in the "search term" field the exact following string : 
+
++"8x^3-4x^2-4x+1"
+
+You'll get in the \begin{bolded}five first results\end{underlined}\end{bolded} (excluded your own post and this post itself) all the help you are requesting for.
+
+[hide=(Some excuses)][size=70]I'm sorry not providing you the direct link to this result but I encountered users who never tried the search function, thinking quite easier to have other users make the search for them. So now I prefer to point to the search function and to give the appropriate search term (I checked that it indeed will give you the expected result) instead of the link itself [\/size]([url=https:\/\/en.wiktionary.org\/wiki\/give_a_man_a_fish_and_you_feed_him_for_a_day;_teach_a_man_to_fish_and_you_feed_him_for_a_lifetime]wink[\/url])[\/hide][\/quote]
+
+THANKS @PCO
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/327080}{vickyricky}]
+	But @PCO in those post they know the root and proceed using the roots .But here i have to find the roots .
+U can help me to solve $: 1-\frac{1}{3-4sin^2x}= \frac{1}{2cosx}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}But @PCO in those post they know the root and proceed using the roots .But here i have to find the roots .[\/quote]
+What are you asking for exactly ?
+
+If you want just to solve, this is elementary (simple application of course methods) : cancel the $t^2$ element and adapt the ratio between $x^3$ and $x$ elements :
+
+Set $t=\frac{\sqrt 7}3x+\frac 16$ and equation is $4x^3-3x=-\frac 1{2\sqrt 7}$
+With the three trivial roots $\cos\left(\frac 13\arccos\frac{-1}{2\sqrt 7}+\frac{2k\pi}3\right)$ where $k=0,1,2$
+
+And so $\boxed{t=\frac 16+\frac{\sqrt 7}3\cos\left(\frac 13\arccos\frac{-1}{2\sqrt 7}+\frac{2k\pi}3\right)\text{  where }k=0,1,2}$
+
+If you want to find the equjivalent but quite more smart form $\cos\frac{\pi}7,\cos\frac{3\pi}7,\cos\frac{5\pi}7$, you should go out of "course" methods and the given search gives you solutions.
+
+For example, note that $(t+1)(8t^3-4t^2-4t+1)^2=64t^7-112t^5+56t^3-7t+1$
+And writing there $t=\cos u$, this last polynomial is $\cos 7u+1=0$, from where getting the "smart" form is simple ... .
+
+
+
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/247598}{MATH1945}]
+	find all continous functions from real to itself such that for any $x,y,z$ real, $$f(x+y+z)+f(x)+f(y)+f(z)=f(x+y)+f(y+z)+f(z+x)$$
+	\flushright \href{https://artofproblemsolving.com/community/c6h1577506}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}find all functions from real to itself such that for any $x,y,z$ real, $$f(x+y+z)+f(x)+f(y)+f(z)=f(x+y)+f(y+z)+f(z+x)$$[\/quote]
+
+Are you sure you did not forget the constraint "continuous" ?
+With this constraint, it has been posted many times, with solutions $ax^2+bx$ (use search function)
+
+Without this continuity constraint,  lot of weird solutions will appear.
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/247598}{MATH1945}]
+	@pco I've searched and got nothing.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}@pco I've searched and got nothing.[\/quote]
+
+What search string did you use ?
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/247598}{MATH1945}]
+	nevermind i forget to use " lol
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/212321}{SHARKYKESA}]
+	Find all possible pairs of integers $(a,b)$ for which the polynomial $x^4+(2a+1)x^3+(a-1)^2x^2+bx+4$ can be factored into a product of two polynomials $P(x)$ and $Q(x)$, each of degree 2 with leading coefficients equal to 1, such that the equat $Q(x)=0$ has two different roots $\alpha$ and $\beta$ (not necessarily real), and $P(\alpha)=\beta$ and $P(\beta)=\alpha$.
+
+	\flushright \href{https://artofproblemsolving.com/community/c6h1578428}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all possible pairs of integers $(a,b)$ for which the polynomial $x^4+(2a+1)x^3+(a-1)^2x^2+bx+4$ can be factored into a product of two polynomials $P(x)$ and $Q(x)$, each of degree 2 with leading coefficients equal to 1, such that the equat $Q(x)=0$ has two different roots $\alpha$ and $\beta$ (not necessarily real), and $P(\alpha)=\beta$ and $P(\beta)=\alpha$.[\/quote]
+Write $x^4+(2a+1)x^3+(a-1)^2x^2+bx+4=(x-\alpha)(x-\beta)(x^2+ux+v)$
+
+We have $\alpha^2+u\alpha+v=\beta$ and $\beta^2+u\beta+v=\alpha$
+And so, subtracting and using $\alpha\ne \beta$ : $\alpha+\beta=-1-u$
+
+Looking at $x^3$ coefficient in initial equation, we get :
+$-\alpha-\beta+u=2a+1$ and so, using $\alpha+\beta=-1-u$ : $u=a$ and $\alpha+\beta=-a-1$
+
+So initial equation may be written $x^4+(2a+1)x^3+(a-1)^2x^2+bx+4=(x^2+(a+1)x+p)(x^2+ax+v)$ (where $p=\alpha\beta$
+
+Matching $x^2$ coefficients, we get $v+p=1-3a$
+Matching $x$ coefficients, we get $a(v+p)+v=b$ and so $a-3a^2+v=b$
+From this, we get $v=3a^2-a+b$ and $p=-3a^2-2a+1-b$
+
+Matching constant coefficient, we get $(3a^2-a+b)(-3a^2-2a+1-b)=4$ with $a,b\in\mathbb Z$
+
+This easily gives $(a,b)\in\{(-1,-2),(2,-11),(2,-14)\}$
+
+$\boxed{\text{S1 : }(a,b)=(-1,-2)}$ gives $x^4-x^3+4x^2-2x+4=(x^2+2)(x^2-x+2)$ which indeed fits
+
+$(a,b)=(2,-11)$ gives $x^4+5x^3+x^2-11x+4=(x^2+3x-4)(x^2+2x-1)$ which does not fit
+
+$\boxed{\text{S2 : }(a,b)=(2,-14)}$ gives $x^4+5x^3+x^2-14x+4=(x^2+3x-1)(x^2+2x-4)$ which indeed fits
+
+
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/332064}{ZIKO11010111}]
+	Does it exist a polynomial with integer coefficients such that 
+$$P(1+\sqrt[3]{2})=1+\sqrt[3]{2}$$ and $$P(1+\sqrt{7})=2+3\sqrt{7}$$
+	\flushright \href{https://artofproblemsolving.com/community/c6h1580120}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Does it exist a polynomial with integer coefficients such that 
+$$P(1+\sqrt[3]{2})=1+\sqrt[3]{2}$$ and $$P(1+\sqrt{7})=2+3\sqrt{7}$$[\/quote]
+First equality implies that $\sqrt[3]2$ is root of $P(1+x)-(1+x)$ and so 
+
+$P(x+1)=x+1+(x^3-2)Q(x)$ with $Q(x)\in\mathbb Z$
+
+So $2+3\sqrt 7=P(1+\sqrt 7)=\sqrt 7+1+(7\sqrt 7-2)Q(\sqrt 7)$
+
+Which is $Q(\sqrt 7)=\frac{1+2\sqrt 7}{7\sqrt 7-2}$ $=\frac{100}{339}+\frac{11}{339}\sqrt 7$
+
+Which is impossible since $Q(x)\in\mathbb Z[X]$ implies $Q(\sqrt 7)=a+b\sqrt 7$ for some $a,b\in\mathbb Z$
+
+And so $\boxed{\text{No such polynomial}}$
+
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/390573}{Idea_lover}]
+	\begin{tcolorbox}[quote=ZIKO11010111]Does it exist a polynomial with integer coefficients such that 
+$$P(1+\sqrt[3]{2})=1+\sqrt[3]{2}$$ and $$P(1+\sqrt{7})=2+3\sqrt{7}$$[\/quote]
+First equality implies that $\sqrt[3]2$ is root of $P(1+x)-(1+x)$ and so 
+
+$P(x+1)=x+1+(x^3-2)Q(x)$ with $Q(x)\in\mathbb Z$
+
+So $2+3\sqrt 7=P(1+\sqrt 7)=\sqrt 7+1+(7\sqrt 7-2)Q(\sqrt 7)$
+
+Which is $Q(\sqrt 7)=\frac{1+2\sqrt 7}{7\sqrt 7-2}$ $=\frac{100}{339}+\frac{11}{339}\sqrt 7$
+
+Which is impossible since $Q(x)\in\mathbb Z[X]$ implies $Q(\sqrt 7)=a+b\sqrt 7$ for some $a,b\in\mathbb Z$
+
+And so $\boxed{\text{No such polynomial}}$[\/quote]
+
+I don't quite understand this step
+\begin{tcolorbox}$P(x+1)=x+1+(x^3-2)Q(x)$[\/quote]
+You said $\sqrt[3]2$ is a root of $P(1+x)-(1+x)$ but you concluded $\sqrt[3]2\omega$ and $\sqrt[3]2{\omega}^2$ are roots, where $\omega$ is cube root of unity.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}You said $\sqrt[3]2$ is a root of $P(1+x)-(1+x)$ but you concluded $\sqrt[3]2\omega$ and $\sqrt[3]2{\omega}^2$ are roots, where $\omega$ is cube root of unity.[\/quote]
+Trivially since  $P(1+x)-(1+x)\in\mathbb Z[X]$
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/390573}{Idea_lover}]
+	\begin{tcolorbox}[quote=Idea_lover]You said $\sqrt[3]2$ is a root of $P(1+x)-(1+x)$ but you concluded $\sqrt[3]2\omega$ and $\sqrt[3]2{\omega}^2$ are roots, where $\omega$ is cube root of unity.[\/quote]
+Trivially since  $P(1+x)-(1+x)\in\mathbb Z[X]$[\/quote]
+
+I don't understand if $P(1+x)-(1+x)\in\mathbb Z[X]$, why should those two be the roots ? You mean to say there is no other polynomial with out having $(x^3-2)$ as a factor and with $\sqrt[3]2$ as a root over $\mathbb Z[X]$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}You mean to say there is no other polynomial with out having $(x^3-2)$ as a factor and with $\sqrt[3]2$ as a root over $\mathbb Z[X$[\/quote]
+Is $A(x)\in\mathbb Z[X]$ is non allzero and such that $A(\sqrt[3]2)=0$, then just compute 
+
+$B(x)=\gcd(A(x),x^3-2)$
+We get $B(x)\in\mathbb Z[X]$ and with degree $1,2,3$
+
+If it has degree $1$, then $B(x)=ax+b$ and $a\sqrt[3]2+b=0$, impossible
+If it has degree $2$, then $B(x)=ax^2+bx+c$ and $a\sqrt[3]4+b\sqrt[3]2+c=0$, impossible
+So it has degree $3$ and is $x^3-2$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/390573}{Idea_lover}]
+	\begin{tcolorbox}[quote=Idea_lover]You mean to say there is no other polynomial with out having $(x^3-2)$ as a factor and with $\sqrt[3]2$ as a root over $\mathbb Z[X$[\/quote]
+Is $A(x)\in\mathbb Z[X]$ is non allzero and such that $A(\sqrt[3]2)=0$, then just compute 
+
+$B(x)=\gcd(A(x),x^3-2)$
+We get $B(x)\in\mathbb Z[X]$ and with degree $1,2,3$
+
+If it has degree $1$, then $B(x)=ax+b$ and $a\sqrt[3]2+b=0$, impossible
+If it has degree $2$, then $B(x)=ax^2+bx+c$ and $a\sqrt[3]4+b\sqrt[3]2+c=0$, impossible
+So it has degree $3$ and is $x^3-2$[\/quote]
+
+Thanks, fine  :blush: 
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/214044}{rafayaashary1}]
+	Motivated by the considerations [url=https:\/\/artofproblemsolving.com\/community\/c6h1366834p9052565]here[\/url] and [url=https:\/\/artofproblemsolving.com\/community\/c6h571291p9054997]here[\/url], we observe that
+$$P(x)\equiv x\pmod{(x-1)^3-2}\implies P(0)\equiv 0\pmod{-3}$$
+And
+$$P(x)\equiv 3x-1\pmod{(x-1)^2-7}\implies P(0)\equiv -1\pmod{-6}$$
+An obvious contradiction $\blacksquare$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/344350}{soryn}]
+	Show that if the equation:
+
+$ax^{2}+bx+c=0$
+
+has a positive solution,then the polynomial:
+
+$f=5aX^{4}+mX^{3}+3bX^{2}+nX+c,f\in\mathbb{R\left[X\right]}$ 
+
+has at least two real roots.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1581671}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Show that if the equation:
+
+$ax^{2}+bx+c=0$
+
+has a positive solution,then the polynomial:
+
+$f=5aX^{4}+mX^{3}+3bX^{2}+nX+c,f\in\mathbb{R\left[X\right]}$ 
+
+has at least two real roots.[\/quote]
+Wrong.
+Choose as counter-example $(a,b,c,m,n)=(0,0,0,1,1)$
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/344350}{soryn}]
+	No,is correct, a,b,c not zero!!!
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/344350}{soryn}]
+	Who can solve quickly and correct?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/391068}{TuZo}]
+	\begin{tcolorbox}Show that if the equation: $ax^{2}+bx+c=0$
+has a positive solution.[\/quote]
+My question is: the equation have exactly 1 positive solution, or least 1 positive solution?
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/391068}{TuZo}]
+	Because if have exactly one positive solution, in this case we have $ac<0$, so $f(-\infty)>0,f(0)<0,f(+$$\infty)>0$ or $f(-\infty)<0,f(0)>0,f(+$$\infty)<0$ and in both case this mean that we have least two real solutions
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/344350}{soryn}]
+	Two cases
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/391068}{TuZo}]
+	Tha half of the problem is solved!  ;) 
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/344350}{soryn}]
+	I'm not sure.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/391068}{TuZo}]
+	\begin{tcolorbox}Because if have exactly one positive solution, in this case we have $ac<0$, so $f(-\infty)>0,f(0)<0,f(+$$\infty)>0$ or $f(-\infty)<0,f(0)>0,f(+$$\infty)<0$ and in both case this mean that we have least two real solutions[\/quote]
+
+This is the half solution! We must study if we have exactly 2 positive roots for the quadratic equation!
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/344350}{soryn}]
+	Yes,yes, yes, correct, thank You!
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/366424}{futurestar}]
+	My solution
+
+Define:
+$f(x)=ax^2+bx+c$
+$g(x)=5ax^4+mx^3+3bx^2+nx+c$
+$h(x)=5aX^4+3bX^2+c$
+$k(x)=mx^3+nx $
+
+WLOG take $a>0$
+If we prove that for some t $g(t)<0$ then we are done.So this is what we aim.
+
+\begin{bolded}Case 1\end{bolded}-When $c <0$
+Then $g(0)<0$ and we are done.
+
+\begin{bolded}Case 2 \end{bolded}-when $c>0$
+
+Lemma 1:Both roots of $f(x)=0$ are positive
+Proof: Since the product of the two roots is positive and one root is positive,so the other root will also be positive.
+
+Lemma 2: b is negative
+Proof- trivial
+
+Note that the equation $5ax^2+3bx+c=0$ will have real roots since $9b^2 > 4(5a)(c)$ because $b^2 \geq 4ac$.Also,both the roots will be positive and distinct (positive because there sum and product both are positive).Let the above equation have roots $ \alpha$ and $\beta $ .
+Now choose a positive real $s$ such that.
+$0 < \sqrt \alpha < s < \sqrt \beta $
+Now,by IVT,it is clear that $h(s)<0$
+Now if $k(s)<0$ ,we are done and if $k(s)>0$
+then $k(-s)<0$ and we are done. 
+Hence proved :D
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/344350}{soryn}]
+	Thank you, futurestar!!
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/357221}{mathscraze0110}]
+	$p(x)=(x-1)(x-\frac{1}{2})(x-\frac{1}{4})......(x-\frac{1}{2^999})$
+what is the coefficient of $x^{999}$
+	\flushright \href{https://artofproblemsolving.com/community/c6h1584174}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/357221}{mathscraze0110}]
+	the last no. is $2^{999}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$p(x)=(x-1)(x-\frac{1}{2})(x-\frac{1}{4})......(x-\frac{1}{2^{999}})$
+what is the coefficient of $x^{999}$[\/quote]
+
+Since exactly $1000$ elements in the product, the coefficient of $x^{999}$ is just $-\sum_{k=0}^{999}\frac 1{2^k}$
+
+And so $\boxed{\frac 1{2^{999}}-2}$
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/346763}{WolfusA}]
+	Already appeared here https:\/\/artofproblemsolving.com\/community\/q1h1585140p9803182
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/366128}{H.HAFEZI2000}]
+	Prove no polynomial with real coefficients exists  in which p(x) is rational if and only if p(x+1) is irrational!
+
+
+Please send me anything that can help!
+	\flushright \href{https://artofproblemsolving.com/community/c6h1590365}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Prove no polynomial with real coefficients exists  in which p(x) is rational if and only if p(x+1) is irrational![\/quote]
+Conditions imply :
+$P(x)+P(x+1)\notin\mathbb Q$ $\forall x$ and so $P(x)+P(x+1)$ constant
+$P(x)-P(x+1)\notin\mathbb Q$ $\forall x$ and so $P(x)-P(x+1)$ constant
+
+So $P(x)$ must be constant, which unfortunately is never a solution.
+Q.E.D.
+
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/347605}{SDMM}]
+	Let $P(x)$ be a polynomial with complex coeffcients. Prove that $P(x)$ is an even function if and only if there exists a polynomial $Q(x)$ with complex coefficients satisfying $P(x)=Q(x)Q(-x)$
+	\flushright \href{https://artofproblemsolving.com/community/c6h1592296}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $P(x)$ be a polynomial with complex coeffcients. Prove that $P(x)$ is an even function if and only if there exists a polynomial $Q(x)$ with complex coefficients satisfying $P(x)=Q(x)Q(-x)$[\/quote]
+$z_i$ root implies $-z_i$ root and so $P(x)=a\prod(x-z_i)(x+z_i)$
+
+And so $P(x)=b\prod (x-z_i)\prod(-x-z_i)$
+
+And so, taking $c$ as any complex square root of $b$ and $Q(x)=c\prod(x-z_i)$ gives the required result
+
+Other ditection is trivial.
+
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/350533}{Sarbajit10598}]
+	$f(x)$ is $6th$ degree polynomial satisfying $f(1-x)=f(1+x)$ for all real values of $x$. if $f(x)$ has $4$ distinct real roots and two real equal roots then find the sum of all roots of $f(x)$ .
+	\flushright \href{https://artofproblemsolving.com/community/c6h1592357}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/289831}{jishu2003}]
+	Observation:
+$f(x+1)$ is an even function. Hope that helps...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$f(x)$ is $6th$ degree polynomial satisfying $f(1-x)=f(1+x)$ for all real values of $x$. if $f(x)$ has $4$ distinct real roots and two real equal roots then find the sum of all roots of $f(x)$ .[\/quote]
+
+The unique double root must be $1$ and so the six roots are :
+$1-u,1-v,1,1,1+v,1+u$ for some $u>v>0$
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/3236}{test20}]
+	The 6th degree polynomial $g$ satisfying $g(x)=g(-x)$ is an even function; 
+hence all odd powers of $x$ have coefficient zero.
+By Vieta, the sum of roots of $g$ is the coefficient of $x^5$, and hence zero.
+
+The polynomial $f$ in the problem statement satisfies $f(1-x)=f(1+x)$;
+hence its graph equals the graph of $g$, but shifted by 1 unit to the right.
+Hence each of the roots of $f$ corresponds to a root of $f$, but shifted by 1 unit to the right.
+The sum of roots of $f$ equals the sum of roots of $g$, plus six times the shift of $+1$.
+Hence the sum of roots of $g$ is $6$.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/340293}{H.R.}]
+	For 4th power polynomial $P(x)$ we're given: $$P(2) = P(1) = P(-1) = -2$$ and $$P(-2) = P(3) = 14.$$ Then find $P(0).$
+	\flushright \href{https://artofproblemsolving.com/community/c6h1597300}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}For 4th power polynomial $P(x)$ we're given: $$P(2) = P(1) = P(-1) = -2$$ and $$P(-2) = P(3) = 14.$$ Then find $P(0).$[\/quote]
+$P(2)=P(1)=P(-1)=-2$ $\implies$ $P(x)=(x-2)(x-1)(x+1)(ax+b)-2$
+
+$P(-2)=14$ $\implies$ $6a-3b=4$
+$P(3)=14$ $\implies$ $6a+2b=4$
+And so $(a,b)=(\frac 23,0)$
+
+And $P(x)=\frac 23(x-2)(x-1)x(x+1)-2$ and so $P(0)=-2$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/340293}{H.R.}]
+	\begin{tcolorbox}$P(x)=(x-2)(x-1)(x+2)(ax+b)-2$[\/quote] Did you mean $$P(x)=(x-2)(x-1)(x+2)(ax+b) = -2?$$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}[quote]$P(x)=(x-2)(x-1)(x+2)(ax+b)-2$[\/quote] Did you mean $$P(x)=(x-2)(x-1)(x+2)(ax+b) = -2?$$[\/quote]
+Just a typo. I mean $P(x)=(x-2)(x-1)(x+1)(ax+b)-2$
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/276834}{antonbnt15_Indo}]
+	Find all polynomials $p$ with real coefficients satisfying the equation
+$p(x)^2+p(x^2)=2x^2$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1599894}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/331394}{Kaskade}]
+	\begin{tcolorbox}Find all polynomials $p$ with real coefficients satisfying the equation
+$p(x)^2+p(x^2)=2x^2$.[\/quote]
+
+It is easy to see that the degree of $p\left(x\right)$ is $1$, hence we can write $p\left(x\right)=ax+b$. Equating coefficients, we get $a^2+a=2,\ 2ab=0$. It follows that $b=0$ and $a=1,-2$. Hence we have $p\left(x\right)=x$ or $p\left(x\right)=-2x$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}... Hence we have $p\left(x\right)=x$ or $p\left(x\right)=-2x$.[\/quote]
+Direct in the trap.
+You missed $P(x)=-x^2-1$
+
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/276834}{antonbnt15_Indo}]
+	Simple but tricky `~
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/243405}{ThE-dArK-lOrD}]
+	In case that $\deg (p)>1$, just let $p(x)=-x^k+g(x)$ where $k$ is the degree of $p$ (not hard to show that the leading coefficient must be $-1$).
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/388080}{NomenNescioTR}]
+	For two polynomials P and Q
+1) real coefficient
+2) degree(P)=degree(Q)
+3) function of P\/Q is even function
+4) P\/Q isnt constant
+So can we say "P and Q are even polynomials" or "P and Q are odd polynomials"
+	\flushright \href{https://artofproblemsolving.com/community/c6h1602830}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/286535}{Happy2020}]
+	Yes, either $P$ and $Q$ are both even or both odd. 
+In fact, this would be true even if conditions (1), (2), and (4) were not true. 
+
+You can prove this by doing casework on the parity of either function.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}For two polynomials P and Q
+1) real coefficient
+2) degree(P)=degree(Q)
+3) function of P\/Q is even function
+4) P\/Q isnt constant
+So can we say "P and Q are even polynomials" or "P and Q are odd polynomials"[\/quote]
+\begin{tcolorbox}Yes, either $P$ and $Q$ are both even or both odd.....[\/quote]
+
+No.
+Choose for example $P(x)=x^2(x-1)$ and $Q(x)=(x^2+1)(x-1)$
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/286535}{Happy2020}]
+	Ohhhh truuue I forgot about how functions can be neither odd nor even 
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/388080}{NomenNescioTR}]
+	What about with this:
+5) there isnt a polynomial R(x) such that
+P and Q are divisible by R 
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	You are welcome.
+Glad to have helped you.
+\begin{tcolorbox}What about with this:
+5) there isnt a polynomial R(x) such that
+P and Q are divisible by R[\/quote]
+I suppose you mean "non constant $R(x)$". If so, adding this fifth condition at last allows the conclusion  :D 
+
+$\frac {P(x)}{Q(x)}=\frac{P(-x)}{Q(-x)}$ implies $P(x)Q(-x)$ even and so $P(x)Q(-x)=H(x^2)$
+
+If $P(z)=0$ for some $z\ne 0$, this implies $P(-z)Q(z)=P(z)Q(-z)=0$ and so :
+Either $Q(z)=0$ but then $(x-z)$ divides both $P(x)$ and $Q(x)$, impossible now.
+Either $P(-z)=0$
+
+Writing then $P(x)=(x^2-z^2)P_1(x)$, we get $(x-z^2)|H(x)$ and so $H(x)=(x-z^2)I(x)$ and :
+$P_1(x)Q(-x)=I(x^2)$
+
+And it is easy to continue this process and to get $P(x)=x^mT(x^2)$
+And obviously same process gives us $Q(x)=x^nU(x^2)$
+Plugging this in $P(x)Q(-x)=H(x^2)$, we get $m+n$ even (and so either both even, either both odd).
+
+Hence the conclusion.
+
+Note then that adding just "non constant P,Q" :
+5) implies 4) which becomes useless
+1) and 2) both are useless.
+
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/366128}{H.HAFEZI2000}]
+	find the least number of n that polynomials with rational coefficients such as Fi exist that :
+[size=75][ F [\/size][size=75]1(X) ] ^2 +[ F [size=75]2[\/size](X) ] ^2 + ... + [ F [size=75]n(x) [\/size]][\/size][size=100][size=75]^ 2[\/size][\/size][size=100] =[\/size] [size=100](x^2) + 7[\/size]
+	\flushright \href{https://artofproblemsolving.com/community/c6h1608670}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}find the least number of n that polynomials with rational coefficients such as Fi exist that :
+F[size=75]1(X) + F[size=75]2[\/size](X) + ... + F[size=75]n[\/size](x) = (x^2) + 7[\/quote]
+Least is $n=1$ :
+
+$F1(x)=x^2+7$
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/366128}{H.HAFEZI2000}]
+	\begin{tcolorbox}[quote=H.HAFEZI2000]find the least number of n that polynomials with rational coefficients such as Fi exist that :
+F[size=75]1(X) + F[size=75]2[\/size](X) + ... + F[size=75]n[\/size](x) = (x^2) + 7[\/quote]
+Least is $n=1$ :
+
+$F1(x)=x^2+7$[\/quote]
+
+sorry I've edited the question 'cause there was a mistake
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/43127}{ayush_2008}]
+	if$ f(x) $ is a fourth degree polynomial function satisfying$ f(x)=\frac{x}{x+3}$ only for x=0,1,2,3,4, then f(5)=
+please guide
+	\flushright \href{https://artofproblemsolving.com/community/c6h1621235}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/246574}{Giffunk}]
+	\begin{tcolorbox}if$ f(x) $ is a fourth degree polynomial function satisfying$ f(x)=\frac{x}{x+3}$ only for x=0,1,2,3,4, then f(5)=
+please guide[\/quote]
+
+Let $P(x)$ be a fifth degree polynomial such that $P(x)=(x+3)f(x)-x$ , with roots $0,1,2,3,4$ 
+Hence $P(x)=a(x)(x-1)(x-2)(x-3)(x-4)$
+Setting the value $x=-3$ we get the value of $a=-1\/840$ and hence we have $f(5)=\frac{120(-1\/840)+5}{8}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/238386}{ythomashu}]
+	$f(x)-\frac{x}{x+3}=\frac{ax(x-1)(x-2)(x-3)(x-4)}{x+3}$
+$(x+3)f(x)-x=ax(x-1)(x-2)(x-3)(x-4)$
+$8f(5)-5=120a$
+$f(5)=\frac{120a+5}8$
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}if$ f(x) $ is a fourth degree polynomial function satisfying$ f(x)=\frac{x}{x+3}$ only for x=0,1,2,3,4, then f(5)=
+please guide[\/quote]
+So $(x+3)f(x)-x$ is a degree $5$ polynomial with roors $0,1,2,3,4$
+So $(x+3)f(x)-x=ax(x-1)(x-2)(x-3)(x-4)$
+
+Setting there $x=-3$, we get $a=-\frac 1{840}$
+
+And so $f(x)=\frac{840x-x(x-1)(x-2)(x-3)(x-4)}{840(x+3)}$
+
+And $\boxed{f(5)=\frac{17}{28}}$
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/43127}{ayush_2008}]
+	thanks Sir .i was expecting that Sir (you) will answer it .
+Regards
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/190123}{hoanggiang}]
+	Find all  polynomial $P(x)$ such that $$ xP\left ( x-1 \right )=\left ( x-2017 \right )P\left ( x \right ). $$
+	\flushright \href{https://artofproblemsolving.com/community/c6h1623935}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all  polynomial $P(x)$ such that $$ xP\left ( x-1 \right )=\left ( x-2017 \right )P\left ( x \right ). $$[\/quote]
+Setting $x=0$ we get $P(0)=0$ and so $P(x)=xP_1(x)$
+And equation is $(x-1)P_1(x-1)=(x-2017)P_1(x)$
+
+Setting $x=1$ we get $P_1(1)=0$ and so $P_1(x)=(x-1)P_2(x)$
+And equation is $(x-2)P_2(x-1)=(x-2017)P_2(x)$
+
+Setting $x=2$ we get $P_2(2)=0$ and so $P_2(x)=(x-2)P_3(x)$
+And equation is $(x-3)P_3(x-1)=(x-2017)P_3(x)$
+
+...
+
+And equation is $(x-2016)P_{2016}(x-1)=(x-2017)P_{2016}(x)$
+
+Setting $x=2016$ we get $P_{2016}(2016)=0$ and so $P_{2016}(x)=(x-2016)P_{2017}(x)$
+And equation is $P_{2017}(x-1)=P_{2017}(x)$
+And so $P_{2017}(x)=c$ constant
+
+And $\boxed{P(x)=c\prod_{k=0}^{2016}(x-k)}$ whatever is $c\in\mathbb R$
+
+
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/336097}{opptoinfinity}]
+	Consider $f(x)=ax^3+bx^2+cx+4$ where $a, b, c$ are real numbers, and $f"(\frac{-2}{3})=0$. Also the tangent drawn to the graph of the function $y=f(x)$ at $x=\frac{-2}{3}$ is $y=\frac{5x}{3}+\frac{100}{27}$. Find $a+b+c$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1624341}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/346763}{WolfusA}]
+	Tangent line equation
+$y=f'(x_0)(x-x_0)+f(x_0)$ So $f'(\frac{-2}{3})=\frac{5}{3}\wedge f(\frac{-2}{3})-\frac{-2}{3}f'(\frac{-2}{3})=\frac{100}{27}$ In addition you've got third equation $f"(\frac{-2}{3})=0$, thus find $a,b,c$ and them sum them up.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Consider $f(x)=ax^3+bx^2+cx+4$ where $a, b, c$ are real numbers, and $f"(\frac{-2}{3})=0$. Also the tangent drawn to the graph of the function $y=f(x)$ at $x=\frac{-2}{3}$ is $y=\frac{5x}{3}+\frac{100}{27}$. Find $a+b+c$.[\/quote]
+We get $f(-\frac 23)=\frac{70}{27}$ and $f'(-\frac 23)=\frac 53$ and $f''(-\frac 23)=0$
+
+So $f(x)=\frac{70}{27}+\frac 53(x+\frac 23)+\alpha(x+\frac 23)^3$
+
+Setting there $x=0$, we get $\alpha=1$ and so 
+$f(x)=\frac{70}{27}+\frac 53(x+\frac 23)+(x+\frac 23)^3$
+
+And required quantity is $f(1)-4=\boxed{6}$
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/405366}{Smita}]
+	\begin{tcolorbox}Consider $f(x)=ax^3+bx^2+cx+4$ where $a, b, c$ are real numbers, and $f"(\frac{-2}{3})=0$. Also the tangent drawn to the graph of the function $y=f(x)$ at $x=\frac{-2}{3}$ is $y=\frac{5x}{3}+\frac{100}{27}$. Find $a+b+c$.[\/quote]
+
+its just basic  calculus
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/340100}{Samujjal101}]
+	A polynomial P(x) leaves the remainders 10 and 2x-3 when it is divided by (x-2) and $(x+1)^2$ respectively. Find the remainder when it is divided by (x-2)$(x+1)^2$
+	\flushright \href{https://artofproblemsolving.com/community/c6h1625978}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}A polynomial P(x) leaves the remainders 10 and 2x-3 when it is divided by (x-2) and $(x+1)^2$ respectively. Find the remainder when it is divided by (x-2)$(x+1)^2$[\/quote]
+$P(x)=(x+1)^2Q(x)+2x-3$
+$P(2)=10$ implies then $Q(2)=1$ and so $Q(x)=(x-2)R(x)+1$
+
+So $P(x)=(x-2)(x+1)^2R(x)+(x+1)^2+2x-3$
+
+Hence the answer $\boxed{x^2+4x-2}$
+
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/340100}{Samujjal101}]
+	\begin{tcolorbox}[quote=Samujjal101]A polynomial P(x) leaves the remainders 10 and 2x-3 when it is divided by (x-2) and $(x+1)^2$ respectively. Find the remainder when it is divided by (x-2)$(x+1)^2$[\/quote]
+$P(x)=(x+1)^2Q(x)+2x-3$
+$P(2)=10$ implies then $Q(2)=1$ and so $Q(x)=(x-2)R(x)+1$
+
+So $P(x)=(x-2)(x+1)^2R(x)+(x+1)^2+2x-3$
+
+Hence the answer $\boxed{x^2+4x-2}$[\/quote]
+
+Thanks man !
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/394604}{Mr.Bogus19}]
+	Let $p(x)=x^4+ax^3+bx^2+cx+d$ where a,b,c,d are constant, $p(1)=1993, p(2)=3986, p(3)=5979$,find the value of :$$\frac{1}{4}[p(11)+p(-7)]$$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1634064}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $p(x)=x^4+ax^3+bx^2+cx+d$ where a,b,c,d are constant, $p(1)=1993, p(2)=3986, p(3)=5979$,find the value of :$$\frac{1}{4}[p(11)+p(-7)]$$.[\/quote]
+Note that :
+
+$11^0+(-7)^0=81.1^0-160.2^0+81.3^0$
+$11^1+(-7)^1=81.1^1-160.2^1+81.3^1$
+$11^2+(-7)^2=81.1^2-160.2^2+81.3^2$
+$11^3+(-7)^3=81.1^3-160.2^3+81.3^3$
+
+So $(P(11)-11^4)+(P(-7)-(-7)^4)=81(P(1)-1^4)-160(P(2)-2^4)+81(P(3)-3^4)$
+
+And $P(11)+P(-7)=81P(1)-160P(2)+81P(3)+12960$
+
+In our specific case, we have $P(1)+P(3)=2P(2)$ and so $P(11)+P(-7)=12960+2P(2)$
+
+And so $\boxed{\frac{P(11)+P(-7)}4=5233}$
+
+
+
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/293403}{quangminh1173}]
+	Note that $q(x)=(x-1)(x-2)(x-3)(x-m)$ where $m$ is a real number and $q(x)=p(x)-1993x.$
+Hence, 
+$$\frac{1}{4}[p(11)+p(-7)]=\frac{1}{4}[q(11)+q(-7)+7972]=\frac{1}{4}[720(11-m)+720(m+7)+7972]=5233$$
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/190123}{hoanggiang}]
+	Find all polynomial  $P(x)$ with real coefficients such that $$ P\left ( 6x^3+7x^2+16x+3 \right )=P\left ( x^2+x+3 \right )P\left ( 3x+1 \right ),\forall x\in\mathbb{R}$$
+	\flushright \href{https://artofproblemsolving.com/community/c6h1634517}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/190123}{hoanggiang}]
+	Who can solve this problem?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all polynomial  $P(x)$ with real coefficients such that $$ P\left ( 6x^3+7x^2+16x+3 \right )=P\left ( x^2+x+3 \right )P\left ( 3x+1 \right ),\forall x\in\mathbb{R}$$[\/quote]
+Easy to show that the only possible real root of a nonconstant $P(x)$ can be $\frac 12$
+
+Easy then to find the family of solutions $P(x)=0\forall x$ and $P(x)=(2x-1)^n$ $\forall n\in\mathbb Z_{\ge 0}$
+
+The remaining problem is to find if it exists non constant solutions without real roots (allpositive then, since we easily get $P(1)=1$)
+...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/392475}{sagnikndp16}]
+	\begin{tcolorbox}[quote=hoanggiang]Find all polynomial  $P(x)$ with real coefficients such that $$ P\left ( 6x^3+7x^2+16x+3 \right )=P\left ( x^2+x+3 \right )P\left ( 3x+1 \right ),\forall x\in\mathbb{R}$$[\/quote]
+Easy to show that the only possible real root of a nonconstant $P(x)$ can be $\frac 12$
+
+Easy then to find the family of solutions $P(x)=0\forall x$ and $P(x)=(2x-1)^n$ $\forall n\in\mathbb Z_{\ge 0}$
+
+The remaining problem is to find if it exists non constant solutions without real roots (allpositive then, since we easily get $P(1)=1$)
+...[\/quote]
+
+how will you show that the non constant polynomial can have $\frac 12$ as a root
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/327922}{Davrbek}]
+	The polynomial $P (x)$ is such that the polynomials $P (P (x))$ and
+$P (P (P (x)))$ are strictly monotone on the whole real axis.
+Prove that $P (x)$ is also strictly monotone on the whole thing 
+axis.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1634950}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}The polynomial $P (x)$ is such that the polynomials $P (P (x))$ and
+$P (P (P (x)))$ are strictly monotone on the whole real axis.
+Prove that $P (x)$ is also strictly monotone on the whole thing 
+axis.[\/quote]
+Since $P(P(x))$ is strictly monotonous, then it has odd degree and is surjective.
+So $P(x)$ has odd degree and is surjective.
+
+If $P(a)=P(b)$ for some $a\ne b$, then, since surjective, $\exists u\ne v$ such that $P(u)=a$ and $P(v)=b$
+And then $P(P(u))=P(P(v))$, impossible since $P(P(x))$ is monotonous.
+
+Hence $P(x)$ is injective, and so monotonous.
+Q.E.D.
+\begin{italicized}(And, btw, no need for $P(P(P(x))$ monotonous.)\end{italicized}
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/346763}{WolfusA}]
+	I don't use assumption $P(P(P(x))$ is monotonous too. if $P(x)$ is constant everything works. Assume $P(x)$ is not constant. For all $x \in R$ the following has the same sign different than $0$.
+$[P(P(x))]'= P'(P(x))\cdot P'(x)$.
+Assume WLOG for all $x\in R$ we have $[P(P(x))]'<0$. $P(x)$ is strictly monotone iff $P'(x)$ has the same sign for all $x\in R$. Assume there exist real numbers $a\neq b\wedge P'(a)>0>P'(b)$. Then by intermediate value theorem $\exists_{c\in R} \ P'(c) =0$. Thus 0>$[P(P(c))]'= P'(P(c))\cdot P'(c)=0$ contradiction. This finishes proof.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/346763}{WolfusA}]
+	\begin{tcolorbox}
+If $P(a)=P(b)$ for some $a\ne b$, then, since surjective, $\exists u\ne v$ such that $P(u)=a$ and $P(v)=b$
+And then $P(P(u))=P(P(v))$, impossible since $P(P(x))$ is monotonous.
+[\/quote]
+
+You could do it faster. If $P(a)=P(b)$ for some $a\ne b$, then $P(P(a))=P(P(b))$ which is contradiction with $P (P (x))$ is strictly monotone.
+\end{solution}
+*******************************************************************************

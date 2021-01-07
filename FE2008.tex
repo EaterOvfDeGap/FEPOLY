@@ -1,0 +1,945 @@
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/17813}{duytungct}]
+	Find all continuous functions $f: \mathbb R \to \mathbb R$ so that $ f(x+f(x))=f(x)$ for all $ x \in \mathbb R$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h181337}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/246}{pbornsztein}]
+	If we assume the uniform continuity on $ \mathbb{R}$ (not just the continuity), then I can prove that $ f$ is constant...  
+
+So, can we deduce the uniform continuity from the functional equation (which is just to prove that $ f$ has limit in $ +\infty$ and $ -\infty$)?
+
+Pierre.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all continuous function $ f: R \to R$ so that $ f(x + f(x)) = f(x)$ for all $ x \in R$\end{tcolorbox}
+
+$ 1)$ First, it is easy to show with induction that $ f(x+nf(x))=f(x)$ $ \forall x\in \mathbb{R}$ and $ \forall n\in\mathbb{N}$
+
+$ 2)$ Constant functions $ f(x)=c$ are obviously solutions.
+
+$ 3)$ Assume it exists $ f(x)$ non-constant continuous solution. Then 
+It exists $ x_0<x_1$ such that $ f(x_0)\neq f(x_1)$
+Let $ A=\{x>x_0$ such that $ f(x)=f(x_1)\}$
+$ A\neq_\emptyset$ (since $ x_1\in A$) and $ x>x_0$ $ \forall x\in A$. Let then $ x_2=\inf(A)$.
+
+Since $ f(x)$ is continuous, $ f(x_2)=f(x_1)$, $ x_2>x_0$ and $ \boxed{f(x)\neq f(x_1)\forall x\in[x_0,x_2)}$
+
+Since $ f(x_2)\neq f(x_0)$, $ \exists n\neq p\in\mathbb{N}$ such that either $ x_0+nf(x_0)<x_2+pf(x_2)<x_2+nf(x_2)$, either $ x_0+nf(x_0)>x_2+pf(x_2)>x_2+pf(x_2)$
+Since $ f(x)$ is continuous, so is $ x+nf(x)$, so $ \exists x_3\in(x_0,x_2)$ such that $ x_3+nf(x_3)=x_2+pf(x_2)$, so $ f(x_3+nf(x_3))=f(x_2+pf(x_2))$, and so $ f(x_3)=f(x_2)=f(x_1)$
+
+But this is a contradiction since we know (see boxed statement above)  that $ f(x)\neq f(x_1)$ $ \forall x\in[x_0,x_2)$
+
+So the only solutions are constant functions.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/246}{pbornsztein}]
+	Ok, I got it!
+
+Let $ f$ be a solution.
+Clearly, $ f$ cannot be injective.
+
+Let $ g(x)=f(x)+x$.
+Let $ g^n$ denotes the $ n^{th}$ iterate of $ g$.
+
+It is easy to verify that $ g$ is continuous and $ g^2(x)=2g(x)-x$ for all $ x$.
+Thus, $ g$ is injective.
+Since $ g$ is continuous and injective, we deduce that $ g$ is strictly monotone. But, if $ g$ is decreasing then $ f(x)=g(x)-x$ is (strictly) decreasing too, so that $ f$ would be injective, a contradiction.
+Thus, $ g$ is increasing.
+
+A straightforward induction leads to $ g^n(x) = ng(x)-(n-1)x = nf(x)+x$ for all $ x$ and positive integer $ n$.
+
+Let $ a,b$ such that $ a<b$.
+Since for each positive integer $ n$, the function $ g^n$ is increasing, we deduce that $ g^n(a) < g^n(b)$, which leads to $ f(a)-f(b) < \frac {b-a}{n}$ for all $ n>0$.
+Taking limit on $ n$, leads to $ f(a)-f(b) \leq 0$, so that $ f$ is non-decreasing.
+
+A straightforward induction leads to $ f(x+nf(x)) = f(x)$ for all $ x$ and non-negative integer $ n$
+Since $ f$ is non-decreasing, it follows that $ f$ is constant on each intervall with endpoints $ x$ and $ x+nf(x)$ for each $ x$ $ n >0$.
+
+Assume that there exists $ a$ such that $ f(a) > 0$ and $ c$ such that $ f(c)=0$.
+Let $ M$ be the sup of the set $ S$ of the $ x$ such that $ f(x) =0$ (for all such $ x$, we have $ x < a$ since $ f$ is non-decreasing).
+Using a sequence of element of $ S$ which has limit $ M$ and continuity of $ f$, we clearly deduce that $ f(M)=0$.
+For each $ e>0$, we have $ f(M+e)>0$ so that $ f$ is constant on $ [M+e,+\infty[$. Clearly, when $ e$ varies, the constant value is always the same, say $ y$. Thus, for each $ e>0$, we have $ 0<y = f(M+e)$. Taking limit on $ e$ and using continuity, we deduce that $ f(M)=y >0$. A contradiction.
+
+Assume there exist $ b$ such that $ f(b) < 0$ and $ c$ such that $ f(c)=0.$
+Thus, from above $ f$ is constant on $ ]-\infty , b]$, and we get the same contradiction as above by considering $ m = \inf S$.
+
+Therefore $ f$ is the zero function, or $ f$ has always the same sign on $ \mathbb{R}$.
+In the latter case, if $ f(a) > 0$ for all $ a$, then $ f$ is constant on each $ [a, + \infty[$ for all $ a$, so that $ f$ is constant.
+If $ f(b) < 0$ for all $ b$ then $ f$ is constant on each $ ]- \infty , b]$ for all $ b$, so that $ f$ is constant.
+
+Thus, in each case $ f$ is constant.
+
+Conversly, if $ f$ is constant then $ f$ is clearly a solution.
+
+Pierre.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/246}{pbornsztein}]
+	Aaargh... a bit too slow in writing... :oops: 
+
+Pierre.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/285}{harazi}]
+	That's a bit too complicated, Pierre.  :D  Once you know that $ g(g(x))=2g(x)-x$ you easily deduce that $ g$ is bijective (by continuity and monotony), so that relation $ g^n(x)=ng(x)-(n-1)x$ actually holds for all integers $ n$. Next write $ g^n(x)<g^n(y)$ for all integers $ n$ if $ x<y$ and you're done.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/32514}{TTsphn}]
+	Find all functions $f:\mathbb N\to\mathbb Z$ for which $f(1)=1$, $f(2)=0$, and 
+\[f(m)^2-f(n)^2=f(m+n)f(m-n),\quad \forall m,n \in \mathbb N, m>n.\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h181737}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all function such that : 
+$ f: N\to Z$ 
+$ f(m)^2 - f(n)^2 = f(m + n)f(m - n),\forall m > n$
+$ f(1) = 1 ,f(2) = 0$\end{tcolorbox}
+
+Let $ P(m,n)$ the property : $ f(m)^2 - f(n)^2 = f(m + n)f(m - n)$
+
+$ P(n+2,n)$ gives $ f(n+2)^2=f(n)^2$ which implies $ f(2p)=0$ and $ f(2p+1)^2=1$
+$ P(2p+1,2p)$ gives then $ 1=f(4p+1)$
+$ P(2p+2,2p+1)$ gives $ -1=f(4p+3)$
+
+And so we have a full definition of $ f(n)$ :
+$ f(2p)=0$
+$ f(4p+1)=1$
+$ f(4p+3)=-1$
+
+And it is easy to verify that these necessary conditions are also sufficient.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32514}{TTsphn}]
+	More than find all function satisfy conditon : 
+$ f: N\to Z$ such that : 
+$ f(m)^2-f(n)^2=f(m+n)f(m-n)$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/29191}{zaya_yc}]
+	Find all functions $f: \mathbb N \to \mathbb N$ so that $ f(xf(y))=yf(x)$ for all $ x,y \in \mathbb N$ .
+	\flushright \href{https://artofproblemsolving.com/community/c6h181906}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/22804}{nayel}]
+	Put $ x = 1,y = t$ in the equation to get $ f(f(t)) = tf(1)\,\forall t\in\mathbb N\quad(1)$.
+
+Again from the equation we have $ f(yf(x)) = xf(y)$. Hence $ f(f(xf(y))) = xf(y)$. Thus $ f(f(t)) = t$ for $ t = xf(y)$. Combining this with $ (1)$ we get $ f(1) = 1$. Thus $ x = 1,y = t$ implies $ f(f(t)) = t\,\forall t\in\mathbb N\quad(2)$.
+
+Assume that $ f(a) = f(b)$. Then we have $ f(af(a)) = f(af(b))$ which implies $ af(a) = bf(a)\implies a = b$. Thus $ f$ is injective. However, $ (2)$ implies that $ f$ is surjective. Thus $ f$ is bijective.
+
+The substitution $ y = f(z)$ in our original equation yields $ f(f(z)f(x)) = xf(f(z)) = zx\,\forall z,x\in\mathbb N$. But $ zx = f(f(zx))$. Thus $ f(f(zx)) = f(f(z)f(x))\implies f(zx) = f(z)f(x)$. This is Cauchy's equation with solution  $ f(x) = x^k$ (the other solutions don't count since $ f: \mathbb N\to\mathbb N$). But $ f(f(x)) = x$ implies $ k^2 = 1$. Hence $ k = 1$ (as $ k\neq -1$). Thus the only solution is $ \boxed{f(x) = x}$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all function $ f: N\to N$ so that $ f(xf(y)) = yf(x)$ for all $ x,y \in N$ .\end{tcolorbox}
+
+Let $ P(x,y)$ be the property $ f(xf(y)) = yf(x)$
+Let $ f(1)=a$
+
+$ P(1,1)$ implies $ f(a)=a$
+$ P(1,a)$ implies $ a=a^2$ and so $ a=1$
+$ P(1,x)$ implies $ f(f(x))=x$ and $ f(x)$ is bijective
+
+$ P(x,f(y))$ implies $ f(xy)=f(x)f(y)$ and $ f(x)$ is multiplicative and need only to be defined for primes.
+
+$ f(x)=ab$, with $ a,b>1$ implies then $ x=f(a)f(b)$ with $ f(a)>1$ and $ f(b)>1$ (since f is bijective and so only $ f(1)=1$) and so image of a prime is a prime and only primes give primes.
+
+Split then the set of primes in three distinct subsets $ A$, $ B$ and $ C$ such that exists a bijection $ h(p)$ from $ A$ to $ B$.
+Let then $ f(x)$ defined as :
+
+$ f(1)=1$
+$ f(p)=h(p)$ $ \forall p\in A$
+$ f(p)=h^{-1}(p)$ $ \forall p\in B$
+$ f(p)=p$ $ \forall p\in C$
+
+$ f(\prod p_i^{n_i})=\prod f(p_i)^{n_i}$ $ \forall$ non-primes.
+
+And it is easy to verify that these necessary solutions are sufficient.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$ f(zx) = f(z)f(x)$. This is Cauchy's equation with solution  $ f(x) = x^k$ (the other solutions don't count since $ f: \mathbb N\to\mathbb N$). \end{tcolorbox}
+
+Hello Nayel !
+
+You're wrong here. Cauchy multiplcative equation has a lot of solutions different from  $ f(x) = x^k$ when in $ \mathbb{N}$. For example, here :
+
+$ f(1)=1$
+$ f(2)=3$
+$ f(3)=2$
+$ f(p)=p$ for any prime $ p>3$
+
+And other values using multiplicative property ($ f(4)=9$, $ f(8)=27$, $ f(9)=4$, $ f(12)=18$, ...).
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/36661}{mathfunny}]
+	Find all functions $f: \mathbb R \to \mathbb R$ which satisfy $ f(x+y)=f(x)\cdot f(y) \cdot f(xy)$ for all $x,y\in\mathbb{R}$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h182651}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all functions satify $ f(x + y) = f(x).f(y).f(xy), \forall x,y\in\mathbb{R}$\end{tcolorbox}
+
+Let $ P(x,y)$ be the property $ f(x + y) = f(x).f(y).f(xy)$
+
+$ 1)$ If $ \exists x_0$ such that $ f(x_0) = 0$, then $ P(x - x_0,x_0)$ implies $ f(x) = 0$ $ \forall x$
+
+$ 2)$ suppose now $ f(x)\neq 0$ $ \forall x$. Let then $ x\neq 0$ and $ y\neq 0$ :
+$ P(x,\frac {1}{xy} + y)$ implies $ f(x + y + \frac {1}{xy}) = f(x)^2f(\frac {1}{xy})f(y)f(\frac {1}{x})f(\frac {1}{y})f(xy)$
+
+$ P(x + \frac {1}{xy},y)$ implies $ f(x + y + \frac {1}{xy}) = f(x)f(y)^2f(\frac {1}{xy})f(\frac {1}{y})f(xy)f(\frac {1}{x})$
+
+And so $ f(x) = f(y)=c$ $ \forall x,y\neq 0$
+
+Then $ P(x,x)$, $ x\neq 0$  gives $ c=c^3$ and so $ c=-1$ or $ c=+1$
+And $ P(x,-x)$, $ x\neq 0$ gives $ f(0)=c^3=c$
+
+And so we have only three solutions : (EDITED : first post said five solution)
+$ f(x) = 0$ $ \forall x$
+$ f(x) = - 1$ $ \forall x$
+$ f(x) = + 1$ $ \forall x$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/36147}{Edward_Tur}]
+	Find all functions $f: \mathbb R \to \mathbb R$ such that $$ xf(y)-yf(x)=f\left( {\frac{y}{x}} \right),$$ for all reals $x$ and $y$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h183261}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$ xf(y) - yf(x) = f\left( {\frac {y}{x}} \right)$\end{tcolorbox}
+
+Let $ P(x,y)$ the property $ xf(y) - yf(x) = f\left( {\frac {y}{x}} \right)$
+
+$ P(1,1)$ $ \implies$ $ f(1)=0$
+
+$ P(\frac{1}{x},y)$ implies $ \frac{1}{x}f(y) - yf(\frac{1}{x}) = f(xy)$
+But $ P(x,1)$ gives $ - f(x) = f( \frac {1}{x})$
+
+And so $ f(xy)=\frac{1}{x}f(y) + yf(x)$
+But (symetry between $ x$ and $ y$) we also have  $ f(xy)=\frac{1}{y}f(x) + xf(y)$
+
+And so $ \frac{1}{x}f(y) + yf(x)=\frac{1}{y}f(x) + xf(y)$
+
+and so $ \frac{f(x)}{x-\frac{1}{x}}= \frac{f(y)}{y-\frac{1}{y}}=c$
+
+And so $ f(x)=c(x-\frac{1}{x})$.
+
+Plugging back this necessary condition in the original equation, we get that it works with any $ c$.
+
+The solutions are $ \boxed{f(x)=c(x-\frac{1}{x})}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/13743}{redkimchi}]
+	Suppose $ f$ is a function on the positive integers which takes integer values with the following properties:
+(a) $ f(2) = 2$
+(b) (multiplicative) $ f(mn) = f(m)f(n)$ for all positive integers $ m$ and $ n$ 
+(c) (increasing) $ f(m) > f(n)$ if $ m > n$ 
+Find $ f(1983)$.
+
+
+Generalized problem : Find all functions $ f$ on the positive integers which takes real values\end{bolded} and satisfying (b) and (c).
+	\flushright \href{https://artofproblemsolving.com/community/c6h183876}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/13985}{BaBaK Ghalebi}]
+	I think the condition (a) is necessary...
+anyway a function $ f$ satisfying (a),(b),(c) is the single function $ f(n)=n$...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/246}{pbornsztein}]
+	That's a well-known result from Erdös that if $ f: \mathbb{N^*} \rightarrow \mathbb{R}$ is multiplicative and non-decreasing then $ f$ is constant or of the form $ f(n) = n^u$ for some positive real $ u$.
+
+Pierre.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}[Australian 1984 (or 1983) p. 7] Suppose $ f$ is a function on the positive integers which takes integer values with the following properties:
+[list](a) $ f(2) = 2$
+(b) (multiplicative) $ f(mn) = f(m)f(n)$ for all positive integers $ m$ and $ n$ 
+(c) (increasing) $ f(m) > f(n)$ if $ m > n$  [\/list]
+Find $ f(1983)$.
+
+
+Generalized problem : Find all functions $ f$ on the positive integers which takes real values\end{bolded} and satisfying (b) and (c).\end{tcolorbox}
+
+First, we have $ f(n)\neq 0$ $ \forall n>0$ (else we would have $ f(2n)=f(n)=0$ and so contradiction with (c)).
+Then, we have $ f(1)=1$ since $ f(1)=f(1\times 1)=f(1)^2$ and $ f(1)\neq 0$ (see above).
+Then, we have $ f(n)>1$ $ \forall n>1$. It's true since we have then $ f(n)>f(1)=1$ $ \forall n>1$ (applying (c)).
+
+Let then $ u,v$, such that $ u\neq v$, $ u>1$, $ v>1$.
+Since $ f(u)$ and $ f(v)$ are positive, $ \ln(f(u))$ and $ \ln(f(v))$are defined. Assume then $ \frac{\ln(f(u))}{\ln(u)}\neq\frac{\ln(f(v))}{\ln(v)}$. 
+Then we have $ \frac{\ln(f(u))}{\ln(f(v))}\neq\frac{\ln(u)}{\ln(v)}$ WLOG say $ 0<\frac{\ln(f(u))}{\ln(f(v))}<\frac{\ln(u)}{\ln(v)}$.
+Then, it exists two positive integer $ p,q$ such that $ 0<\frac{\ln(f(u))}{\ln(f(v))}<\frac{p}{q}<\frac{\ln(u)}{\ln(v)}$ 
+$ \frac{\ln(f(u))}{\ln(f(v))}<\frac{p}{q}$  implies $ f(u^q)<f(v^p)$
+$ \frac{p}{q}<\frac{\ln(u)}{\ln(v)}$ implies $ v^p<u^q$
+And so we have a contradiction with  (c).
+
+So $ \frac{\ln(f(u))}{\ln(u)}=\frac{\ln(f(v))}{\ln(v)}=c$ for some real $ c>0$
+
+So $ \boxed{f(n)=n^c}$ $ \forall n>0$
+
+If we add the condition (a), we have $ c=1$ and $ f(n)=n$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/35072}{robbenmaths}]
+	$ f(x)$ is a function defined on $ [0,1]$ such that
+1) $ f(1)=1$,
+2) $ f(x)=\frac{1}{3}[f(\frac{x}{3})+f(\frac{x+1}{3})+f(\frac{x+2}{3})]$ for all $ x \in [0,1]$, and
+3) For every $ \epsilon>0$, there exists a positive $ \delta$ such that: for all $ x \in [0;1]$ and $ |x-y|<\delta$, we have 
+$$ |f(x)-f(y)|<\epsilon.$$
+
+Prove that $ f(x)=1$ for all $ x \in [0,1]$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h184003}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$ f(x)$ is a function defined on $ [0;1]$ such that
+1) $ f(1) = 1$
+2) $ f(x) = \frac {1}{3}[f(\frac {x}{3}) + f(\frac {x + 1}{3}) + f(\frac {x + 2}{3})]$ for all $ x \in [0;1]$
+3) For every $ \epsilon > 0$, there exists a positive $ \delta$ such that: for all $ x \in [0;1]$ and $ |x - y| < \delta$, we have 
+$ |f(x) - f(y)| < \epsilon$.
+
+Prove that $ f(x) = 1$ for all $ x \in [0;1]$\end{tcolorbox}
+
+The point $ 3)$ implies $ f(x)$ is continuous, so is bounded on $ [0,1]$. Let $ m$ the minimum value.
+
+So it exists $ x_0$ such that $ f(x)\geq f(x_0)=m$ $ \forall x\in [0,1]$.
+Then $ f(x) = \frac {1}{3}[f(\frac {x}{3}) + f(\frac {x + 1}{3}) + f(\frac {x + 2}{3})]$ implies $ f(x_0) = f(\frac {x_0}{3}) = f(\frac {x_0 + 1}{3}) = f(\frac {x_0 + 2}{3})=m$
+Then, applying the same demo with $ \frac{x_0}{3}$,  $ \frac{x_0+1}{3}$ and  $ \frac{_0x+2}{3}$, we get $ f(\frac{x_0+k}{9})=m$ $ \forall k=0,1,2,...,8$.
+And, with induction : $ f(\frac{x_0+k}{3^p})=m$ $ \forall k=0,1,2,...,3^p-1$
+And, since $ f(x)$ is continuous, $ f(x)=m$ $ \forall x\in[0,1]$
+
+And so, since $ f(1)=1$,  $ f(x)=1$ $ \forall x\in[0,1]$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18420}{aviateurpilot}]
+	we take for $ e>0$: $ E(e)=\{h\in[0,1]: \ \forall x,y\in[0,1],|x-y|<h\Rightarrow |f(x)-f(y)|<e\}$
+and we take $ \delta=sup(E(e))$
+if $ \delta <1$
+we see that for $ h\in[\delta,min(3\delta,1)[$
+if $ |x-y|\le h$ then for $ k\in\{0,1,2\}: \ |\frac{x+k}{3}-\frac{y+k}{3}|<\frac{h}{3}<\delta$
+so $ \forall k\in\{0,1,2\}: \ |f(\frac{x+k}{3})-f(\frac{y+k}{3})|<e$
+then $ |f(x)-f(y)|=\frac{1}{3}|\sum_{k=0}^{2}f(\frac{x+k}{3})-f(\frac{y+k}{3})|<e$
+then $ min(3\delta,1) \in E(e)$ gives $ min(3\delta,1)\le sup(E(e))=\delta$ (impossible)
+
+then $ \forall e>0: \ sup(E(e))=1$
+so $ \forall e>0,\forall x,y\in]0,1]$ we have $ |x-y|<1$ then $ |f(x)-f(y)|<e$ then $ f(x)=f(y)=f(1)=1$
+so $ \forall x\in]0,1]: \ f(x)=1$ and $ f(0)=\frac{1}{3}(f(0)+f(1\/3)+f(2\/3))=\frac{1}{3}(f(0)+2)$ gives $ f(0)=1$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/22804}{nayel}]
+	Find all functions $ f: \mathbb R\to\mathbb R$ such that 
+\[ f(x+f(y-x))=y+2f(x)\]
+for all $ x,y\in\mathbb R$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h184072}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all functions $ f: \mathbb R\to\mathbb R$ such that
+\[ f(x + f(y - x)) = y + 2f(x)
+\]
+for all $ x,y\in\mathbb R$.\end{tcolorbox}
+
+$ x=0$ and $ y=-2f(0)$ implies $ f(f(-2f(0)))=0$
+
+Then $ y=x+f(-2f(0))$ implies $ f(y-x)=0$ and so $ f(x)=x+f(-2f(0))+2f(x)$ and so $ f(x)=a-x$ for some real $ a$.
+
+Plugging back this value in original equation, we get $ a=0$ and so the unique solution $ \boxed{f(x)=-x}$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/22804}{nayel}]
+	Wow... nice and quick solution. I didn't think it would be this easy...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/37331}{Kamyar1991}]
+	hi  nayel!! if   f(0)=c   we have f(c)=0 and  f(f(c))=4c   then f(2c)=c    f(f(c))=f(2c)=c   so 4c=c  c=0   
+
+in the main equality x=y  then f(x)=-x  this problem is very obviouse u try to solve my problem ( IRAN!!! navid safaee)
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/22804}{nayel}]
+	Find all functions $ f: \mathbb R\to\mathbb R$ such that 
+\[ f(x+f(y-x))=f(x)-f(y)+x\]
+for all $ x,y\in\mathbb R$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h184076}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all functions $ f: \mathbb R\to\mathbb R$ such that
+\[ f(x + f(y - x)) = f(x) - f(y) + x
+\]
+for all $ x,y\in\mathbb R$.\end{tcolorbox}
+
+$ x = y$ implies $ f(x + f(0)) = x$ and so $ f(x) = x - f(0)$ and so ($ x = 0$) $ f(0) = - f(0)$ and $ f(0) = 0$.
+
+And so the unique solution would be $ f(x) = x$ but it is easy to check that this necessary condition does not work.
+
+And so no solution for this equation.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/1147}{stergiu}]
+	\begin{tcolorbox}[quote="nayel"]Find all functions $ f: \mathbb R\to\mathbb R$ such that
+\[ f(x + f(y - x)) = f(x) - f(y) + x
+\]
+for all $ x,y\in\mathbb R$.\end{tcolorbox}
+
+$ x = y$ implies $ f(x + f(0)) = x$ and so $ f(x) = x - f(0)$ and so ($ x = 0$) $ f(0) = - f(0)$ and $ f(0) = 0$.
+
+And so the unique solution would be $ f(x) = x$ but it is easy to check that this necessary condition does not work.
+
+And so no solution for this equation.\end{tcolorbox}
+
+ Nice ! But if we had :
+\[ f(x + f(y - x)) = f(x) + f(y) - x
+\]
+for all $ x,y\in\mathbb R$  
+
+   what should we do  to provw that $ f(x) = x+c$ ? 
+
+ Babis
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/31988}{ringos}]
+	\begin{tcolorbox}[quote="pco"][quote="nayel"]Find all functions $ f: \mathbb R\to\mathbb R$ such that
+\[ f(x + f(y - x)) = f(x) - f(y) + x
+\]
+for all $ x,y\in\mathbb R$.\end{tcolorbox}
+
+$ x = y$ implies $ f(x + f(0)) = x$ and so $ f(x) = x - f(0)$ and so ($ x = 0$) $ f(0) = - f(0)$ and $ f(0) = 0$.
+
+And so the unique solution would be $ f(x) = x$ but it is easy to check that this necessary condition does not work.
+
+And so no solution for this equation.\end{tcolorbox}
+
+ Nice ! But if we had :
+\[ f(x + f(y - x)) = f(x) + f(y) - x
+\]
+for all $ x,y\in\mathbb R$  
+
+   what should we do  to provw that $ f(x) = x$ ? 
+
+ Babis\end{tcolorbox}
+
+If $ f(a) = f(a+c)$, put $ y = x + a$ and $ y = x + a + c$, we get $ f(x+c) = f(x)$ for all x.
+Put $ x = x + c$, we get $ c = 0$. So $ f$ is injective.
+Put $ x = f(y)$, we get $ f(y-f(y)) = 0$. $ y-f(y)$ must be a constant because $ f$ is injective.
+It is easy to check that $ f(x) = x + c$ satisfy the condition.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/1147}{stergiu}]
+	\begin{tcolorbox}
+.........
+If $ f(a) = f(a + c)$, put $ y = x + a$ and $ y = x + a + c$, we get $ f(x + c) = f(x)$ for all x.
+Put $ x = x + c$, we get $ c = 0$. So $ f$ is injective.
+Put $ x = f(y)$, we get $ f(y - f(y)) = 0$. $ y - f(y)$ must be a constant because $ f$ is injective.
+It is easy to check that $ f(x) = x + c$ satisfy the condition.\end{tcolorbox}
+
+ Please , can you explain the last step ?
+
+ '' Put $ x = x + c$, we get $ c = 0$. So $ f$ is injective. '' 
+
+ Where (to which relation)do you put this $ x=x+c$ and how do  reach that c=0?
+ Thanks in advance - Babis
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}[quote="ringos"]
+.........
+If $ f(a) = f(a + c)$, put $ y = x + a$ and $ y = x + a + c$, we get $ f(x + c) = f(x)$ for all x.
+Put $ x = x + c$, we get $ c = 0$. So $ f$ is injective.
+Put $ x = f(y)$, we get $ f(y - f(y)) = 0$. $ y - f(y)$ must be a constant because $ f$ is injective.
+It is easy to check that $ f(x) = x + c$ satisfy the condition.\end{tcolorbox}
+
+ Please , can you explain the last step ?
+
+ '' Put $ x = x + c$, we get $ c = 0$. So $ f$ is injective. '' 
+
+ Where (to which relation)do you put this $ x = x + c$ and how do  reach that c=0?
+ Thanks in advance - Babis\end{tcolorbox}
+
+Explanation :
+
+Let $ P(x,y)$ be the property $ f(x+f(y-x))=f(x)+f(y)-x$
+
+Suppose $ f(a)=f(b)$. Then :
+
+$ P(x,x+a)$ gives $ f(x+f(a))=f(x)+f(x+a)-x$
+$ P(x,x+b)$ gives $ f(x+f(b))=f(x)+f(x+b)-x$
+
+And, since $ f(a)=f(b)$, the two LHS are identical, so the two RHS are also identical,  and we have the property $ Q(x)$ : $ f(x+a)=f(x+b)$ $ \forall x$
+
+Let then $ P(a,x)$ : $ f(a+f(x-a))=f(a)+f(x)-a$
+$ Q(x-b-a)$ implies $ f(x-b)=f(x-a)$ so LHS is equal to $ f(a+f(x-b))$
+$ Q(f(x-b))$ implies $ f(a+f(x-b))=f(b+f(x-b))$ so LHS is equal to $ f(b+f(x-b))$
+And, since $ f(a)=f(b)$, the equality becomes $ f(b+f(x-b))=f(b)+f(x)-a$
+
+But $ P(b,x)$ implies $ f(b+f(x-b))=f(b)+f(x)-b$
+
+And so $ f(b)+f(x)-a=f(b)+f(x)-b$
+
+So $ f(a)=f(b)$ implies $ a=b$ and $ f(x)$ is injective.
+
+Then $ P(f(x),x)$ gives $ f(f(x)+f(x-f(x)))=f(f(x))$ and so injectivity implies $ f(x)+f(x-f(x))=f(x)$ and so $ f(x-f(x))=0$ and so, with injectivity again : $ f(x)=x+$constant.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/1147}{stergiu}]
+	\begin{tcolorbox}[quote="stergiu"][quote="ringos"]
+.........
+If $ f(a) = f(a + c)$, put $ y = x + a$ and $ y = x + a + c$, we get $ f(x + c) = f(x)$ for all x.
+Put $ x = x + c$, we get $ c = 0$. So $ f$ is injective.
+Put $ x = f(y)$, we get $ f(y - f(y)) = 0$. $ y - f(y)$ must be a constant because $ f$ is injective.
+It is easy to check that $ f(x) = x + c$ satisfy the condition.\end{tcolorbox}
+
+ Please , can you explain the last step ?
+
+ '' Put $ x = x + c$, we get $ c = 0$. So $ f$ is injective. '' 
+
+ Where (to which relation)do you put this $ x = x + c$ and how do  reach that c=0?
+ Thanks in advance - Babis\end{tcolorbox}
+
+Explanation :
+
+Let $ P(x,y)$ be the property $ f(x + f(y - x)) = f(x) + f(y) - x$
+
+Suppose $ f(a) = f(b)$. Then :
+
+$ P(x,x + a)$ gives $ f(x + f(a)) = f(x) + f(x + a) - x$
+$ P(x,x + b)$ gives $ f(x + f(b)) = f(x) + f(x + b) - x$
+
+And, since $ f(a) = f(b)$, the two LHS are identical, so the two RHS are also identical,  and we have the property $ Q(x)$ : $ f(x + a) = f(x + b)$ $ \forall x$
+
+Let then $ P(a,x)$ : $ f(a + f(x - a)) = f(a) + f(x) - a$
+$ Q(x - b - a)$ implies $ f(x - b) = f(x - a)$ so LHS is equal to $ f(a + f(x - b))$
+$ Q(f(x - b))$ implies $ f(a + f(x - b)) = f(b + f(x - b))$ so LHS is equal to $ f(b + f(x - b))$
+And, since $ f(a) = f(b)$, the equality becomes $ f(b + f(x - b)) = f(b) + f(x) - a$
+
+But $ P(b,x)$ implies $ f(b + f(x - b)) = f(b) + f(x) - b$
+
+And so $ f(b) + f(x) - a = f(b) + f(x) - b$
+
+So $ f(a) = f(b)$ implies $ a = b$ and $ f(x)$ is injective.
+
+Then $ P(f(x),x)$ gives $ f(f(x) + f(x - f(x))) = f(f(x))$ and so injectivity implies $ f(x) + f(x - f(x)) = f(x)$ and so $ f(x - f(x)) = 0$ and so, with injectivity again : $ f(x) = x +$constant.\end{tcolorbox}
+
+  Many thinks  
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/1147}{stergiu}]
+	Michael Lambrou , Prof. at University of Crete - Greece gave this solution :
+
+ Let  $ f(0) = c$ For $ x = y = -c$ the initial gives
+
+                                           $ f(-c + c) = f(-c) + f(-c) + c$, 
+that is 
+               $ c = 2f(-c) + c$,
+ hence $ f(-c) = 0$. 
+
+For  $ x = t + c, y = t$  the initial relation gives 
+  
+                                              $ f( t + c + 0) = f(t + c) + f(t)-t-c$
+Thus $ f(t) = t + c$ , which is acceptable .
+
+ [color=blue]\begin{italicized}I must thank prof Lambou and  all solvers of this problem and of course Nayel who gave the basic idea to create the problem.\end{italicized}[\/color]
+
+ BAbis
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/11714}{mathgeniuse^ln(x)}]
+	I found a solution to this functional equation, but was wondering whether I made any flaws?
+
+Find all Functions f from the Real Numbers to the Real Numbers such that
+
+$ f(x-f(y))=f(f(y))+xf(y)+f(x)-1$ for all x,y in the real numbers.
+
+Solution
+
+[hide]First, let $ x=0$, then we have $ f(-f(y))=f(f(y))+f(0)-1$.
+
+Then set $ f(y)=g(y^{2})$, to get $ f(-g(y^{2}))=f(g(y^{2}))+g(0)-1$, which implies that $ g((g(y^{2}))^{2})=g((g(y^{2}))^{2})+g(0)-1$, so $ g(0)=1$, and then $ f(0)=1$.
+
+Next, we observe that plugging $ y=0$, we get that
+$ f(x-1)=f(1)+x+f(x)-1$.  Upon plugging $ x=1$, we get that $ f(1)=\frac{1}{2}$.
+
+Furthermore, we see that $ f(x-1)=f(1)+x+f(x)-1$(*) implies that $ g(x^{2}-2x+1)=x-1\/2+g(x^{2})$ (**).
+
+However, $ \frac{g(x^{2}-2x+1)-g(x^{2})}{-2x+1}=-\frac{1}{2}$, for all values of x, except $ x=\frac{1}{2}$.  So, for right now, for all values of x, except for $ x=\frac{1}{2}$, $ g(x)=1-\frac{x}{2}$ (***), for we know that $ g(0)=1$.
+
+Now, we set $ x=\frac{\sqrt{2}}{2}$ into (**).
+
+Then we get that $ g(\frac{3}{2}-\sqrt{2})=\frac{\sqrt{2}}{2}-\frac{1}{2}+g(\frac{1}{2})$.
+
+This implies that $ g(\frac{1}{2})=\frac{3}{4}$ from knowing (***) for all $ x \neq \frac{1}{2}$.
+
+Likewise, we plug in $ x=-\frac{\sqrt{2}}{2}$ into (**), and we see that we get $ g(\frac{1}{2})=\frac{3}{4}$.
+
+So, in either case, we get that $ g(x)=1-\frac{x}{2}$, for all $ x$.
+
+Therefore, $ f(x)=1-\frac{x^{2}}{2}$ is the only function that works in this problem, which can be checked easily.[\/hide]
+	\flushright \href{https://artofproblemsolving.com/community/c6h184439}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}I found a solution to this functional equation, but was wondering whether I made any flaws?\end{tcolorbox}
+
+I think you made some.
+
+\begin{tcolorbox} 
+...
+Then set $ f(y) = g(y^{2})$, 
+...
+\end{tcolorbox}
+
+You can't set $ f(y) = g(y^{2})$ except if you prove first that $ f(-x)=f(x)$
+
+\begin{tcolorbox} 
+...
+$ \frac {g(x^{2} - 2x + 1) - g(x^{2})}{ - 2x + 1} = - \frac {1}{2}$, for all values of x, except $ x = \frac {1}{2}$.  So, for right now, for all values of x, except for $ x = \frac {1}{2}$, $ g(x) = 1 - \frac {x}{2}$ (***)\end{tcolorbox}
+
+How could you conclude from $ \frac {g(x^{2} - 2x + 1) - g(x^{2})}{ - 2x + 1} = - \frac {1}{2}$ that $ g(x) = 1 - \frac {x}{2}$.
+It can't be immediate.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}I found a solution to this functional equation, but was wondering whether I made any flaws?
+
+Find all Functions f from the Real Numbers to the Real Numbers such that
+
+$ f(x - f(y)) = f(f(y)) + xf(y) + f(x) - 1$ for all x,y in the real numbers.
+
+\end{tcolorbox}
+
+It's a problem I searched for a long time on another forum without finding general solution. I have a solution with one constraint more :
+
+"The set of discontinuity points of $ f(x)$ is included in an interval $ (a,b)$" (for example, $ f(x)$ has a finite set of discontinuity points).
+
+With this condition, the only solution is $ f(x)=1-\frac{x^2}{2}$. Here is the solution I gave on this other forum :
+
+Let $ P(x,y)$ the property $ f(x-f(y)) = f(f(y)) + xf(y) + f(x) - 1$.
+
+$ 1)$ $ f(x)$ is not bounded (it does not exist $ u,v$ such that $ u<f(x)<v$ $ \forall x$)
+Obviously $ \exists y_0$ such that $ f(y_0)\neq 0$.
+Then, in $ P(x,y_0)$, let $ x\rightarrow+\infty$ : RHS is not bounded, and so LHS can't be bounded. Q.E.D.
+
+$ 2)$ $ f(x) = \frac{f(0)+1}{2} - \frac{x^2}{2}$ $ \forall x\in Im(f)$ (I name $ Im(f)$ the set $ \{f(x)$, $ x\in\mathbb{R}\}$).
+$ P(f(x),x)$ implies $ f(0) = 2f(f(x)) + f(x)^2 - 1$ and so 
+$ f(f(x))= \frac{f(0)+1}{2} - \frac{f(x)^2}{2}$
+And hence the result.
+
+$ 3)$ $ f(x) = 1 - \frac{x^2}{2}$ For all $ x$ such that $ \frac{x}{2}\in Im(f)$
+$ P(2f(x),x)$ implies $ f(f(x)) = f(f(x)) + 2f(x)^2 + f(2f(x)) - 1$ and so
+$ f(2f(x)) = 1 - \frac{(2f(x))^2}{2}$
+And hence the result.
+
+$ 4)$ $ f(0)=1$
+Since $ f(x)$ is not bounded (see $ 1$ above), and since the set of discontinuity points of $ f(x)$ is included in an interval $ (a,b)$, it is possible to find two values $ u$ and $ v$ such that $ f(v)=2f(u)$
+Then, point 2 above gives $ f(f(v)) = \frac{f(0)+1}{2} - \frac{f(v)^2}{2}$
+And point 3 above gives $ f(f(v)) = 1 - \frac{f(v)^2}{2}$
+And so $ \frac{f(0)+1}{2}= 1$
+And hence the result.
+
+$ 5)$ $ f(x) = 1 - \frac{x^2}{2}$ $ \forall x\in\mathbb{R}$
+Let $ g(x) = f(x) - (1 - \frac{x^2}{2})$. $ P(x,y)$ becomes : $ g(x-f(y)) = g(f(y))+ g(x)$
+Let then $ x=f(y)$, we have $ g(f(y))=\frac{g(0)}{2} = 0$. And so
+$ g(x - y) = g(x)$ $ \forall x\in\mathbb{R}$, $ \forall y\in Im(f)$
+
+Since we know that it exists an intervall $ [-\infty,x_1)$ or $ (x_2,+\infty)$ included in $ Im(f)$, we can conclude that $ g(x)=$contant$ =0$.
+And hence the result.
+
+========
+It remains to study the case of functions having infinitly many discontinuity points whose set is unbounded.
+
+So, to be continued ...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/49556}{xxp2000}]
+	1) $ f(0) = 1$ and $ f(f(y)) = 1 - \frac {f(y)^2}2$
+Let $ a = f(0)$. 
+$ P(0,y): f(f(y)) = \frac {1 + a - f(y)^2}2$
+We know $ f$ cannot be constant function. So there exists $ x = \frac1{f(y)}$ for some $ y$.
+Then we have $ f(\frac1{f(y)} - f(y)) = f(f(y)) + f(\frac1{f(y)})$. 
+Now let $ u = f(\frac1{f(y)} - f(y))$ and $ v = f(y)$. We see $ u$ and $ u - f(v)$ are all in $ Im(f)$.
+$ P(u,v): \frac {1 + a - (u - f(v))^2}2 = \frac {1 + a - f(v)^2}2 + uf(v) + \frac {1 + a - u^2}2 - 1\Rightarrow a = 1$
+
+2) $ f(x) = 1 - \frac {x^2}2$
+Let $ g(x) = f(x) + \frac {x^2}2$, the original equation can be rewritten as
+$ g(x + \frac {y^2}2 - g(y)) = g(x)$.
+Hence $ g$ is periodic function with period $ \frac {y^2}2 - g(y)$ for any $ y$
+$ g(0) = 1\Rightarrow g(x - 1) = g(x)$
+Let $ y$ be arbitrary, we see $ \frac {(y - 1)^2}2 - g(y - 1)$ is also a period. Since the difference of two periods is still period, 
+$ [\frac {y^2}2 - g(y)] - [\frac {(y - 1)^2}2 - g(y - 1)] = y - \frac12$ is another period.
+Since $ y-\frac12$ can be any real number, $ g(y) = g(0) = 1$ for any $ y$.
+
+Hence $ f(x) = g(x) - \frac {x^2}2 = 1 - \frac {x^2}2$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/10035}{Altheman}]
+	When you rewrite the equation in terms of $ g$, it is incorrect. You dropped the $ g(f(x))$ term and the constant. It should be $ g(x-f(y))=g(f(y))+g(x)-1$ (then you can replace $ f(y)$ again, but it is a fundamentally different equation).
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/49556}{xxp2000}]
+	$ g(x-f(y))\\=f(x-f(y))+\frac12(x-f(y))^2\\=f(f(y))+xf(y)+f(x)-1+\frac12(x-f(y))^2\\=1-\frac12(f(y))^2+xf(y)+f(x)-1+\frac12x^2-xf(y)+\frac12(f(y))^2\\=f(x)+\frac12x^2\\=g(x)$.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/37331}{Kamyar1991}]
+	Find all functions $ f: \mathbb{Z} - \{0\}\to\mathbb{Q}$ which satisfy
+\[f\left(\frac {x + y}3\right) = \frac {f(x) + f(y)}2,\]
+for all $ x,y\in\mathbb{Z} - \{0\}$ such that $ 3\mid x + y$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h184766}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}you are right pco,the problem is not correctly stated,the original problem is the following one:
+
+find all functions $ f: \mathbb{Z} - \{0\}\to\mathbb{Q}$ which fulfill the following condition:
+
+$ f\left(\frac {x + y}3\right) = \frac {f(x) + f(y)}2$\end{bolded}
+
+
+
+so we must have $ 3\mid x + y$ and also $ x,y\in\mathbb{Z} - \{0\}$ for example $ x = 1,y = 2$\end{tcolorbox}
+
+Let $ P(x,y)$ be the property $ f\left(\frac {x + y}3\right) = \frac {f(x) + f(y)}2$
+
+$ P(x,2x)$ implies $ f(2x)=f(x)$ $ \forall x\neq 0$
+$ P(3x,3x)$ implies $ f(2x)=f(3x)$ $ \forall x\neq 0$ and so $ f(3x)=f(2x)=f(x)$ $ \forall x\neq 0$
+
+Assume then $ f(nx)=f(x)$ $ \forall x\neq 0$ for some integer $ n\neq 0$. Then :
+
+$ P(3nx,3x)$ implies $ f((n+1)x)=\frac{f(3nx)+f(3x)}{2}$ and, since we know $ f(3x)=f(x)$, $ f((n+1)x)=\frac{f(nx)+f(x)}{2}$, and, since $ f(nx)=f(x)$, $ f((n+1)x)=f(x)$
+So $ f(nx)=f(x)$ $ \forall x\neq 0$ and $ \forall n>0$
+
+Then $ P(6x,-3x)$ gives $ f(x)=\frac{f(6x)+f(-3x)}{2}$ $ =\frac{f(x)+f(-x)}{2}$ and so $ f(-x)=f(x)$ $ \forall x$
+
+And so $ f(nx)=f(x)$ $ \forall x\neq 0$, $ \forall n\in\mathbb{Z}^*$
+
+And so the solutions are $ f(x)=c$ for any $ c\in\mathbb{Q}$ (and it is easy to check that these necessary conditions are sufficient).
+
+But I don't understand the interest of $ \mathbb{Z}^*$ instead of $ \mathbb{Z}$ or the interest of $ \mathbb{Q}$ instead of $ \mathbb{R}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/13985}{BaBaK Ghalebi}]
+	\begin{tcolorbox}But I don't understand the interest $ \mathbb{Z}^{*}$ of  instead of $ \mathbb{Z}$ or the interest of $ \mathbb{Q}$ instead of $ \mathbb{R}$\end{tcolorbox}
+
+this problem was given in an iranian olympiad about 13 years ago,and the official solution uses induction to prove that $ f$ is constant,but as far as I can see,the official solution didn't use tha fact $ f: \mathbb{Z}^{*}\to\mathbb{Q}$ either (instead of $ f: \mathbb{Z}\to\mathbb{R}$)
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/34189}{tdl}]
+	Find all functions $f: \mathbb N \to \mathbb N$, for which the relation $ f (f (n)) + (f (n))^2 = n^2 + 3n + 3$ holds for all $n \in \mathbb N$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h185525}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all functions $ f : N\rightarrow N$, for which the relation $ f (f (n)) + (f (n))^2 = n^2 + 3n + 3$ holds.\end{tcolorbox}
+
+If $ f(n)>n+1$, we have $ f(n)\geq n+2$ and so $ f(f(n))\leq n^2+3n+3-(n+2)^2=-n-1<0$, which is impossible. So $ f(n)\leq n+1$ $ \forall n$
+
+If $ 0<f(n)<n+1$, we have $ f(f(n))>n^2+3n+3-(n+1)^2=n+2>f(n)+1$ and so $ f(m)>m+1$ with $ m=f(n)$ and this is impossible (see line above).
+
+So we must have $ f(n)=n+1$ $ \forall n$ and it is easy to check that this necessary condition is sufficient.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/34189}{tdl}]
+	Find all functions $f: \mathbb R \to \mathbb R$ satisfying the equality $$ f (y) + f (x + f (y)) = y + f (f (x) + f (f (y)))$$ happens for all real $ x$ and $ y$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h185527}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all functions $ f : R\rightarrow R$ satisfying the equality $ f (y) + f (x + f (y)) = y + f (f (x) + f (f (y)))$ for all real $ x; y$.\end{tcolorbox}
+
+Let $ P(x,y)$ be the property $ f (y) + f (x + f (y)) = y + f (f (x) + f (f (y)))$
+Let $ a=f(0)$
+
+First, if $ f(y)=f(z)$, looking at $ P(x,y)$ and $ P(x,z)$ shows that $ y=z$ and so $ f(x)$ is injective.
+
+$ P(0,0)$ implies $ a + f (a) = f (a + f (a))$  and so $ f(u)=u$ where $ u=a+f(a)$
+
+$ P(x,u)$ implies $ u + f (x + u) = u + f (f (x) + u)$, so $ f (x + u) =f (f (x) + u)$ and, since $ f(x)$ is injective, $ x+u=f(x)+u$ and so $ f(x)=x$
+
+And it is easy to check that this necessary condition is sufficient.
+
+So the unique solution is $ \boxed{f(x)=x}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/37331}{Kamyar1991}]
+	Find all functions $f: \mathbb R \to \mathbb R$ such that
+\[f(x^2+f(y))=(f(x))^2+y, \quad \forall x,y \in \mathbb R.\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h185651}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}f(x^2+f(y))=(f(x))^2+y sorry !!  :oops:\end{tcolorbox}
+
+Let $ P(x,y)$ be the property $ f(x^2+f(y))=f(x)^2+y$
+Let $ a=f(0)$
+
+$ P(0,x)$ implies $ f(f(x))=x+a^2$ and so $ f(x)$ is bijective.
+Comparing $ P(x,y)$ and $ P(-x,y)$ we get $ f(x)^2=f(-x)^2$ and, since $ f(x)$ is injective, $ f(-x)=-f(x)$ $ \forall x\neq 0$
+Since $ f(x)$ is surjective, it exists $ b$ such that $ f(b)=0$. Then, if $ b\neq 0$, we have $ f(b)=-f(-b)=0$, which is impossible ($ f(x)$ is injective). So $ b=0$ and $ f(0)=0$
+
+So we have $ f(f(x))=x$.
+
+$ P(x,0)$ gives $ f(x^2)=f(x)^2$
+$ P(x,f(y))$ gives then $ f(x^2+y)=f(x)^2+f(y)=f(x^2)+f(y)$
+
+So $ f(x+y)=f(x)+f(y)$ $ \forall x,y$ (If $ x\geq 0$, see line above; If $ x<0$, use $ f(-x)=-f(x)$ plus line above.
+
+So we have a Cauchy equation with the supplementary characteristic that $ f(x)\geq 0$ $ \forall x\geq 0$, which implies $ f(x)$ increasing, so continuous, and so $ f(x)=cx$
+
+Plugging back this necessary condition in the original equation, we get $ c=1$ and the unique solution is $ ^\boxed{f(x)=x}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/16000}{tchebytchev}]
+	Let $ f$ and $ g$ be two continuous and bijective functions defined from $ \mathbb R$  to $\mathbb  R$ such that $$ f(g^{ - 1}(x)) + g(f^{ -1}(x)) = 2x$$ for all reals $x$ and there exists a real number $ c$ such that $ f(c) = g(c).$
+Prove that $ f(x) = g(x)$ for every real number $ x$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h186115}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}let $ f$ and $ g$ be two continious and bijectives functions defined from $ R$  to $ R$ such that $ f(g^{ - 1}(x)) + g(f^{ - 1}(x)) = 2x$ and there exist a real nuber $ c$ such that $ f(c) = g(c).$
+prove that $ f(x) = g(x)$ for every real number $ x$.\end{tcolorbox}
+
+Taking $ h(x)=f(g^{-1}(x))$ and $ u=g(c)$, this problem is equivalent to :
+let $ h$ be a continuous bijective function defined from $ R$  to $ R$ such that $ h(x) + h^{ - 1}(x) = 2x$ and there exists a real number $ u$ such that $ h(u)=u.$
+prove that $ h(x) = x$ for every real number $ x$.
+
+Let $ x_0$ such that $ h(x_0)-x_0=a\neq 0$. We have $ h(x_0)=x_0+a$ and, using $ h(x) + h^{ - 1}(x) = 2x$, we get $ h(x_0+na)=(n+1)a$ $ \forall n\in\mathbb{Z}$. 
+More, $ h(x)$, since bijective and continuous, is strictly monotonous, and so strictly increasing (since $ h(x_0+na)=(n+1)a$) .
+
+If $ a>0$, let $ p\in\mathbb{Z}$ such that $ x_0+pa\leq u<x_0+(p+1)a$. Since $ h(x)$ is strictly increasing, we have $ h(u)\geq h(x_0+pa)=x_0+(p+1)a>u$, and so $ h(u)>u$, which is impossible since we know that $ h(u)=u$
+
+If $ a<0$, let $ p\in\mathbb{Z}$ such that $ x_0+(p+1)a\leq u<x_0+pa$. Since $ h(x)$ is strictly increasing, we have $ h(u)< h(x_0+pa)=x_0+(p+1)a\leq u$,  and so $ h(u)<u$, which is impossible since we know that $ h(u)=u$
+
+So it does not exist any $ x_0$ such that $ h(x_0)-x_0=a\neq 0$. And so $ \boxed{h(x)=x}$ $ \forall x$
+
+Q.E.D.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/24241}{drapt@}]
+	nice work  :D
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/24241}{drapt@}]
+	i think there is a mistake;$ h(x_0+na)=(n+1)a$ is not true ,because for $ n=0$ we have $ f(x_0)=a$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}i think there is a mistake;$ h(x_0 + na) = (n + 1)a$ is not true ,because for $ n = 0$ we have $ f(x_0) = a$\end{tcolorbox}
+
+Yes, this is just a copy mistake : $ h(x_0 + na) = x_0+(n + 1)a$
+Same correction on the next line.
+\end{solution}
+*******************************************************************************

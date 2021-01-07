@@ -1,0 +1,1517 @@
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/1838}{paladin8}]
+	$P(x)$ is a polynomial of degree $3n$ such that
+\begin{eqnarray*} P(0) = P(3) = \cdots &=& P(3n) = 2, \\ P(1) = P(4) = \cdots &=& P(3n-2) = 1, \\ P(2) = P(5) = \cdots &=& P(3n-1) = 0, \quad\text{ and }\\ && P(3n+1) = 730.\end{eqnarray*}
+Determine $n$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h62982}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/14052}{t0rajir0u}]
+	Eek... but if I may offer a possible simplification of the problem:  Consider $Q(x) = P(x) - 1$.  Then the problem can be rewritten
+
+$Q(3k) = 1, k \le n$
+$Q(3k-2) = 0, k \le n$
+$Q(3k-1) = -1, k \le n$
+$Q(3n+1) = 729 = 3^6 = 3 \times 3^2 \times 3^3$
+
+Hope that leads someone to a solution 'cause I'm stuck and I have homework to do  :)   (Personally, I think $n = 3$ or $n = 6$)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/13833}{Raluca}]
+	We have 
+$P(x)=-x+2+3[x\/3], \ \forall x\in\{0,1,2,...,3n\}$,
+so 
+$\frac{P(x)+x-2}{3}=[x\/3], \ \forall x\in\{0,1,2,...,3n\}$.
+Denote 
+$F(x)=\frac{P(x)+x-2}{3}$
+Since $P(3n+1)=730$, we get $F(3n+1)=n+243$.
+
+We havo to find $n$ such that polynomial $F$ should satisfy:
+
+$(i) \ F(x)=[x\/3], \ \forall x\in\{0,1,2,...,3n\}$;
+$(ii) \ F(3n+1)=n+243$;
+$(iii) \deg(F)=3n$.
+
+I don't know if it could be helpful :? .
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/6912}{chess64}]
+	Does anyone have a solution??
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/6741}{jin}]
+	\begin{tcolorbox}Eek... but if I may offer a possible simplification of the problem:  Consider $Q(x) = P(x) - 1$.  Then the problem can be rewritten
+
+$Q(3k) = 1, k \le n$
+$Q(3k-2) = 0, k \le n$
+$Q(3k-1) = -1, k \le n$
+
+Hope that leads someone to a solution 'cause I'm stuck and I have homework to do  :)   (Personally, I think $n = 3$ or $n = 6$)\end{tcolorbox}
+
+So we can get $f(3n+1)=(-1)^n\frac{2}{3}(\sqrt{3})^{3n+2}\cos\frac{3n+2}{6}\pi$ by Langrange Interpolation.
+So $n=4$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/10301}{maokid7}]
+	could you please explain some more.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/6551}{perfect_radio}]
+	Using Lagrange Interpolation I get that $P(3n+1) = \sum_{k=0}^{3n}(-1)^{3n-k}\binom{3n+1}{k}f(k)$.
+Now you could use the old trick with the roots of unity, but I don't see any way of keeping the computations short.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/20099}{pardesi}]
+	Before wriring down the proof(asuuming it to be correct) an intutive note since i was doing complex no.s these days period three reminds me of  $\omega$
+
+\begin{italicized}Proof\end{italicized}
+a bit guess work and manipulation may lead u to conclude that 
+
+$P(k)-1$ $=$ $\frac{2Ime^{\frac{\pi i}{3}}\omega^{k}}{\sqrt 3}$ for the given values of $k$
+
+claim is 
+
+$P(x)=1+\frac{2\sum_{k=0}^{3n}\binom{x}{k}Ime^{\frac{pi i}{3}}(\omega-1)^{k}}{\sqrt 3}$
+clearly  $P(j)=1+\frac{2Ime^{\frac{\pi i}{3}}\omega^{k}}{\sqrt 3}$ for $j=0,1,2\dots 3n$
+so the polynomial cannot be anything but the above one
+a bit of manipulation leads to 
+$P(3n+1)=\frac{-2 Ime^{\frac{\pi i}{3}}(\omega-1)^{k}}{\sqrt 3}$
+note $\omega-1=1\sqrt 3 e^{\frac{\pi i}{3}}$
+we get by De-moivre's Theorem $P(3n+1)=730=3^{6}+1$
+this gives $n=4$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}could you please explain some more.\end{tcolorbox}
+
+1) For integer $k\in[0,3n]$, the unique polynomial $P_{k}$ of degree $3n$ and such that $P_{k}(k)=1$  and $P_{k}(p)=0$ for any integer integer $p\neq k\in[0,3n]$ is :
+$P_{k}(x)=\frac{1}{(-1)^{3n-k}k!(3n-k)!}\prod_{i=0,i\neq k}^{i=3n}(x-i)$. Notice that $P_{k}(3n+1)=(-1)^{3n-k}\binom{3n+1}{k}$
+2) So the requested polynomial is well defined by its values for 0 to $3n$ and we have :
+$P(x)=\sum_{k=0}^{k=n}2P_{3k}(x)+\sum_{k=0}^{k=n-1}P_{3k+1}(x)$
+3) We can now compute $S=P(3n+1)$
+$S=\sum_{k=0}^{k=n}2(-1)^{3n-3k}\binom{3n+1}{3k}+\sum_{k=0}^{k=n-1}(-1)^{3n-3k-1}\binom{3n+1}{3k+1}$
+Let $A=\sum_{k=0}^{k=n}(-1)^{3k}\binom{3n+1}{3k}$, $B=\sum_{k=0}^{k=n}(-1)^{3k+1}\binom{3n+1}{3k+1}$ and $C=\sum_{k=0}^{k=n-1}(-1)^{3k+2}\binom{3n+1}{3k+2}$. We have :
+$S=(-1)^{3n}2A+(-1)^{3n}B+1$
+$(1-1)^{3n+1}=0=A+B+C$
+$(1-j)^{3n+1}=A+Bj+Cj^{2}$ where $j$ is one one of the complex root of $x^{3}=1$.
+$(1-j^{2})^{3n+1}=A+Bj^{2}+Cj$
+
+And : $A=\frac{(1-j)^{3n+1}+(1-j^{2})^{3n+1}}{3}$ and $B=\frac{j^{2}(1-j)^{3n+1}+j(1-j^{2})^{3n+1}}{3}$
+
+$S=(-1)^{3n}2A+(-1)^{3n}B+1=1-j(j-1)^{3n}-j^{2}(j^{2}-1)^{3n}$
+
+If $n$ is odd ($n=2p+1$), we have $S=1+(-1)^{p}3^{3p+2}$
+Id $n$ is even ($n=2p$), we have $S=1+(-1)^{p}3^{3p}$
+
+4) In our case, we need to solve $S=730=3^{6}+1$
+Clearly $p=2$ and $n=4$
+
+-- 
+Patrick
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29176}{singapore1728}]
+	hey, there is a solution using difference operator by Dr Kin Yi Li in his journal "Mathematical Excalibur", which I think is more succinct than lagrange interpolation. here is the link:
+
+http://www.math.ust.hk\/excalibur\/v11_n5.pdf
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	Unitary quadratic trinomials $ f(x)$ and $ g(x)$ satisfy the following interesting condition: $ f(g(x)) = 0$ and $ g(f(x)) = 0$ do not have real roots. Prove that at least one of equations $ f(f(x)) = 0$ and $ g(g(x)) = 0$ does not have real roots too.
+
+\begin{italicized}S. Berlov \end{italicized}
+	\flushright \href{https://artofproblemsolving.com/community/c6h147156}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	Hello,
+\begin{tcolorbox}\begin{italicized}S. Berlov \end{italicized}
+Unitary quadratic trinomials $f(x)$ and $g(x)$ satisfy
+the following interesting condition: $f(g(x))=0$ and $g(f(x))=0$ 
+do not have real roots. prove that at least one of equations
+$f(f(x))=0$ and $g(g(x))=0$ does not have roots too.\end{tcolorbox}
+
+Assume $f(f(x))=0$ and $g(g(x))=0$ have roots. Then $f(x)$ have roots too, say $x_{1}$ and $x_{2}$ with $x_{1}\leq x_{2}$ and $g(x)$ have roots too, say $y_{1}$ and $y_{2}$ with $y_{1}\leq y_{2}$
+We can assume $x_{2}\leq y_{2}$ (else we just have to swap f and g)
+
+Since $f(f(x))=0$ has root $x_{3}$, $f(x_{3})=x_{1}$ or $f(x_{3})=x_{2}$, so $f(x_{3})\leq y_{2}$
+But $f(x_{3})\leq y_{2}$ and $f(x) \rightarrow+\infty$  when $x \rightarrow+\infty$  implies it exists $x_{4}$ such that $f(x_{4})=y_{2}$ $\Rightarrow $  $g(f(x_{4}))=g(y_{2})=0$
+
+So, if $f(f(x))=0$ and $g(g(x))=0$ has roots, then either $f(g(x))=0$ or $g(f(x))=0$ has root.
+
+So, if neither $f(g(x))=0$ nor $g(f(x))=0$ has root, either $f(f(x))=0$ or $g(g(x))=0$ don't have roots.
+Q.E.D.
+
+-- 
+Patrick
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/34380}{math10}]
+	\begin{tcolorbox}\begin{italicized}S. Berlov \end{italicized}
+Unitary quadratic trinomials $ f(x)$ and $ g(x)$ satisfy
+the following interesting condition: $ f(g(x)) = 0$ and $ g(f(x)) = 0$ 
+do not have real roots. prove that at least one of equations
+$ f(f(x)) = 0$ and $ g(g(x)) = 0$ does not have roots too.\end{tcolorbox}
+Easy problem. Here my solution   .
+If equation $ f(x).g(x) = 0$ haven't root then equation $ f(f(x) = 0$ and $ g(g(x)) = 0$ haven't root.
+Let $ x_1,x_2$ be root of equation $ f(x) = 0$,$ x_3,x_4$ be root of equation $ g(x) = 0$
+Suppose 2 equation $ f(f(x)) = 0$ and $ g(g(x)) = 0$ have root.
+So $ \triangle_f - 4x_1\geq 0$; $ \triangle_f - 4x_2\geq 0$; $ \triangle_g - 4x_4\geq 0$; $ \triangle_g - 4x_3\geq 0$
+So $ 2\triangle_f + 2\triangle_g - 4\sum_{i = 1}^{4}x_i\geq 0$
+From equation $ f(g(x)) = 0$ haven't root  we have equation $ g(x) = x_1$ haven't root .So $ \triangle_g - 4x_1 < 0$
+Similary we have  $ \triangle_g - 4x_2 < 0$;  $ \triangle_f - 4x_3 < 0$ ; $ \triangle_f - 4x_4 < 0$
+So $ 2\triangle_f + 2\triangle_g - 4\sum_{i = 1}^{4}x_i < 0$ QED.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	Do there exist non-zero reals $a$, $b$, $c$ such that, for any $n>3$, there exists a polynomial $P_{n}(x) = x^{n}+\dots+a x^{2}+bx+c$, which has exactly $n$ (not necessary distinct) integral roots?
+\begin{italicized}N. Agakhanov, I. Bogdanov\end{italicized}
+	\flushright \href{https://artofproblemsolving.com/community/c6h147176}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	The answer is no.
+
+Let $r_{i}$ be the roots of $P_{n}(x)$. We have $P_{n}(x)=\prod_{i=1}^{n}(x-r_{i})$. Then :
+$(-1)^{n}\prod_{i=1}^{n}r_{i}=c$
+$(-1)^{n-1}(\prod_{i=1}^{n}r_{i})(\sum_{i=1}^{n}\frac{1}{r_{i}})=b$  (no root is zero since c is non-zero)
+
+For easier view, let $x_{i}=-\frac{1}{r_{i}}$. We have then : $\prod_{i=1}^{n}x_{i}=\frac{1}{c}$ and  $\sum_{i=1}^{n}x_{i}=\frac{b}{c}$  
+
+Then, let $G$ be the geometric mean of $x_{i}$. We have $G=(\frac{1}{c})^{\frac{1}{n}}$
+Let A be the arithmetic mean of $x_{i}$. We have $A=\frac{b}{n*c^{}}$
+We know that $G\leq A$, so $(\frac{1}{c})^{\frac{1}{n}}\leq \frac{b}{n*c^{}}$ $\forall n>3$
+
+And this is impossible since LHS has a limit 1 when n grows while RHS decreases towards 0 when n grows.
+
+-- 
+Patrick
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/16261}{Rust}]
+	\begin{tcolorbox}We know that $G\leq A$, so $(\frac{1}{c})^{\frac{1}{n}}\leq \frac{b}{n*c^{}}$ $\forall n>3$
+
+And this is impossible since LHS has a limit 1 when n grows while RHS decreases towards 0 when n grows.
+
+-- 
+Patrick\end{tcolorbox}
+Let $x_{1}=x_{2}=1,x_{3}=x_{4}=-1$. $A=0<G=1$. :D 
+It is possible.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox} Let $x_{1}=x_{2}=1,x_{3}=x_{4}=-1$. $A=0<G=1$. :D 
+It is possible.\end{tcolorbox}
+Yes, You're right, $G\leq A$ is true if all $x_{i}$ are $\geq 0$.  :blush: 
+
+So here is the correction :
+
+The answer is no.
+
+Let $r_{i}$ be the roots of $P_{n}(x)$. We have $P_{n}(x)=\prod_{i=1}^{n}(x-r_{i})$. Then :
+$(-1)^{n}\prod_{i=1}^{n}r_{i}=c$
+$(-1)^{n-1}(\prod_{i=1}^{n}r_{i})(\sum_{i=1}^{n}\frac{1}{r_{i}})=b$  (no root is zero since c is non-zero)
+$(-1)^{n-2}(\prod_{i=1}^{n}r_{i})(\sum_{i\neq j}\frac{1}{r_{i}r_{j}})=(-1)^{n-2}(\prod_{i=1}^{n}r_{i})\frac{1}{2}( (\sum_{i=1}^{n}\frac{1}{r_{i}})^{2}-(\sum_{i=1}^{n}\frac{1}{r_{i}^{2}}))=a$
+And so :
+$\prod_{i=1}^{n}r_{i}=(-1)^{n}c$,    $\sum_{i=1}^{n}\frac{1}{r_{i}}=-\frac{b}{c}$  and $\sum_{i=1}^{n}\frac{1}{r_{i}^{2}}=\frac{b^{2}}{c^{2}}-2\frac{a}{c}$
+For easier view, let $x_{i}=-\frac{1}{r_{i}}$. We have then :
+$\prod_{i=1}^{n}x_{i}=\frac{1}{c}$,    $\sum_{i=1}^{n}x_{i}=\frac{b}{c}$  and $\sum_{i=1}^{n}x_{i}^{2}=\frac{b^{2}}{c^{2}}-2\frac{a}{c}=u^{2}$ for a certain real $u\geq 0$ (and the constraint $b\geq 2ac$)
+
+Let then G be the geometric mean of $|x_{i}|$. We have $G=(\frac{1}{|c|})^{\frac{1}{n}}$.
+Let then Q be the quadratic mean of $|x_{i}|$. We have $Q=\frac{u}{n^{\frac{1}{2}}}$
+
+We know that, for a given set of positive (or zero)  $|x_{i}|, G\leq Q$. So, $(\frac{1}{|c|})^{\frac{1}{n}}\leq \frac{u}{n^{\frac{1}{2}}}$ $\forall n>3$
+
+And this is impossible since LHS have limit 1 when n increases while RHS have limit 0.
+
+-- 
+Patrick
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/16261}{Rust}]
+	Yes. You are right.
+\begin{tcolorbox} For easier view, let $x_{i}=-\frac{1}{r_{i}}$. We have then :
+$\prod_{i=1}^{n}x_{i}=\frac{1}{c}$,    $\sum_{i=1}^{n}x_{i}=\frac{b}{c}$  and $\sum_{i=1}^{n}x_{i}^{2}=\frac{b^{2}}{c^{2}}-2\frac{a}{c}=u^{2}$ for a certain real $u\geq 0$ (and the constraint $b\geq 2ac$)
+Patrick\end{tcolorbox}
+But $b^{2}\ge 4ac .$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/11003}{pavel kozlov}]
+	From $\prod_{i=1}^{n}{r_{i}}^{2}=c^{2}$ and $\sum_{i=1}^{n}\frac{1}{{r_{i}}^{2}}=\frac{b^{2}}{c^{2}}-2\frac{a}{c}$ follows that their product (which is equal to $b^{2}-2ac$) is limited. On the other hand this product is the sum of $n$ positive numbers of a form $\frac{\prod_{i=1}^{n}{r_{i}}^{2}}{{r_{i}}^{2}}$. Hence $n\leq b^{2}-2ac$  :o  :idea: It is impossible!
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/7956}{pureblack2003}]
+	Find all polynomials $P \in \mathbb{R}[X]$ such that 
+\[(x-4)P(x+1)-xP(x)+20=0,\]
+for all $x \in \mathbb R$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h149112}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	[hide="A hint"]Because $20=5x-5(x-4)$ we have $(x-4)P(x+1)-xP(x)+5x-5(x-4)=0$ or $(x-4)(P(x+1)-5)=x(P(x)-5)$, then put $Q(x)=P(x)-5$ we have $(x-4)Q(x+1)=xQ(x)$. Now it is well know![\/hide]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/11776}{mathisfun1}]
+	It's straightforward to show via induction that $P(x) = 5$ for all positive integers. Hence $P(x)=5$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	:blush:  Ok! But i think your method not works with following:
+Let $a,b\in\mathbb{R}$, find all $P\in\mathbb{R}[x]$ such that \[xP(x-a)\equiv (x-b)P(x).\]
+Happy hunting!  
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	\begin{tcolorbox}It's straightforward to show via induction that $P(x) = 5$ for all positive integers. Hence $P(x)=5$.\end{tcolorbox}
+Sorry, But you can't have $P(5)=5$ :P
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/11776}{mathisfun1}]
+	Since $P(4) = 5$, $4P(5)-20-4P(5)+20=0$, so we can certainly make $P(5)=5$. But I think you mean that $P(5)$ does not have to equal 5. The problem arises in my induction: If $P(n) = 5$, then $nP(n+1)-5n-4P(n+1)+20 = 0 \Rightarrow P(n+1) = \frac{5(n-4)}{n-4}= 5$. This breaks down when $n=4$. If $P(5) \ne 5$, then let $P(x) = a_{n}x^{n}+a_{n-1}x^{n-1}+...+a_{1}x+a_{0}$. Comparing the leading terms of $x(P(x+1)-P(x))$ and $4P(x+1)$, we find that $n=4$. So $P(x) = a_{4}x^{4}+a_{3}x^{3}+a_{2}x^{2}+a_{1}x+a_{0}$. $P(1)=P(2)=P(3)=P(4)=5$, etc.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	Final, what is your answer?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/4229}{scorpius119}]
+	[hide="following the hint"]
+From $(x-4)Q(x+1)=xQ(x)$, we immediately see that 1 and 4 are roots by plugging in $x=0,4$. Then plug in $x=1,3$ to find that 2 and 3 are also roots. Therefore, there exists a polynomial $C(x)$ such that
+\[Q(x)=(x-1)(x-2)(x-3)(x-4)C(x)\]
+and the equation becomes $C(x+1)=C(x)$. This means $C$ is constant (since $C(x)-C(0)$ has roots at all nonnegative integers $x$, so has infinitely many roots and is therefore the zero polynomial). So we obtain the solution
+\[P(x)=5+k(x-1)(x-2)(x-3)(x-4)\]
+for any constant $k$.
+[\/hide]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/11776}{mathisfun1}]
+	\begin{tcolorbox}Final, what is your answer?\end{tcolorbox}
+Using Scorpius119's ending: $P(1) =P(2)=P(3)=P(4) = 5 \Rightarrow P(x)-5 = a_{4}x^{4}+a_{3}x^{3}+a_{2}x^{2}+a_{1}x_{1}+a_{0}-5 = k(x-1)(x-2)(x-3)(x-4)$.
+ :blush: To be honest, I didn't see the more efficient ending -- I was thinking about substituting back into the original equation and getting a system of equations.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	Ok, Now we can continue for : 
+\begin{tcolorbox}:blush:  Ok! But i think your method not works with following:
+Let $a,b\in\mathbb{R}$, find all $P\in\mathbb{R}[x]$ such that
+\[xP(x-a)\equiv (x-b)P(x). \]
+Happy hunting!  \end{tcolorbox}
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Ok, Now we can continue for : 
+Let $a,b\in\mathbb{R}$, find all $P\in\mathbb{R}[x]$ such that
+\[xP(x-a)\equiv (x-b)P(x). \]
+\end{tcolorbox}
+
+1) if $a=0$ and $b=0$, any $P(x)$ is solution
+2) if $a=0$ and $b\neq 0$, $P(x)=0$ is the only solution
+3) if $a\neq 0$ and $b=0$, $P(x-a)=P(x)$ $\forall x\neq 0$ $\Rightarrow $ $P(x)=c$
+4) if $ab\neq 0$ :
+$x=0$ in $xP(x-a)=(x-b)P(x)$ $\Rightarrow $ $P(0)=0$
+If $P(r)=0$ with $r\neq 0$, then $P(r-a)=0$ $\Rightarrow $ all roots of P are $0,a, 2a, \cdot, ua$ for some u of $\mathbb{Z}^{+}$
+$x=b$ in $xP(x-a)=(x-b)P(x)$ $\Rightarrow $ $P(b-a)=0$
+If $P(r)=0$ with $r\neq b-a$, then $P(r+a)=0$ $\Rightarrow $ all roots of P are $b-a,b-2a, b-3a, ..., b-ka$ for some k of $\mathbb{N}$
+
+Hence we must have $b=ka$ and all roots are $0, a, 2a, ..., (k-1)a$ $\Rightarrow $ $P(x)=c\prod_{i=0}^{k-1}(x-ia)^{n_{i}}$
+Identification in initial equation gives $n_{i}=1$
+
+As a result, we have :
+a) if $a=0$ and $b=0$, then $P(x)$ is any
+b) if $a=0$ and $b\neq 0$, then $P(x)\equiv 0$ 
+c) if $a\neq 0$ and $b=0$,  then $P(x)\equiv c$
+d) if $ab\neq 0$ then it must exist k in $\mathbb{N}$ such that $b=ka$ and solution is $P(x)=c\prod_{i=0}^{k-1}(x-ia)$
+
+-- 
+Patrick
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18420}{aviateurpilot}]
+	$E=\{k\in \mathbb{C}| \ p(k)=0\}$
+
+$a=b=0$ => $S=R[X]$
+$a\neq 0,b=0$ => $P\equiv c$.
+if $ab\neq 0$
+if $|E-a\mathbb{N}|\neq 0$ such that $P(k)=0$
+then $\forall (s,k)\in \mathbb{N}\times (E-a\mathbb{N}),$ $p(k-sa)=0$ so, $p\equiv 0$
+if $p\not\equiv 0$
+$E\subseteq a\mathbb{N}$
+we can suppose that $am=MAX(E)$ so, it's evident that $E=\{am,a(m-1),a(m-2),..,0\}$.
+then $p(x)=c\prod_{i=0}^{m}(x-ia)^{n_{i}},\ c\in\mathbb{R}^{*}$
+and $x\prod_{i=1}^{m+1}(x-ia)^{n_{i-1}}=(x-b)\prod_{i=0}^{m}(x-ia)^{n_{i}}$
+so $x-b=x-(m+1)a\ (b\ must\ be\ in\ a\mathbb{N}^{*})$( and $n_{i}=n={i-1}$ for $i=1..m$
+finally.
+$p(x)=cx\prod_{i=1}^{m}(x-ia)^{n}\ ,with\ (c,m,n)\in \mathbb{R}\times \mathbb{N}^{*}\times \mathbb{N}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/8143}{Jutaro}]
+	Let $f(x)$ be a cubic polynomial with rational coefficients. If the graph of $f(x)$ is tangent to the $x$ axis, prove that the roots of $f(x)$ are all rational.
+	\flushright \href{https://artofproblemsolving.com/community/c6h149390}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $f(x)$ be a cubic polynomial with rational coefficients. If the graph of $f(x)$ is tangent to the $x$ axis, prove that the roots of $f(x)$ are all rational.\end{tcolorbox}
+
+If $x=r$ is the point where the graph of $f(x)$ is tangent to the $x$ axis, then $f(r)=f'(r)=0$ and r is at least a double root.
+Polynomial division of $f(x)$ by $f'(x)$ gives $f(x)=(ax+b)f'(x)+px+q$, where $(a,b,p,q)$ are all rationals.
+
+So we have $pr+q=0$ and r is rational.
+Then polynomial division of $f(x)$ by $(x-r)^{2}$ gives $f(x)=(ux+v)(x-r)^{2}$, with $(u,v)$ rational and hence the third root is rational too.
+
+-- 
+Patrick
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/58773}{vijaymenon}]
+	actually i do not understand the solution .please help me giving a detailed explanation and solution.
+
+please help,
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/58773}{vijaymenon}]
+	please someone reply
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/47249}{Makoto Kohno}]
+	Hence all coefficients of $ f(x)$ are rationals, all coefficients of $ f'(x)$ are rationals.
+
+So 
+
+\begin{tcolorbox}
+Polynomial division of $ f(x)$ by $ f'(x)$ gives $ f(x) = (ax + b)f'(x) + px + q$, where $ (a,b,p,q)$ are all rationals.
+\end{tcolorbox}
+
+And hence $ f(r)=f'(r)=0$ ,
+
+\begin{tcolorbox}
+So we have $ pr + q = 0$ and r is rational.
+\end{tcolorbox}
+
+And then all coefficients of $ (x-r)^{2}$  are rationals, so
+
+\begin{tcolorbox}
+Then polynomial division of $ f(x)$ by $ (x - r)^{2}$ gives $ f(x) = (ux + v)(x - r)^{2}$, with $ (u,v)$ rational and hence the third root is rational too.
+\end{tcolorbox}
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/100136}{DavyBa}]
+	I withdraw my comment.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/212803}{JashBlued}]
+	\begin{tcolorbox}The statement of this problem is incorrect. If f(x) = x^3 + 2x, then its three roots are: 0, i√2, and -i√2 which are not all rational. Its graph is tangent to the X axis in x = 0. The derivative f`(0) is not equal to 0, but the second derivative f``(0) is. The statement probably should be: "all its real roots are rational".\end{tcolorbox}
+
+Does the polynomial f(x) = x^3 + 3x have 0 as a root of multiplicity 2? Not... right?...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/155347}{Wave-Particle}]
+	No, it does not have a root of 0 multiplicity 2
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/146669}{trumpeter}]
+	\begin{tcolorbox}The statement of this problem is incorrect. If f(x) = x^3 + 2x, then its three roots are: 0, i√2, and -i√2 which are not all rational. Its graph is tangent to the X axis in x = 0. The derivative f`(0) is not equal to 0, but the second derivative f``(0) is. The statement probably should be: "all its real roots are rational".\end{tcolorbox}
+
+Actually, the graph is not tangent to the $x$-axis at $x=0$. This is called an "inflection point" or "saddle point", where it sort of curves out. These are identified when $f''(x)=0$.
+
+To solve the original problem, calculus actually is not required.
+
+[hide=Solution]
+It is well known that a polynomial is tangent to the $x$-axis at $x=r$ when the multiplicity of $r$ in the polynomial is a positive even integer.
+
+Thus, the multiplicity must be $2$. Let $f(x)=a_3x^3+a_2x^2+a_1x+a_0$. Then, the sum of the roots (counting multiplicity) is $-\frac{a_2}{a_3}$, or a rational number. Thus, the final root is just $-\frac{a_2}{a_3}-2r$, which is a rational number. Thus, all three roots of $f(x)$ are rational.
+
+Q.E.D.
+[\/hide]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/100136}{DavyBa}]
+	Yes, you are correct. I realized it myself just recently. The graph of this polynomial is not tangent to X axis since the first derivative at x = 0 is positive. It was a temporary blackout. :) 
+Thank you for your reply.
+
+Also, thank you for posting the solution. May I ask you about one detail in this solution for my understanding? 
+Since the multiplicity of r in such special cubic polynomial is 2, it's clear that such cubic polynomial has 3 real roots: r, r, and some real root q. It's also clear that the sum 2r+q (and the product (r^2)q, etc.) of these three real roots are rational (Vieta's formulas). How does it prove that all three roots are rational?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/100136}{DavyBa}]
+	It's clear how to prove it by using calculus. Let's examine two types of cubic polynomials whose graphs are tangent to X axis. Firstly, consider polynomials f(x) = a(x-b)^3 with rational a and b, that have root r = b with multiplicity 3. Both first and second derivatives f`(b) = f``(b) = 0, so its graph is tangent to X axis and b is the inflection point. All three roots are r = b (which is a rational number). 
+The second case is when root r of polynomial ax^3 + bx^2 + cx + d has multiplicity 2. Then, r is a local extremum. In this case, f(r) = f`(r) = 0. Polynomial division f(x)\/f`(x) gives us the remainder px + q in which p and q are rational numbers. From f(r) = f`(r) = 0 it follows that pr + q = 0 and that r is a rational number. From this it follows by Vieta's formula that the third root is also rational. Q.E.D.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/16383}{M4RI0}]
+	Find all polynomials $f(x)$ with real coefficients satisfying
+\[f(x^{2})=f(x)f(x-1) \quad \forall x \in \mathbb R.\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h151076}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all real polynomials $f(x)$ satisfying
+
+$f(x^{2})=f(x)f(x-1)$ for all $x$\end{tcolorbox}
+
+Nice question.
+Let first consider that f is a complex polynomial.
+If $z$ is a complex root, then $z^{2}$ is also a root, and so is $z^{2^{n}}$ $\forall n$. So, it must exist $p$ and $q$ such that  $z^{2^{p}}=z^{2^{q}}$  and $z$ is either $0$, either $e^{\frac{2\pi}{n}i}$.
+
+If $z$ is a complex root, $(z+1)^{2}$ is also a root, so $0$ can't be a root (since $1$ would be a root, and then $4, 25, ...$), and $(z+1)^{2}$ must also be some $e^{\frac{2\pi}{k}i}$, 
+
+But the only complex on the unit circle such that $(z+1)$ be also on the unit circle are $j=e^{\frac{2\pi}{3}i}$ and $j^{2}=e^{-\frac{2\pi}{3}i}$.
+
+So the only possible roots are $j$ and $j^{2}$ and we must have $f(x)=a(x-j)^{p}(x-j^{2})^{q}$
+
+Since we are looking for real polynomials, $p=q$ and we must have $f(x)=(x^{2}+x+1)^{p}$ or $f(x)=0$
+
+And it is easy to check that this necessary condition works.
+
+-- 
+Patrick
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	This is another idea http://www.mathlinks.ro/Forum/viewtopic.php?t=132186  
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/10512}{mathmanman}]
+	Do there exist a sequence $a_{1}, a_{2}, a_{3}, \ldots$ of real numbers and a non-constant polynomial $P(x)$ such that $a_{m}+a_{n}=P(mn)$ for every positive integral $m$ and $n?$
+
+\begin{italicized}Proposed by A. Golovanov\end{italicized}
+	\flushright \href{https://artofproblemsolving.com/community/c6h151112}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Do there exist a sequence $a_{1}, a_{2}, a_{3}, \ldots$ of real numbers and a non-constant polynomial $P(x)$ such that $a_{m}+a_{n}=P(mn)$ for every positive integral $m$ and $n?$\end{tcolorbox}
+
+It does not :
+
+$m=1$ $\Rightarrow $ $a_{n}=P(n)-a_{1}$
+So we have $P(m)+P(n)-2a_{1}=P(mn)$ and for example $2P(n)-2a_{1}=P(n^{2})$ which can't be true $\forall n$ (take $n\rightarrow+\infty$) if $P(x)$ is non constant.
+
+-- 
+Patrick
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/16261}{Rust}]
+	\begin{tcolorbox}Do there exist a sequence $a_{1}, a_{2}, a_{3}, \ldots$ of real numbers and a non-constant polynomial $P(x)$ such that $a_{m}+a_{n}=P(mn)$ for every positive integral $m$ and $n?$\end{tcolorbox}
+We get $a_{n}=P(n)-a_{1}, \ a_{1}=P(1)\/2.$ If $deg(P)=k$, then for big n $|a_{k}|n^{k}\/2=c_{1}n^{k}<|P(n)|<2a_{k}n^{k}=c_{2}n^{k}$.
+Therefore $|P(n^{2})|>c_{1}n^{2k}>2c_{2}n^{k}>|P(n)|+|P(n)|$ - contradition.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	Determine all polynomials $f (x)$ with real coeffcients that satisfy
+\[f (x^{2}-2x) = f^{2}(x-2)\]
+for all $x.$
+	\flushright \href{https://artofproblemsolving.com/community/c6h151180}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Determine all polynomials $f (x)$ with real coeffcients that satisfy
+\[f (x^{2}-2x) = f^{2}(x-2) \]
+for all $x.$\end{tcolorbox}
+
+Let $g(x)=f(x-1)$, then $g((x-1)^{2})=g^{2}(x-1)$ and $g(x^{2})=g^{2}(x)$
+
+Then, if $z$ is a complex nonzero root of $g(x)$, then $z^{2}$ is also a root and, since we have a finite number of roots, all nonzero roots have their modulus equal to 1.
+But then, if $e^{ix}$ $(x\in[0,2\pi))$ is a complex root, $e^{i\frac{x}{2}}$ is also a root, and so are $e^{i\frac{x}{2^{k}}}$ $\forall k\in\mathbb{N}$, and $x$ must be 0 (else we have an infinite number of roots). But, if $1=e^{0*i}$ is a root, so is $-1=e^{i\pi}$ and $e^{i\frac{\pi}{2^{k}}}$ $\forall k\in\mathbb{N}$.
+
+So $g(x)$ can only have zeroes roots and we have $g(x)=ax^{n}$. This necessary condition works if $a^{2}=a$, so if $a=0$ or $a=1$
+
+The solutions to the initial problem are :
+$f(x)=0$
+$f(x)=(x+1)^{n}$ $\forall n\in\mathbb{N}\cup\{0\}$
+
+-- 
+Patrick
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	$g^{2}(x)=g(x^{2}).$(*)
+
+If $g\equiv C$ then $C=0$ or $1$.
+
+If $g\not\equiv C$ , write $g(x)=a_{n}x^{n}+a_{n-1}x^{n-1}+...+a_{0}(a_{n}\not = 0)$. By (*) we have $a_{n}x^{2n}=a_{n}^{2}x^{2n}$ or $a_{n}=1$. Now, we'll prove that $a_{0}=a_{1}=...=a_{n-1}=0$. Assume that there exist $i\in\{0,1,...,n-1\}$ such that $a_{i}\not = 0$, put $k=\max \{i|a_{i}\not = 0\}$, then by see at $x^{n+k}$ in (*) we have $2a_{k}=0$, contradiction!
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/18420}{aviateurpilot}]
+	Suppose that
+\[\prod_{n=1}^{1996}(1+nx^{3^{n}})=1+\sum_{i=1}^{m}a_{m}x^{k_{i}},\]
+where $a_i$ (for $i=1,2,\ldots,m$) are non-zero real numbers and $k_{i}<k_{i+1}$ for all $i=1,2,\ldots,m-1$. Find $a_{1996}$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h152574}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$\prod_{n=1}^{1996}(1+nx^{3^{n}})=1+\sum_{i=1}^{m}a_{m}x^{k_{i}}$
+and $\prod_{i=1}^{m}a_{i}\neq 0\ and\ \forall i\in\{1,2,..,m-1\},\ k_{i}<k_{i+1}$
+find $a_{1996}$\end{tcolorbox}
+
+Nice problem !
+
+It's easy to see that the $k_{i}$ are all sum of $p$ different powers of $3$, with $1\leq p \leq 1996$
+They are ordered in the same order that the numbers obtained by replacing $3$ by $2$ :
+$1\rightarrow 2^{0}\rightarrow 3^{1}$
+$2\rightarrow 2^{1}\rightarrow 3^{2}$
+$3\rightarrow 2^{1}+2^{0}\rightarrow 3^{2}+3^{1}$
+$4\rightarrow 2^{2}\rightarrow 3^{3}$
+$5\rightarrow 2^{2}+2^{0}\rightarrow 3^{3}+3^{1}$
+...
+$1996\rightarrow 2^{10}+2^{9}+2^{8}+2^{7}+2^{6}+2^{3}+2^{2}\rightarrow 3^{11}+3^{10}+3^{9}+3^{8}+3^{7}+3^{4}+3^{3}$
+
+And so $a_{1996}=11*10*9*8*7*4*3=665280$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18420}{aviateurpilot}]
+	good,
+me also I found $\forall (a,b)\in ([2,+\infty[\times [10,+\infty[)\cap \mathbb{N}^{2},\ a_{1996}=665280$
+if $\prod_{n=1}^{b}(1+nx^{a^{n}})=1+\sum_{i=1}^{m}a_{i}x^{k_{i}}$ where $a_{i}\neq 0,k_{i+1}>k_{i}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/18653}{maky}]
+	The problem is about real polynomial functions, denoted by $f$, of degree $\deg f$.
+
+a) Prove that a polynomial function $f$ can`t be wrriten as sum of at most $\deg f$ periodic functions.
+
+b) Show that if a polynomial function of degree $1$ is written as sum of two periodic functions, then they are unbounded on every interval (thus, they are "wild").
+
+c) Show that every polynomial function of degree $1$ can be written as sum of two periodic functions.
+
+d) Show that every polynomial function $f$ can be written as sum of $\deg f+1$ periodic functions.
+
+e) Give an example of a function that can`t be written as a finite sum of periodic functions.
+
+\begin{italicized}Dan Schwarz\end{italicized}
+	\flushright \href{https://artofproblemsolving.com/community/c6h153374}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18728}{edriv}]
+	a) By induction. Let $f$ be a polynomial that can be written as sum of $\deg f = n$ periodic functions $f_{1},f_{2},\ldots,f_{n}$ with periods $t_{1},t_{2},\ldots,t_{n}$.
+We have:
+$f(x) = f_{1}(x)+\ldots+f_{n}(x)$
+Since $f_{1}(x)-f_{1}(x+t_{1}) = 0$, we get:
+$f(x)-f(x+t_{1}) = f_{2}(x)-f_{2}(x+t_{1})+\ldots+f_{n}(x)-f_{n}(x+t_{1})$
+Note that $f(x)-f(x+t_{1})$ is a polynomial of degree $n-1$, and it's written as sum of $n-1$ periodic functions.
+So we can "go down" until a polynomial of degree 1 is written as sum of only one periodic function... but a polynomial of degree 1 is not periodic!  :) 
+
+b) Since $f(x)$ is periodic if and only if $af(x)+b$ is, with a,b nonzero constants, and the same for boundedness, we can suppose the polynomial to be x.
+Let $f_{1}(x)+f_{2}(x) = x$ for all x, and the period of $f_{1},f_{2}$ be $t_{1},t_{2}$.
+Without loss of generality we suppose $f_{1}(0) = 0$. Then $f_{1}(nt_{1}) = 0$ for all integers n, and $f_{2}(nt_{1}) = kt_{1}$ for all integers n, and $f_{2}(nt_{1}+mt_{2}) = nt_{1}$ for all integers n,m. If the ratio $\frac{t_{1}}{t_{2}}$ is rational, than  $f_{1}(x)+f_{2}(x)$ is a periodic function, but this is impossible. Therefore $\frac{t_{1}}{t_{2}}$ is irrational, and by a well-known theorem $nt_{1}+mt_{2}$ can go as near as we want to every real. 
+For each $\epsilon > 0$, there are integers n,m such that $0<nt_{1}+mt_{2}<\epsilon$, and we can also make $nt_{1}$ very large by going nearer to 0, and then multiplying n,m by a large factor (if $\epsilon < |t_{2}|$ we must have $n \ge 1$).
+Then we can also go near to each real a with a very large $nt_{1}$, to which corresponds a very large value of $f_{2}$ which can't be bounded in an interval. The same for $f_{1}$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18728}{edriv}]
+	c) I think that here we need the Axiom of Choice.
+Take two nonzero reals $t_{1},t_{2}$ such that $\frac{t_{1}}{t_{2}}$ is irrational. Let $A = \{nt_{1}+mt_{2}| n,m \in \mathbb{Z}\}$. $a-b \in A$ is an equivalence relation among the reals. Let $[a]$ be the equivalence class of a, and let $c: \{[a]: a \in \mathbb{R}\}\rightarrow \mathbb{R}$ a choice function of the classes.
+
+Using the definition of our equivalence relation and the fact that $\frac{t_{1}}{t_{2}}$ is irrational, we show that for each $x \in \mathbb{R}$ there exist unique integers n,m such that $x = c([x])+nt_{1}+mt_{2}$. Then we define:
+$f_{1}(x) = f_{1}(c([x])+nt_{1}+mt_{2}) = c([x])+mt_{2}$
+$f_{2}(x) = f_{2}(c([x])+nt_{1}+mt_{2}) = nt_{1}$
+
+$f_{1},f_{2}$ are periodic, since obviously $f_{1}(x+t_{1})= f_{1}(c([x])+(n+1)t_{1}+mt_{2})= c([x])+mt_{2}= f_{1}(x)$ and the same for $f_{2}$.
+And also $f_{1}(x)+f_{2}(x) = c([x])+mt_{2}+nt_{1}= x$.
+
+d) This can be done by induction, using c). Suppose the statament is true for all polynomial with deg < n, and that you can choose freely the periods of the functions of which the polynomial is sum. (not completely freely, their  ratio is irrational).
+Take the polynomial f with $\deg f = n$. Choose a number $t_{n+1}$ as you want.
+Consider $f(x)-f(x-t_{n+1})$. It is a polynomial of degree n-1. Then there exists periodic functions such that
+$f(x)-f(x-t_{n+1})= g_{1}(x)+\ldots+g_{n}(x)$.
+
+We first prove the lemma: if $g$ is a periodic function of period t, and $\frac{t}{t_{1}}$ is irrational, then there exists a function $g'$ such that $g(x) = g'(x)-g'(x-t_{1})$ and $g'$ is still periodic of period t.
+The proof is somehow the same of the point c)... with the same terminology, define:
+$g'(x) = g'(c([x])+nt+m t_{1}) = \sum_{i=0}^{m}g(c([x])+nt+it_{1})$ if $m \ge 0$, 0 is m = -1 and $\sum_{i=1}^{-m-1}g(c([x])+nt+-it)$ if $m<-1$.
+Then it's easily seen that g' satisfies $g'(x)-g'(x-t_{1}) = g(x)$ and $g'(x) = g'(x+t)$.
+
+Using the lemma, we get that there are periodic functions such that:
+$f(x)-f(x-t_{n+1}) = f_{1}(x)-f_{1}(x-t_{n+1})+\ldots+f_{n}(x)-f_{n}(x-t_{n+1})$
+Now we have just to add the suitable function $f_{n+1}$.
+For each $0\le x < t_{n+1}$ define:
+$f_{n+1}(x) = f(x)-f(x-t_{n+1})-f_{1}(x)+f_{1}(x-t_{n+1})+\ldots-f_{n}(x)+f_{n}(x-t_{n+1})$
+And then extend $f_{n+1}$ to the reals using periodicity, and check that
+$f(x) = f_{1}(x)+f_{2}(x)+\ldots+f_{n}(x)$ for all real x.  :)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18653}{maky}]
+	my solution to c)
+[hide="solution"]
+let $B$ be a Hamel-basis of $\mathbb{R}$ over $\mathbb{Q}$ (as a vectorial space), and let $B_{1},B_{2}$ be a partition of it.
+now, take functions $f_{1},f_{2}$, define them over $B$, then extend them as linear maps :
+if $x\in B_{1}$, then $f_{1}(x)=x$ and $f_{2}(x)=0$
+if $x\in B_{2}$, then $f_{1}(x)=0$ and $f_{2}(x)=x$.
+now, for $y\in \mathbb{R}$, $y=\sum a_{i}x_{i}$ with $x_{i}\in B$ and $a_{i}\in \mathbb{Q}$.
+$f_{1}(y)+f_{2}(y)=\sum_{x_{i}\in B_{1}}a_{i}f_{1}(x_{i})+\sum_{x_{i}\in B_{2}}a_{i}f_{2}(x_{i}) = \sum a_{i}x_{i}= y$.
+also it is easy to check that $f_{1}$ is periodic (with period any $x\in B_{1}$) and $f_{2}$ is periodic also (with period any $x\in B_{2}$).
+[\/hide]
+
+edit : oops, i just said a biiiiiiiiiiiiiig stupid thing.  :blush:
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}my solution to c) (without AC)
+let $B$ be a Hamel-basis of $\mathbb{R}$ over $\mathbb{Q}$ (as a vectorial space), ...
+\end{tcolorbox}
+
+But this needs AC !
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox} e) give an example of a function that can`t be written as a finite sum of periodic functions.\end{tcolorbox}
+
+Take $f(x)=e^{x}$
+
+Demo:
+
+If $e^{x}$ is sum of $n$ periodic functions $e^{x}=\sum_{i=1}^{n}f_{i}(x)$, with $f_{i}(x+t_{i})=f(x)$ and $t_{i}>0$, then :
+
+$e^{x+t_{n}}=\sum_{i=1}^{n-1}f_{i}(x+t_{n})+f_{n}(x+t_{n})=\sum_{i=1}^{n-1}f_{i}(x+t_{n})+f_{n}(x)$
+
+$e^{x+t_{n}}-e^{x}= \sum_{i=1}^{n-1}(f_{i}(x+t_{n})-f_{i}(x))$
+
+$e^{x}=\sum_{i=1}^{n-1}\frac{f_{i}(x+t_{n})-f_{i}(x)}{e^{t_{n}}-1}$
+
+$e^{x}=\sum_{i=1}^{n-1}h_{i}(x)$, with $h_{i}(x)=\frac{f_{i}(x+t_{n})-f_{i}(x)}{e^{t_{n}}-1}$, $h_{i}(x+t_{i})=h_{i}(x)$ and $t_{i}>0$
+
+So, if $e^{x}$ is sum of $n$ periodic functions, $e^{x}$ is sum of $n-1$ periodic functions, which implies $e^{x}$ is sum of $1$ periodic function, which is false.
+
+So $e^{x}$ can't be sum of a finite number of periodic functions.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18728}{edriv}]
+	Nice!
+Here is my proof:
+Suppose a function $f$ is sum of n periodic functions $f_{1},\ldots,f_{n}$ with periods $t_{1},\ldots,t_{n}$, $t_{i}\neq 0$.
+Let $T = \{t_{1},\ldots,t_{n}\}$. Then you can see by induction that, for all real x, 
+
+$\sum_{X \subset T}(-1)^{|X|}f\left( x+\sum_{t \in X}t \right) = 0$.
+
+I think that, with some conditions on the $t_{i}$, this can become a sufficient condition.
+
+If we put $f(x) = e^{x}$, we can factor the condition as:
+$e^{x}(e^{t_{1}}-1)(e^{t_{2}}-1)\cdots (e^{t_{n}}-1) = 0$
+
+But this is nonzero because all $t_{i}$ are different from 0  :D
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/21482}{Yosh...}]
+	Let $ k$ be the smallest positive integer with the following property:
+
+There are distinct integers $ m_{1},m_{2},m_{3},m_{4},m_{5}$ such that the polynomial \[p(x)=(x-m_{1})(x-m_{2})(x-m_{3})(x-m_{4})(x-m_{5})\] has exactly $k$ non-zero integers coefficients.
+
+Find a set of integers $\{m_{1},m_{2},m_{3},m_{4},m_{5}\}$ for which this minimum $k$ is achieved
+	\flushright \href{https://artofproblemsolving.com/community/c6h155855}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $k$ be the smallest positive integer with the following property:
+
+There are distinct positive integers $m_{1},m_{2},m_{3},m_{4},m_{5}$
+such that the polynomial $p(x)=(x-m_{1})(x-m_{2})(x-m_{3})(x-m_{4})(x-m_{5})$ has exactly $k$ non-zero integers coefficients.
+
+Find a set of integers $m_{1},m_{2},m_{3},m_{4},m_{5}$ for which this minimum $k$ is achieved\end{tcolorbox}
+
+I don't understand : if all $m_{i}>0$, none of the coefficients of $p(x)=(x-m_{1})(x-m_{2})(x-m_{3})(x-m_{4})(x-m_{5})$ can be zero : coeff of $x^{5},x^{3},x$ are all $>0$ and coeff of $x^{4},x^{2},1$ are all $<0$.
+
+So $k=6$ and any polynomial verify the property.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/21482}{Yosh...}]
+	Thx for the correction..
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ k$ be the smallest positive integer with the following property:
+
+There are distinct integers $ m_{1},m_{2},m_{3},m_{4},m_{5}$
+such that the polynomial $ p(x)=(x-m_{1})(x-m_{2})(x-m_{3})(x-m_{4})(x-m_{5})$ has exactly $ k$ non-zero integers coefficients.
+
+Find a set of integers $ m_{1},m_{2},m_{3},m_{4},m_{5}$ for which this minimum $ k$ is achieved\end{tcolorbox}
+
+Hello !
+With this correction, I claim $ k=3$.
+
+1) $ k=0$ is impossible : it would mean $ p(x)=0$
+2) $ k=1$ is impossible : it would mean $ p(x)=x^{5}$ and all $ m_{i}$ would be equal (to 0)
+3) $ k=2$ is impossible : it would mean $ p(x)=x^{5}+ax^{4}$ or $ p(x)=x^{5}+ax^{3}$ or $ p(x)=x^{5}+ax^{2}$ or $ p(x)=x^{5}+ax$ or $ p(x)=x^{5}+a$ :
+$ p(x)=x^{5}+ax^{4}$ implies four identical roots 0, which is impossible
+$ p(x)=x^{5}+ax^{3}$ implies three identical roots 0, which is impossible
+$ p(x)=x^{5}+ax^{2}$ implies two identical roots 0, which is impossible
+$ p(x)=x^{5}+ax$ implies a root 0 and the four roots of $ x^{4}=-a$. But this equation can't have four real roots, so impossible
+$ p(x)=x^{5}+a$ implies $ m_{i}$ are the five roots of $ x^{5}+a=0$. But this equation can't have five real roots, so impossible
+
+3) $ k=3$ is possible :
+Take $ m_{1}=0,m_{2}=a,m_{3}=-a,m_{4}=b,m_{5}=-b$ with $ a\neq b$ and $ ab\neq 0$. Then :
+$ p(x)=x^{5}-(a^{2}+b^{2})x^{3}+a^{2}b^{2}x$ and $ p(x)$ has exactly 3 non-zero integer coefficients.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	Find all $ P\in\mathbb{R}[x]$ such that \[1+P(x)=\frac{P(x-1)+P(x+1)}{2}\] holds for all $x\in\mathbb R.$
+	\flushright \href{https://artofproblemsolving.com/community/c6h159183}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all $ P\in\mathbb{R}[x]$ such that $ 1+P(x)=\frac{P(x-1)+P(x+1)}{2}\forall x\in\mathbb R.$\end{tcolorbox}
+
+If $ P(x)$ verifies the requested condition, then all the derivatives of $ P(x)$ verify $ P^{(i)}(x)=\frac{P^{(i)}(x-1)+P^{(i)}(x+1)}{2}$
+It is easy to see that no quadratic polynomial $ Q(x)=ax^{2}+bx+c$ with $ a\neq 0$ verify this last equation  $ Q(x)=\frac{Q(x-1)+Q(x+1)}{2}$ since $ Q(0)=c\neq a+c=\frac{Q(-1)+Q(1)}{2}$
+So $ deg(P)\leq 2$ and $ P(x)=ax^{2}+bx+c$. Putting back this expression in the original equation, we find $ a=1$
+
+And all the solutions are polynomials $ P(x)=x^{2}+bx+c$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29386}{mszew}]
+	[hide="Is it a hint?"]Transforming the equation to $ P(x+1)=2P(x)+2-P(x-1)$ and using a kind of binet formula like fibonacci sequence[\/hide]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18420}{aviateurpilot}]
+	\begin{tcolorbox}Find all $ P\in\mathbb{R}[x]$ such that $ 1+P(x)=\frac{P(x-1)+P(x+1)}{2}\forall x\in\mathbb R.$\end{tcolorbox}
+we take $ f(x)=p(x)-x^{2}$
+we have $ f(x)=\frac{f(x-1)+f(x+1)}{2}$ then $ f(x)=ax+b$
+so $ p(x)=f(x)+x^{2}=x^{2}+ax+b$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/22328}{sinajackson}]
+	Find all polynomials
+\[P_{n}(x)=n!x^{n}+a_{n-1}x^{n-1}+\cdots+a_{1}x+(-1)^{n}n(n+1)\]
+with integer coefficients such that $P_n$ has $ n$ real roots $ x_{1},x_{2},\ldots,x_{n}$ that have the following condition: for all $ k=1,2,\ldots,n$, we have $ k\leq x_{k}\leq k+1$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h162115}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/16261}{Rust}]
+	$ x_{1}...x_{n}=\frac{n+1}{(n-1)!}<1$ if $ n\ge 3$. If n=2, then $ P_{2}(x)=2x^{2}+a_{1}x+6=2(x-1)(x-3),a_{1}=-8$.
+Therefore it may be if and only if $ n\le 2$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$ x_{1}...x_{n}=\frac{n+1}{(n-1)!}<1$ if $ n\ge 3$. If n=2, then $ P_{2}(x)=2x^{2}+a_{1}x+6=2(x-1)(x-3),a_{1}=-8$.
+Therefore it may be if and only if $ n\le 2$.\end{tcolorbox}
+
+Two little mistakes, Rust :
+
+$ 1).$ For $ n=3$, $ \frac{n+1}{(n-1)!}=2>1$. In fact, we must have $ n!\leq x_{1}...x_{n}\leq (n+1)!$ and this\end{underlined} is not verified for n=3.
+
+$ 2).$ For $ n=2$, two values for $ a_{1}$ fit : $ a_{1}=-7$ and $ a_{1}=-8$ (remember roots need not to be integers).
+
+So exactly three polynomials are solutions :
+
+$ 2x^{2}-7x+6$
+$ 2x^{2}-8x+6$
+$ x-2$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/32514}{TTsphn}]
+	Suppose that $ P(x)$ and $Q(x)$ are polynomials with real coefficients such that for all $x$, $P(x)$ is an integer if and only if $Q(x)$ is an integer. Prove that $P(x)-Q(x)$ is a constant.
+	\flushright \href{https://artofproblemsolving.com/community/c6h166088}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32541}{gregg}]
+	$ P(x)\in Z\Leftrightarrow P(x)=a\forall x\in R[x]$
+$ Q(x)\in Z\Leftrightarrow Q(x)=b\forall x\in R[x]$
+So $ P(x)-Q(x) = a-b$
+We put a-b=c and here is the answer
+I am not sure though about the answer.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18418}{\u0391\u03c1\u03c7\u03b9\u03bc\u03ae\u03b4\u03b7\u03c2 6}]
+	No :| .Suppose that P(x)=x^2+1 & Q(x)=x then P(x)-Q(x)=x^2-x-1......
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32514}{TTsphn}]
+	This problem haven't solved .
+It is very good.
+Has some problem from this problem
+Find all $ P(x)\in R[x]$ such that
+$ P(x+1)\in Z\leftrightarrow P(x)\in Z$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Suppose  $ P(x),Q(x)\in R[x]$
+$ \forall x : P(x)\in Z\Leftrightarrow Q(x)\in Z$
+Prove that $ P(x)-Q(x) = c$\end{tcolorbox}
+
+I think we miss some precision :
+
+Let $ P(x)=x$ and $ Q(x)=1-x$, we have $ \forall x : P(x)\in Z\Leftrightarrow Q(x)\in Z$ but $ P(x)-Q(x) = 2x-1\neq c$
+
+maybe you wanted to add "monic" polynomials ?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32514}{TTsphn}]
+	I am sorry $ P(x)+Q(x)$ or $ P(x)-Q(x)$=c
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Suppose  $ P(x),Q(x)\in R[x]$
+$ \forall x : P(x)\in Z\Leftrightarrow Q(x)\in Z$
+Prove that $ P(x)-Q(x) = c$\end{tcolorbox}
+
+Here is a solution :
+
+With the condition $ P(x)-Q(x) = c$ or $ P(x)+Q(x) = c$, WLOG consider  that $ P(x)$ and $ Q(x)$ have positive coefficients of highest degree (you just have to appropriatly replace $ P$ by $ -P$ or $ Q$ by $ -Q$)
+
+Then it exists $ x_{0}$ such that $ \forall x > x_{0}$, $ P(x)$ and $ Q(x)$ are strictly increasing (and grow up to $ +\infty$).
+Let then $ n_{1}\in\mathbb{Z}$ such that $ n_{1}> P(x_{0})$
+$ \forall n\geq n_{1}$, $ \exists$ unique $ a_{n}\in(x_{0},+\infty)$ (edited) such that $ P(a_{n}) = n_{1}+n-1$ and $ \{a_{n}\}$ is a strictly increasing sequence.
+Since $ P(a_{n}) = n_{1}+n-1\in\mathbb{Z}$, $ Q(a_{n})\in\mathbb{Z}$ too.
+
+Since $ a_{n+1}> a_{n}> a_{1}> x_{0}$, $ Q(a_{n+1}) > Q(a_{n})$. Then if $ Q(a_{n+1}) > Q(a_{n})+1$, $ \exists y\in(a_{n},a_{n+1})$ such that $ Q(y) = Q(a_{n})+1\in\mathbb{Z}$
+So $ P(y) = m\in\mathbb{Z}$ and, since $ a_{n}< y < a_{n+1}$ and $ P(x)$ strictly increasing, $ P(a_{n}) = n_{1}+n-1 < P(y) = m < a_{n+1}= n_{1}+n$, which is impossible.
+
+So $ Q(a_{n+1}) = Q(a_{n})+1$ and, since $ P(a_{n+1}) = P(a_{n})+1$, we have $ P(a_{n+1})-Q(a_{n+1}) = P(a_{n})-Q(a_{n}) = c$ $ \forall n > 0$
+
+So $ P(x)-Q(x)-c$ has infinitly many zeroes and so $ P(x)-Q(x) = c$ $ \forall x\in\mathbb{R}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/30374}{hoangclub}]
+	Find all polynomial $ P \in\mathbb R[x]$ such that there exists a unique $Q \in \mathbb R[x]$ with $Q(0)=0$ satisfying
+\[x+Q(y+P(x)) = y+Q(x+P(y)),\]
+for all $x,y \in \mathbb R$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h166605}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all polynomial $ P$  $ \in$ $ R[x]$ such that only have unique $ Q$ $ \in$ $ R[x]$ with $ Q(0) = 0$ satisfying:
+     $ x+Q(y+P(x))$=$ y+Q(x+P(y))$for all x,y $ \in$$ R$.\end{tcolorbox}
+
+Let $ p$ an $ q$ be the degree of polynomials $ P$ and $ Q$.
+
+1) $ p=0$. $ P(x)=a$ and so $ x+Q(y+a)=y+Q(x+a)$. So $ q=1$, $ Q(x)=cx$ and $ x+cy+ca=y+cx+ca$ and $ c=1$
+
+2) $ p=1$. $ P(x)=ax+b$ and so $ x+Q(y+ax+b)=y+Q(x+ay+b)$
+Then, if we put $ y=-P(x)$ in the original equation, we have $ x+P(x) = Q(x+P(-P(x)))$ and LHS has degree 0 (if $ a=-1$) or 1 and RHS degree 0 (if $ a^{2}=1$) or q. And so :
+2.1) LHS has degree 0 : $ P(x)=b-x$ and so $ b=Q(2b)$ and obviously $ Q(x)$ is not unique.
+2.2) LHS has degree 1 and $ q=1$ : $ P(x)=ax+b$ with $ a\neq-1$ and $ Q(x)=cx$ (since $ Q(0)=0$). So :
+$ x+c(y+ax+b)=y+c(x+ay+b)$ and so $ 1+ac-c=0$ and so $ a\neq 1$ and $ c=\frac{1}{1-a}$
+
+3) $ p>1$
+Then, in $ x+Q(y+P(x))$=$ y+Q(x+P(y))$, LHS has degree in $ x$ $ \max(1,pq)$ and RHS has degree $ q$ in $ x$ and, since $ p>1$, this is impossible.
+
+And the solutions are :
+$ P(x)=a$ (and unique $ Q$ is $ Q(x)=x$)
+$ P(x)=ax+b$ with $ a\notin\{-1,1\}$ (and unique $ Q$ is $ Q(x)=\frac{1}{1-a}x$)
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/30374}{hoangclub}]
+	Prove that there exist polynomial $ P$ with integer coefficients and degree $2003$ such that each of the numbers $P(0),P(1), \ldots,P(2003)$ is a power of $2$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h166608}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32514}{TTsphn}]
+	You can use Lagrange law for $ i=0,..,2003$
+Chose $ P(i)=2^{m}$ suitable.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/30326}{quangpbc}]
+	\begin{tcolorbox}You can use Lagrange law for $ i = 0,..,2003$
+Chose $ P(i) = 2^{m}$ suitable.\end{tcolorbox}
+
+What do you mean, TTsphn  :( . $ P(i) = 2^{m}$
+
+What does $ m$ mean ?. If $ P(i) = 2^{i}$ then $ P(x)$ is not a polynomial  :roll:
+
+And, $ \deg(P(x))=2003$  
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32514}{TTsphn}]
+	Chose m suitable from represent  of $ P(x)$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32278}{hjbrasch}]
+	Assume that $ \forall n=0,1,\ldots 2003: P(n)=2^{a_{n}}$ with non-negative integers $ a_{n}$ and $ \deg P=2003$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Assume that $ \forall n = 0,1,\ldots 2003: P(n) = 2^{a_{n}}$ with non-negative integers $ a_{n}$ and $ \deg P = 2003$\end{tcolorbox}
+
+Don't you forget that $ P(x)\in\mathbb{Z}[X]$ and not $ \mathbb{R}[X]$ ?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Prove that there exist polynomial $ P$ $ \in$ $ Z[x]$ $ deg(P)$=2003 such that each number $ P(0);P(1)...P(2003)$ is a power  of 2.\end{tcolorbox}
+
+For any positive integer $ n$, let $ P(x) = u\prod_{i = 0}^{n-1}(x-i)+2^{a}$
+We have $ P(i) = 2^{a}$ $ \forall i\in[0,n-1]$ and $ P(n) = u.n!+2^{a}$
+
+If we can have $ u.n!+2^{a}= 2^{b}$, the problem is solved.
+Let then $ a =$greatest power of $ 2$ dividing $ n!$ and $ m = n!2^{-a}$ odd positive integer
+Since $ m$ is odd, we have $ 2^{\phi(m)}= 1\pmod{m}$ and so $ m|2^{\phi(m)}-1$ and so $ 2^{a}(2^{\phi(m)}-1) = kn!$
+
+So $ P(x) = k\prod_{i = 0}^{n-1}(x-i)+2^{a}$ is a solution to the question for a n-degree polynomial.
+You just have then to take $ n = 2003$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32278}{hjbrasch}]
+	sorry, finger\/button slippage :oops:
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32514}{TTsphn}]
+	We can use Abel express
+$ f(x)=a_{n}(x-c_{1})..(x-c_{n})+....+a_{1}(x-c_{1})+a_{0}$
+Chose $ a_{1},...,a_{n}$ .
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/32514}{TTsphn}]
+	Let $s$ be a real number such that $0 < s \leq 1$. Does there exist polynomials $ P(x),Q(x)\in \mathbb R[x]$ such that
+\[\frac{P(n)}{Q(n)}=\sum_{i =1}^{n}\frac{1}{i^{s}},\]
+holds for all $n\in \mathbb N$?
+	\flushright \href{https://artofproblemsolving.com/community/c6h166797}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/5820}{N.T.TUAN}]
+	[hide="A hint"]$ \sum_{i=1}^{n}\frac{1}{i^{s}}\to+\infty$ when $ n\to\infty$.[\/hide]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$ 0 < s = < 1$
+Dose there exist $ P(x),Q(x)\in R[x]$
+$ \frac{P(n)}{Q(n)}=\sum_{i = 1}^{n}\frac{1}{i^{s}}$,for all $ n\in N$\end{tcolorbox}
+
+Let $ a_{p}x^{p}$ be the highest term of $ P(x)$ and $ b_{q}x^{q}$ be the highest term of $ Q(x)$ (with $ a_{p}\neq 0$ and $ b_{q}\neq 0$)
+
+Then $ \lim_{n\to+\infty}n^{q-p}\frac{P(n)}{Q(n)}=\frac{a_{p}}{b_{q}}$
+
+
+We have : $ \int_{k}^{k+1}\frac{1}{x^{s}}dx<\frac{1}{k^{s}}<\int_{k-1}^{k}\frac{1}{x^{s}}dx$ $ \forall k>1$
+
+And so : $ 1+\int_{2}^{n+1}\frac{1}{x^{s}}dx<\sum_{i = 1}^{n}\frac{1}{i^{s}}<1+\int_{1}^{n}\frac{1}{x^{s}}dx$
+
+If $ s=1$ : $ 1+\ln(n+1)-\ln(2)<\sum_{i = 1}^{n}\frac{1}{i^{s}}<1+\ln(n)$
+
+Or, if $ 0<s<1$ : $ 1+\frac{(n+1)^{1-s}-2^{1-s}}{1-s}<\sum_{i = 1}^{n}\frac{1}{i^{s}}<1+\frac{n^{1-s}-1}{1-s}$
+
+And so :
+And, if $ s=1$ : $ n^{q-p}(1+\ln(n+1)-\ln(2))<n^{q-p}\sum_{i = 1}^{n}\frac{1}{i^{s}}<n^{q-p}(1+\ln(n))$
+
+Or, if $ 0<s<1$ : $ n^{q-p}\frac{(n+1)^{1-s}-2^{1-s}+1-s}{1-s}<n^{q-p}\sum_{i = 1}^{n}\frac{1}{i^{s}}<n^{q-p}\frac{n^{1-s}-s}{1-s}$
+
+And so, since $ 1-s\neq p-q$ is $ s<1$, $ \lim_{n\to+\infty}n^{q-p}\sum_{i = 1}^{n}$ can only be $ 0$ or $ +\infty$ and is always different from $ \frac{a_{p}}{b_{q}}=\lim_{n\to+\infty}n^{q-p}\frac{P(n)}{Q(n)}$
+
+And so $ \frac{P(n)}{Q(n)}=\sum_{i = 1}^{n}\frac{1}{i^{s}}$,for all $ n\in N$ is impossible.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32514}{TTsphn}]
+	Other (Quite simple)
+$ \sum_{i = 1}^{+\infty}\frac{1}{i^{s}}\to\ +\infty$
+$ \frac{1}{n}(\sum_{i = 1}^{n}\frac{1}{i^{s}})\to 0$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/32407}{chessfreak}]
+	Do there exist four real polynomials such that the sum of any three of them has a real zero while the sum of no two polynomials has a real zero?
+	\flushright \href{https://artofproblemsolving.com/community/c6h166926}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Do there exist four real polynomials such that the sum of any three of them has a real zero while the sum of no two polynomials has a real zero?\end{tcolorbox}
+
+No, it does not :
+
+$ \forall i,j\in\{1,2,3,4\}$, we have either $ P_{i}+P_{j}> 0$ $ \forall x$, either $ P_{i}+P_{j}< 0$ $ \forall x$
+
+But $ P_{1}+P_{2}$, $ P_{1}+P_{3}$ and $ P_{2}+P_{3}$ can't have same sign, else their sum would have constant sign and $ P_{1}+P_{2}+P_{3}$ would never be 0.
+
+So, WLOG (choice or order + replacement $ P_{i}$ by $ -P_{i}$) say :
+$ P_{1}+P_{2}> 0$
+$ P_{2}+P_{3}> 0$
+$ P_{1}+P_{3}< 0$
+
+Since $ P_{1}+P_{3}< 0$, and since $ P_{1}+P_{3}$, $ P_{1}+P_{4}$ and $ P_{3}+P_{4}$ can't have same sign, $ P_{1}+P_{4}$ or $ P_{3}+P_{4}$ is $ > 0$. WLOG say :
+$ P_{1}+P_{4}> 0$
+
+Since $ P_{1}+P_{2}> 0$ and $ P_{1}+P_{4}> 0$, and since $ P_{1}+P_{2}$, $ P_{1}+P_{4}$ and $ P_{2}+P_{4}$ can't have same sign :
+$ P_{2}+P_{4}< 0$
+
+Then since $ P_{2}+P_{3}> 0$ and $ P_{1}+P_{4}> 0$, then $ P_{1}+P_{2}+P_{3}+P_{4}> 0$
+But since $ P_{2}+P_{4}< 0$ and $ P_{1}+P_{3}< 0$, then $ P_{1}+P_{2}+P_{3}+P_{4}< 0$
+
+And so contradiction.
+(and this property is available for any set of continuous functions)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/12952}{venkata}]
+	i dunno how many times u need to be told that IMOTC postals are not to be posted at Mathlinks.
+trust me, ppl who have easy access to the net have a gr8 advantage over those who dont.
+in due recognition of the fact that u r not from IMOTC, i request u to kindly not post ANY OF THE IMOTC postal probs.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32245}{borislav_mirchev}]
+	Internet is great place for people to share their knowledge. You should post all problems that you like! I dislike monopolism in math!!!
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/13985}{BaBaK Ghalebi}]
+	\begin{tcolorbox}Internet is great place for people to share their knowledge. You should post all problems that you like! I dislike monopolism in math!!!\end{tcolorbox}
+sure but I think that venkata meant that these problems are in a contest which is still open,so the students are supposed to solve the questions by them selves untill the given time,so it is not a good idea to post it here,its kind of cheating...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32245}{borislav_mirchev}]
+	Yes, you are maybe right. But I think the problems are took from somewhere maybe some other competition or some textbook. What if the student use same textbook? I think, at this time when the world is a "globbal village" some competition without presence of the students if it is not time limited or aren't there some other limitations may be a warranty only that students have the desire and they want to solve proposed problems. They also may ask for help their friends parents, or other web sites not so good but, different from mathlinks... I think after I-st round there should be some communication with the students...maybe interview or round where they solve problems. Other idea I have is electronic competition with fixed time limit, but you again cannot be sure who is in front of the PC...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/20099}{pardesi}]
+	\begin{bolded}chessfreak\end{bolded} i suppose u r relly intesrested in seeing the Postal problems solved  :P 
+How is it that u r not a IMOTC member(as u had claimed   ) and yet u r the first each time to post the postal problems.
+well we have given u enough warnings i think it's time u better stp posting them otherwise we have to egt each of ur posts scrutinized and deleted if they are have postal problems .and if u still continue this u know what lies next.
+now no more requests just
+[color=red][size=200]STOP POSTING THEM BECAUSE OF U EVERYONE ELSE IS DOING SO [\/size][\/color]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/12952}{venkata}]
+	Dear borislav_mirchev
+As Bhabak Ghalebi mentions, this is an ongoing competition , and the rules clrly state: NO EXTERNAL HELP TO BE TAKEN.
+as far as "global villaging" goes, no 1 minds the posting of problems ONCE THE DEADLINE IS OVER.
+also, in all these competitions, a lot hinges on TRUST and ETHICS. so things like asking frnds, parents etc usually dont happen at this level(so i bliv) :maybe:  
+btw, ill surely suggest ur examination methods to our profs 
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/34189}{tdl}]
+	Let $P$ be a non-constant polynomial with integer coefficients. Prove that $ \overline{0.P(1)P(2)\cdots P(n) \cdots}$ is not a rational number.
+	\flushright \href{https://artofproblemsolving.com/community/c6h172847}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ P\in Z[x]$. Prove that: $ \overline{0,P(1)P(2)...P(n)...}\notin Q$\end{tcolorbox}
+
+Wrong.
+
+$ P(x)=c$ implies $ \overline{0,P(1)P(2)...P(n)...}\in Q$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/16261}{Rust}]
+	for all $ n=deg P(x)\in Z[x]$ we get 
+\[ \sum_{k=1}^{\infty}\frac{P(n)}{10^n} \in Q.\]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/34189}{tdl}]
+	To pco: If $ P\neq$ const then is my problem true? :blush: 
+To Rust: I don't understand your idea, what is $ n,k$ in your post?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29126}{MellowMelon}]
+	If I'm understanding this problem correctly, won't $ P(x) = x$ give $ 10\/81$? That fraction is equal to $ 0.123456790123456790\ldots$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/34189}{tdl}]
+	If $ P(x)=x$ then $ \overline{0,P(1)P(2)...P(n)...}=0,1234567891011121314151617181920...$, You misunderstand my idea!
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}To pco: If $ P\neq$ const then is my problem true? :blush: \end{tcolorbox}
+
+Ok, with this restriction, the problem is true :
+
+Let $ S$ the number $ 0.P(1)P(2)\cdots$
+Let $ P(x)\equiv ax^p$ when $ x\rightarrow +\infty$
+The length (in digits) of $ P(n)$ is then $ l(P(n))\equiv \log(a)+p\log(n)$ and the difference of lengths between $ P(n+1)$ and $ P(n)$ is :
+$ l(P(n+1))-l(P(n))\equiv p\log(1+\frac{1}{n})\equiv \frac{p}{n}$
+
+So, when $ n$ grows sufficiently, the length of $ P(n)$ increases slowly (by less than 1) and then all lengths are found.
+If the required number $ \in\mathbb{Q}$, its decimal representation is periodic, with period $ a$.
+So, it exists $ n_0$ such that :
+$ 1)$ $ P(n_0)$ is in the periodic part of $ S$
+$ 2)$ $ l(P(n_0+1))=l(P(n_0))=0\pmod{a}$
+$ 3)$ $ P(n)$ is positive and strictly increasing $ \forall n\geq n_0$
+
+Then, $ P(n_0)$ is a $ ka$-digits number in the periodic part.
+And $ P(n_0+1)$ is an adjacent $ ka$-digits number in the periodic part.
+
+So $ P(n_0)=P(n_0+1)$. But this is impossible (see point 3 above).
+
+So the decimal representation of $ S$ is never periodic.
+
+So $ S\notin \mathbb{Q}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/3182}{Kunihiko_Chikaya}]
+	Let $P(x)$ be a polynomial with degree $ n\in{\mathbb{N}}$. If $ P(0),\ P(1),\ \ldots ,\ P(n)$ are integers, then prove that $ P(k)$ is integer for any integer $k$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h173485}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/2975}{jmerry}]
+	An algorithm for constructing the values of $ P$:
+Let $ \delta P(k)=P(k+1)-P(k)$, $ \delta^2 P(k)=\delta P(k+1)-\delta P(k)$, and so on. For $ 0\le i\le n$ and $ 0\le j\le n-i$, $ \delta^i P(j)$ is an integer; it comes from repeatedly taking differences of integers.
+
+Now, set $ \delta^n P(k)=\delta^n P(0)$ for all $ k$; $ \delta^n P$ must be constant since $ P$ is a polynomial of degree $ \le n$. We can then build back down the difference table: $ \delta^{n-1}P(-1)=\delta^{n-1}P(0)-\delta^n P(-1),\dots,P(-1)=P(0)-\delta P(-1)$ and similarly $ \delta^{n-1}P(2)=\delta^{n-1}P(1)+\delta^n P(1),\dots,P(n+1)=P(n)+\delta P(n)$. We repeat indefinitely to get $ P$ at all positive and negative integers. Every step of the algorithm uses only addition and subtraction, so all of the answers are integers.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/3182}{Kunihiko_Chikaya}]
+	My solution is almost same as yours except for my using induction, jmerry. :)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let$ P(x)$ be polynomial with degree $ n\in{\mathbb{N}}$. If $ P(0),\ P(1),\ \cdots P(n)$ are integers, then prove that $ P(k)$ is integer for any integers $ k$.\end{tcolorbox}
+
+If we write $ P(x)=a_0+\sum_{i=1}^na_i\frac{\prod_{k=0}^{i-1}(x-k)}{i!}$
+
+we have $ a_0=P(0)$ and, for $ p\in[1,n]$, $ P(p)=a_0+\sum_{i=1}^{p}a_i\binom{p}{i}$, and so $ a_1=P(1)-P(0)$ and $ a_p=P(p)-a_0-\sum_{i=1}^{p-1}a_i\binom{p}{i}$ Fpr, $ p>1$
+
+And so all $ a_p$ are integers.
+
+Now, for any $ m>n$ : $ P(m)=a_0+\sum_{i=1}^na_i\frac{\prod_{k=0}^{i-1}(m-k)}{i!}$ $ =a_0+\sum_{i=1}^na_i\binom{m}{i}$ and is an integer.
+
+Now, for any $ m<0$ : $ P(m)=a_0+\sum_{i=1}^na_i\frac{\prod_{k=0}^{i-1}(m-k)}{i!}$ $ =a_0+\sum_{i=1}^na_i(-1)^{i}\binom{i-1-m}{i}$ and is an integer.
+
+And so $ P(n)$ is an integer fo any integer $ n$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/8161}{luimichael}]
+	Lagrange Interpolating Polynomial.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/24822}{Svejk}]
+	Find all polynomials $ P(x) \in \mathbb{R}[X]$ satisfying 
+\[ (P(x))^2-(P(y))^2=P(x+y)\cdot P(x-y) ,\quad  \forall x,y \in \mathbb R.\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h180123}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/3182}{Kunihiko_Chikaya}]
+	$ P(x)=\sin x$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/24822}{Svejk}]
+	\begin{tcolorbox}$ P(x) = \sin x$\end{tcolorbox}
+ the problem asks to find \begin{bolded}polynomials\end{bolded}  and sin x is not a plynomial
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/3182}{Kunihiko_Chikaya}]
+	:oops:
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/35937}{isomorphism}]
+	I think P(x) = x is the only solution. We can find out a tedious solution by explicitly writing the standard polynomial form and then using binomial theorem on one side and seeing by comparing terms they do not occur on the other side. But hell, there will be a simpler way then that. I hope someone solves it in a smart way.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all polynomials $ P \in \mathbb{R}[X]$ satisfying
+\[ (P(x))^2 - (P(y))^2 = P(x + y)\cdot P(x - y) , \forall x,y \in \mathbb R
+\]
+\end{tcolorbox}
+
+$ P(x)=c$ is solution iff $ c=0$
+Consider now only non-constant solutions.
+
+if $ P(x)$ is solution, then $ aP(x)$ is solution too, so we can consider only solutions whose greatest term has a coefficient of 1.
+Let then n the degree of $ P(x)$ ($ P(x)=x^n+\cdots$).
+Let $ y=ax$. We have then $ (P(x))^2 - (P(ax))^2 = P(x + ax)\cdot P(x - ax)$
+
+Coefficient of $ x^{2n}$ in LHS is $ 1-a^{2n}$
+Coefficient of $ x^{2n}$ in RHS is $ (1+a)^n(1-a)^n$
+
+So $ 1-a^{2n}=(1-a^2)^n$ $ \forall a$ And so obviuously $ n=1$
+So $ P(x)=x+a$ and so $ (x+a)^2-(y+a)^2=(x+y+a)(x-y+a)$ and so $ a=0$
+
+So the solutions are $ P(x)=cx$ for any real c.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/35937}{isomorphism}]
+	\begin{tcolorbox}[quote="Svejk"]Find all polynomials $ P \in \mathbb{R}[X]$ satisfying
+\[ (P(x))^2 - (P(y))^2 = P(x + y)\cdot P(x - y) , \forall x,y \in \mathbb R
+\]
+\end{tcolorbox}
+
+$ P(x) = c$ is solution iff $ c = 0$
+Consider now only non-constant solutions.
+
+if $ P(x)$ is solution, then $ aP(x)$ is solution too, so we can consider only solutions whose greatest term has a coefficient of 1.
+Let then n the degree of $ P(x)$ ($ P(x) = x^n + \cdots$).
+Let $ y = ax$. We have then $ (P(x))^2 - (P(ax))^2 = P(x + ax)\cdot P(x - ax)$
+
+Coefficient of $ x^{2n}$ in LHS is $ 1 - a^{2n}$
+Coefficient of $ x^{2n}$ in RHS is $ (1 + a)^n(1 - a)^n$
+
+So $ 1 - a^{2n} = (1 - a^2)^n$ $ \forall a$ And so obviuously $ n = 1$
+So $ P(x) = x + a$ and so $ (x + a)^2 - (y + a)^2 = (x + y + a)(x - y + a)$ and so $ a = 0$
+
+So the solutions are $ P(x) = cx$ for any real c.\end{tcolorbox}
+
+Awesome  
+I missed the constant term :oops:. I proved P(-y) = -P(y) and noticed it can have only odd powers, but was lost after that. "y = ax " was nice :)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/18420}{aviateurpilot}]
+	we take $ Q_x\in R[X]: \ Q_x(y) = (P(x))^2 - (P(y))^2 - P(x + y)P(x - y)$
+we have $ \forall y\in R: \ Q_x(y) = 0$ so $ \forall y\in C: \ Q_x(y) = 0$
+if $ \exists a\{b\in C|P(b) = 0\}$ such that $ a\neq 0$ so $ 0 = Q_x(a) = (P(x))^2 - P(x + a)P(x - a)$
+we take $ U_n = P(na)^{2^{n}}$ $ \forall n\ge 1\ U_n = 0$ because $ U_{n + 1} = U_nP((n + 2)a)^{2^{n - 1}}\ and\ U_1=0$ then $ P\equiv 0$
+if $ \{b\in C|P(b) = 0\}\subset 0$ then $ P(X) = cX^n\ (c\neq 0)$ so $ {c(X^{2n} - Y^{2n}) = c^2(X^2 - Y^2)^n}$ gives $ n = 1$
+
+finally $ P\equiv cX$ where $ c\in R$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/34710}{milin}]
+	And how come $ \sin{x}$ is not a polynomial? Try writing it as a Taylor series! Would this make it a solution?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/9092}{TomciO}]
+	What? It's not a polynomial since, for example, it has infinitely many zeroes.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/3182}{Kunihiko_Chikaya}]
+	and $ \sin x$ is a periodic function, but polynominal function isn't.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/34710}{milin}]
+	1)
+
+It has an infinitive number of zeros because it has an infinitive number of powers.
+
+2)
+
+A constant is a polynomial and a periodic function!
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/14052}{t0rajir0u}]
+	A polynomial is defined to have finite degree.  We distinguish between polynomials, power series, and formal power series.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/34710}{milin}]
+	Ah..   There's an explanation I appreciate. Thanks for clearing that out t0rajir0u.
+\end{solution}
+*******************************************************************************

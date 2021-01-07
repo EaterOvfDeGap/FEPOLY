@@ -1,0 +1,133 @@
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/29721}{Erken}]
+	Find all $ n\in\mathbb{N}$ such that polynomial
+\[ P(x) = (x - 1)(x - 2) \cdots (x -n)\]
+can be represented as $Q(R(x))$, for some polynomials $ Q(x)$ and $R(x)$ with degree greater than $1$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h183353}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all $ n\in\mathbb{N}$,such that polynomial
+$ P(x) = (x - 1)(x - 2)\dots (x - n)$
+can be represented as $ Q(R(x))$,for some non-constant polynomials $ Q(x),R(x)$.\end{tcolorbox}
+
+It seems I misunderstood something because this problem seems trivial :
+
+Any non constant polynomial $ P(x)$ can be represented as $ Q(R(x))$,for some non-constant polynomials $ Q(x),R(x)$ :
+
+Take $ R(x)=x+a$ and $ Q(x)=P(x-a)$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29721}{Erken}]
+	\begin{tcolorbox}[quote="Erken"]Find all $ n\in\mathbb{N}$,such that polynomial
+$ P(x) = (x - 1)(x - 2)\dots (x - n)$
+can be represented as $ Q(R(x))$,for some non-constant polynomials $ Q(x),R(x)$.\end{tcolorbox}
+
+It seems I misunderstood something because this problem seems trivial :
+
+Any non constant polynomial $ P(x)$ can be represented as $ Q(R(x))$,for some non-constant polynomials $ Q(x),R(x)$ :
+
+Take $ R(x) = x + a$ and $ Q(x) = P(x - a)$\end{tcolorbox}
+Sorry,i forgot to write,that 
+$ deg(R),deg(Q)\geq 2$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29721}{Erken}]
+	[hide="hint"]
+Consider two cases,when $ n$ is odd,and when it is an even number  
+[\/hide]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/25787}{olorin}]
+	If $ n > 2$ is even, then
+$ P(x) = \prod_{k = 1}^{n\/2}(x - k)(x - (n + 1 - k)) \\
+\hspace*{0.3in} = \prod_{k = 1}^{n\/2}((x - 1)(x - n) + k(n + 1 - k) - n) = Q(R(x))$
+with $ R(x) = a(x - 1)(x - n) + b\in\mathbb{R}[x]$ non-linear
+and $ Q(x) = \prod_{k = 1}^{n\/2}\left({x - b\over a} + k(n + 1 - k) - n\right)\in\mathbb{R}[x]$ non-linear
+for any $ a,b\in\mathbb{R},a\not = 0$.
+
+I'll show, that these are the only $ Q(x),R(x)\in\mathbb{R}[x]$ non-linear with $ P(x) = Q(R(x))$.
+
+Say $ q: = \deg Q\ge 2$ and $ r: = \deg R\ge 2$. Then $ n = qr$.
+We can replace $ R(x)$ with $ {1\over a}R(x)$ and $ Q(x)$ with $ Q(ax)$ for any $ a\in\mathbb{R},a\not = 0$.
+Similar we can replace $ R(x)$ with $ R(x) - R(1)$ and $ Q(x)$ with $ Q(x + R(1))$.
+So we can assume $ R(x)$ has leading coefficient $ 1$ and $ R(1) = 0$.
+
+From [url=http://www.mathlinks.ro/Forum/viewtopic.php?p=733142&search_id=2134256501#733142]here[\/url] we see, that the strictly monotonic sequences
+$ R(1 + kq),R(2 + kq),\ldots,R((k + 1)q)$ and 
+$ R(1 + (k + 1)q),R(2 + (k + 1)q),\ldots,R((k + 2)q)$
+run through all the roots of $ Q(x)$ in converse order for all $ k = 0,1,\ldots ,r - 2$.
+
+This gives
+$ (*)$  $ R(k) = R(2q + 1 - k)$ for all $ k = 1,2,\ldots 2q$.
+and
+$ (**)$ $ R(k) = R(k + 2q)$ for all $ k = 1,\ldots ,n - 2q$.
+
+For $ r\ge 3$ and $ (q,r)\not = (2,3)$ we have $ 1 < (q - 1)(r - 2)$ and $ r - 1 < qr - 2q = n - 2q$.
+Then by $ (**)$ $ R(x) - R(x + 2q)$ has $ n - 2q$ different roots and degree $ \le\deg R - 1 < n - 2q$.
+So $ R(x) = R(x + 2q)$ and $ R(1) = 0$ gives infinitely many roots $ 1 + 2qk$ of $ R(x)$ for $ k\in\mathbb{N}$,
+and therefore $ R(x)\equiv 0$. Contradiction!
+
+For $ (q,r) = (2,3)$ we get $ 0 = R(1) = R(4) = R(5)$ using $ (*)$ and $ (**)$.
+This gives $ R(x) = (x - 1)(x - 4)(x - 5)$ and $ R(2) = 6,R(3) = 4$, which contradicts $ (*)$.
+
+So $ r = 2$ and $ n = 2q > 2$ even and $ (*)$ gives $ 0 = R(1) = R(n)$.
+Then $ R(x) = (x - 1)(x - n)$ and $ P(x) = Q(R(x)) = \tilde{Q}(R(x))$ 
+with $ \tilde{Q}(x) = \prod_{k = 1}^{n\/2}(x + k(n + 1 - k) - n)\in\mathbb{R}[x]$.
+This gives $ Q(x) = \tilde{Q}(x)$, which completes the proof.
+($ Q(x) - \tilde{Q}(x)$ has infinitely many roots $ x=R(y),y\in\mathbb{R}$)
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/25101}{radio}]
+	Find all polynomials $ P(x)\in \mathbb R[x]$ such that 
+$$ P(x^2)=P(x)P(x+2),$$
+for all $x\in \mathbb R$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h184257}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32247}{Jure the frEEEk}]
+	let $ a$ be a complex root of $ P$. so $ P(a)=0$
+therefore $ a^2,a^4,a^8$ etc. have to be roots of $ P$ also. This leeds to contradiction because we get infinitely many roots and polinomial should be of infinite degree except if $ |a|=1;0$ not hard to exclude the $ 0$ part
+
+but if we put $ a-2$ into the expression we get $ P((a-2)^2)=P(a-2)P(a)$ meaning $ P((a-2)^2)=0$ which means again infinitely many roots with the same reason as before. except if $ |a-2|=1$
+
+the only $ a$ such that $ |a-2|=|a|=1$ is $ a=1$ and it is the only theoretical root of the polynomial
+
+now we put $ a_n(x-1)^n$ into starting expression and conclude that all polinomials of form $ (x-1)^n$ for any natural $ n$ are solutions plus trivial solutions $ P(x)=0$ and $ P(x)=1$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all $ P(x)\in R[x]$ such that 
+$ P(x^2) = P(x)P(x + 2)$\end{tcolorbox}
+
+$ P(x)=0$ and $ P(x)=1$ are solution.
+If $ P(x)$ is different from constant polynomial, then :
+If $ z$ is a complex root, then so is $ z^2$ and so, since we have finite number of roots, all non zero roots have $ |z|=1$.
+If $ 0$ is a root, $ P((-2)^2)=P(-2)P(0)$ and $ 4$ is a root, but $ |4|\neq 1$ and so $ 0$ is not a root.
+If $ z$ is a complex root, then so is $ (z-2)^2$ and so all roots have $ |z|=1$ and $ |z-2|=1$
+
+So the only complex root is $ 1$.
+
+So $ P(x)=a(x-1)^n$ and it is easy to check that $ a=1$
+
+So the solutions are :
+$ P(x)=0$
+$ P(x)=1$
+$ P(x)=(x-1)^n$
+\end{solution}
+*******************************************************************************

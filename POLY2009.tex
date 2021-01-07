@@ -1,0 +1,2290 @@
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/1598}{Arne}]
+	For any positive integer $ n$, prove that there exists a polynomial $ P$ of degree $ n$ such that all coeffients of this polynomial $ P$ are integers, and such that the numbers $ P\left(0\right)$, $ P\left(1\right)$, $ P\left(2\right)$, ..., $ P\left(n\right)$ are pairwisely distinct powers of $ 2$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h1366}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/154}{Myth}]
+	Arne!
+
+For any positive integer n, there exists a polynomial of degree n such that P(0), P(1), P(2), ... P(n) are given numbers.
+
+Do you mean P has integer coefficients?
+[Moderator edit: Yes, he meant this, but the original problem mistakenly didn't contain this condition.]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/2}{Valentin Vornicu}]
+	yes he means that. arne please specify also the olympiad from which this (and any of the problems posted) are from. thanks :)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/1598}{Arne}]
+	Indeed, integer coefficients.
+
+It's from a British olympiad correspondence program. The paper (with 8 questions, used for training of the British students) does not specify whether this problem is original or whether it is taken from a foreign olympiad or so ...
+
+If I knew the source, I would mention it !
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/2}{Valentin Vornicu}]
+	for example you could say British Olympiad and year  :)  don't be upset ... I was just a mere request, so that people can find problems more easily with the search function :)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/1991}{orl}]
+	I feel it is a good idea to specify the olympiad (if known), e.g. by means of http://www.mathlinks.ro\/phpBB/viewtopic.php?t=1053. But this should not necessarily be done before the problem was tackled or hopefully solved.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/118}{Moubinool}]
+	This is a nice idea orl, the code for the classification of problems
+http://www.mathlinks.ro\/phpBB/viewtopic.php?t=1053.e 
+should be on the main page of the forum, any new members will see.,
+even old members can find easily the code for problems.
+What do you think Valentin ? Is it possible to put the orl code for the
+problems continously on the main page of the forum ?
+oubi
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/2}{Valentin Vornicu}]
+	It's a very good idea and yes I am planning on a series of changes, but  I want to do them at once. 
+
+please have a little patience (I don't like it when I say this but I am only human :() I also have to go to college, earn some money to live, repair my car which keeps breaking down, etc ... :)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/26}{grobber}]
+	Maybe Lagrange's formula could help here? (just a crazy thought, I haven't tried anything yet).
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/118}{Moubinool}]
+	yeah yeah seems god idea  :) 
+http://mathworld.wolfram.com\/LagrangeInterpolatingPolynomial.html
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/26}{grobber}]
+	I'll think more abt that at home (I'm in a Icafe right now).
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/246}{pbornsztein}]
+	Ok, let's give a solution. I apologize in advance, because, it will be difficult to write and to read with so few keyboard possibilities...
+
+Let M be the following (n+1)*(n+1) matrice :
+1  0  0 ....  0
+1  1  1 .... 1
+1  2  2 <sup>2<\/sup> ...  2 <sup>n<\/sup> 
+...
+1  n  n <sup>2<\/sup> ...  n <sup>n<\/sup>
+
+Let d = det(M). Since, M is a classical Van der Monde matrice, it's easy to see that d =\/= 0 and is an integer.
+Let d = 2 <sup>a<\/sup> b, where b is odd.
+Thus M is inversible, and let m(i,j) be the general coefficient of M <sup>-1<\/sup> .
+Then m(i,j) = t(i,j)\/d where t(i,j) is an integer.
+Moreover, we note that M*(1,0,...,0) <sup>T<\/sup> = (1,1,...,1) <sup>T<\/sup> , where 'T' denotes the transposition (it must be column vectors)
+Then M <sup>-1<\/sup> *(1,1,...,1) <sup>T<\/sup> = (1,0,...,0) <sup>T<\/sup> . It follows that :
+sum t(1,j)\/d = 1   (1)
+and, for i = 2,...,n+1,   sum t(i,j)\/d  = 0   (2)
+where each sum is over j = 1,...,n+1.
+
+Let w be the order of 2 in Z\/bZ  (since (2,b) = 1). Then, for each non-negative integer k, there exists a non negative integer c(k) such that 2 <sup>kw<\/sup> = 1 + b*c(k).   (3)
+
+Now let (a(0), a(1), ..., a(n)) <sup>T<\/sup> = M <sup>-1<\/sup> *(2 <sup>a<\/sup>, 2 <sup>a+w<\/sup> ,....,2 <sup>a+nw<\/sup> ) <sup>T<\/sup>
+Then (each sum is still over j = 1,...,n+1) :
+- From (1) and (3) :
+a(0) = sum (t(1,j)\/d)*2 <sup>a+(j-1)w<\/sup> = 2 <sup>a<\/sup>  + sum t(1,j)*c(j-1)   is an integer.
+
+- From (2) and (3), for i = 2,...,n+1
+a(i-1) = sum (t(i,j)\/d)*2 <sup>a+(j-1)w<\/sup> = sum t(1,j)*c(j-1)   is an integer.
+
+It follows that the polynomial P(x) = a(0) + a(1)*x + ... + a(n)*x <sup>n<\/sup> has degree (at most) n and integer coefficients. Moreover, for i = 0,...,n, since :
+M*a(0),...,a(n)) <sup>T<\/sup> = (2<sup>a<\/sup>, 2 <sup>a+w<\/sup> ,...,2 <sup>a+nw<\/sup> ) <sup>T<\/sup> 
+we have P(i) = 2 <sup>a+iw<\/sup> , and we are done.
+
+Pierre.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/273}{Namdung}]
+	If I'm not wrong, then this was Putnam problem.
+
+Namdung
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/49556}{xxp2000}]
+	Let $ n!=2^t*(2k+1)$. It is easy to show there exists $ u>0$ such that $ 2k+1|2^u-1=a$.
+$ P(x)=2^t(1+\sum_{i=1}^n\frac{x(x-1)\cdots(x-i+1)}{i!}a^i)$.
+Since $ i!|a^i*2^t$, the coefficients are all integers.
+For any $ 1\le m\le n$,
+$ P(m)=2^t(1+\sum_{i=1}^m\binom{m}{i}a^i)=2^t(1+a)^m=2^{t+um}$.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/211185}{toto1234567890}]
+	Use Lagrange Formula!!! :)
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/40227}{LONGDN}]
+	Find all polynomials $P(X)$ such that for all real $x$,
+\[(x-1)P(2007x)=2007^{2007}(P(x)(x-2007)+2007^{2008}-1).\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h193171}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find P(X) is a multinomial
+$ (x-1)P(2007x)=2007^{2007}(P(x)(x-2007)+2007^{2008}-1)$\end{tcolorbox}
+
+It's an easy one. Your equation may be written : $ (x-1)P(2007x)+2007^{2007}=2007^{2008}(P(x)(\frac{x}{2007}-1)+2007^{2007})$
+
+And so $ H(2007x)=2007^{2008}H(x)$ with $ H(x)=P(x)(\frac{x}{2007}-1)+2007^{2007}$
+
+Writing $ H(x)=\sum a_kx^k$ and identifying coefficients in $ H(2007x)=2007^{2008}H(x)$  immediately gives $ H(x)=ax^{2008}$. But we know that $ H(2007)=2007^{2007}$ and so :
+
+$ H(x)=\frac{x^{2008}}{2007}$
+
+And so $ P(2007)=2008\cdot 2007^{2007}$ and $ P(x)=\frac{x^{2008}-2007^{2008}}{x-2007}$ $ \forall x\neq 2007$, which is indeed a polynomial matching the above requirements.
+
+You can also write $ P(x)=\sum_{k=0}^{2007}2007^{2007-k}x^k$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/49561}{computer}]
+	Find all polynomials $P(x,y)$ with real coefficients such that for any real numbers $a,b,c$, and $d$,
+\[P(a,b)P(c,d)=P(ac+bd,ad+bc).\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h232728}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}find all polyminals P(x,y) with real coefficients such that for any real numbers like a,b,c,d
+
+P(a,b)P(c,d)=P(ac+bd,ad+bc)\end{tcolorbox}
+
+[hide="My solution"]
+Let $ H(x,y,z,t)$ be the assertion $ P(x,y)P(z,t)=P(xz+yt,xt+yz)$
+
+$ H(x,-x,t+1,t)$ $ \implies$ $ P(x,-x)(P(t+1,t)-1)=0$
+From this : either $ P(x,-x)=0$ $ \forall x$, either $ P(x+1,x)=1$ $ \forall x$
+If $ P(x,-x)=0$ $ \forall x$, then $ P(x,y)=(x+y)Q(x,y)$ and it is easy to see that $ Q(x,y)$ has the the same property.
+So $ P(x,y)=(x+y)^nQ(x,y)$ with $ Q(x+1,x)=1$ $ \forall x$
+
+Then, let $ y\neq -x$ and $ a\in\mathbb R$ : $ H(x,y,\frac{a}{x+y}+1,\frac{a}{x+y})$ $ \implies$ $ Q(x,y)=Q(x+a,y+a)$ and so $ Q(x,y)=R(x-y)$. Plugging back in the original equation, we get $ R(uv)=R(u)R(v)$ and so $ R(x)=x^m$ and so $ Q(x,y)=(x-y)^m$
+
+Hence the result : $ P(x,y)=(x+y)^n(x-y)^m$ and it is easy to check that these necessary conditions fit the original equation.
+[\/hide]
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/28492}{knoppix}]
+	Let $n$ be a positive integer and define \[P_n(x) = \sum_{k = 1}^{n + 1}x^k.\]
+For every $ a\in\mathbb{R}$, find the number of (real) solutions of the equation $ P_n(x) = P_n(a)$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h253822}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}let $ n\in\mathbb{N}$ and $ P_n(x) = \sum_{k = 1}^{n + 1}x^k$.
+
+for every $ a\in\mathbb{R}$ find the number of (real) solutions of the equation $ P_n(x) = P_n(a)$.\end{tcolorbox}
+
+For $ x\neq 1$, writing $ P(x)=\frac{x^{n+2}-x}{x-1}$ gives $ P'(x)=\frac{(n+1)x^{n+2}-(n+2)x^{n+1}+1}{(x-1)^2}$
+
+Using $ Q(x)=(n+1)x^{n+2}-(n+2)x^{n+1}+1$, we get $ Q'(x)=(n+1)(n+2)x^n(x-1)$
+
+So :
+
+If $ n$ is even, $ Q(x)\geq 0$ $ \forall x$, and so is $ P'(x)$. So, $ P(x)$ is an increasing function and the equation has a unique root $ a$
+
+If $ n$ is odd, $ Q(x)$ has two zeroes but a unique change of sign (the zero $ x=1$ is a double one) so $ P(x)$ is decreasing then increasing and the equation has two roots (maybe identical : double root at the minimum)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/28492}{knoppix}]
+	What a nice suprise  :)  Thanks a lot
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/46304}{thaithuan_GC}]
+	Let a polynomial $ P(x) = rx^3 + qx^2 + px + 1$ $ (r > 0)$ such that the equation $ P(x) = 0$ has only one real root. A sequence $ (a_n)$ is defined by $ a_0 = 1, a_1 = - p, a_2 = p^2 - q, a_{n + 3} = - pa_{n + 2} - qa_{n + 1} - ra_n$.
+Prove that $ (a_n)$ contains an infinite number of nagetive real numbers.
+	\flushright \href{https://artofproblemsolving.com/community/c6h272562}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/46304}{thaithuan_GC}]
+	No one can solve this olympiad problem ?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32726}{Differ}]
+	If $ a_2$ was $ p^2 - 2q$ it would be easier. :P 
+
+I will post my progress tomorrow wherever I end up, but I do not expect to have a full solution.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32726}{Differ}]
+	$ x = 0$ does not lead to a root.
+
+Then $ Q(x) = x^4P(\frac {1}{x}) = x^3 + px^2 + qx + r = (x - d)(x - e)(x - f) = 0$, where d is real and e and f are imaginary. This means $ - p = d + e + f$, and ${ q = de + ef + fe}$.
+Our characteristic equation is also $ a^3 + pa^2 + qa + r = 0$. So $ a_n = Ad^n + Be^n + Cf^n$
+
+$ A + B + C = 1$
+$ Ad + Be + Cf = d + e + f$
+$ Ad^2 + Be^2 + Cf^2 = p^2 - q = d^2 + e^2 + f^2 - de - ef - fd$
+
+And now I do not even know how to show there are infinite real roots, not just negative roots...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let a polynomial $ P(x) = rx^3 + qx^2 + px + 1$ $ (r > 0)$ such that the equation $ P(x) = 0$ has only one real root. A sequence $ (a_n)$ is defined by $ a_0 = 1, a_1 = - p, a_2 = p^2 - q, a_{n + 3} = - pa_{n + 2} - qa_{n + 1} - ra_n$.
+Prove that $ (a_n)$ contains an infinite number of nagetive real numbers.\end{tcolorbox}
+
+Here is a very strange demo. I'm sure it exists something simpler, but this is the only demo I found :
+
+Let $ b$ any root (real or complex) of the polynomial $ Q(x)=x^3 + px^2 + qx + r = 0$ (notice that since $ P(x)=rx^3+qx^2+px+1$ has one unique real root and two complex roots, so has $ Q(x)$ whose roots are the inverses of $ P(x)$).
+
+Obviously, $ b\neq 0$. Let then $ u_{n+1}=a_{n+3}+(p+b)a_{n+2}-\frac{r}{b}a_{n+1}$ (sequence of complex number)
+
+$ u_{n+1}=-pa_{n+2}-qa_{n+1}-ra_n+(p+b)a_{n+2}-\frac{r}{b}a_{n+1}$
+
+$ u_{n+1}=ba_{n+2}-(q+\frac{r}{b})a_{n+1}-ra_n$
+
+$ u_{n+1}=b(a_{n+2}-\frac{r+bq}{b^2}a_{n+1}-\frac{r}{b}a_n)$
+
+But $ b^3+pb^2+qb+r=0$ $ \implies$ $ p+b=-\frac{r+bq}{b^2}$ and so $ u_{n+1}=b(a_{n+2}+(p+b)a_{n+1}-\frac{r}{b}a_n)=b u_{n}$
+$ u_0=a_{2}+(p+b)a_{1}-\frac{r}{b}a_{0}=p^2-q-p(p+b)-\frac{r}{b}$ $ =-\frac{pb^2+qb+r}{b}$ $ =\frac{b^3}{b}$ $ =b^2$
+
+And so $ u_n=b^{n+2}$ and so $ \boxed{a_{n+2}+(p+b)a_{n+1}-\frac{r}{b}a_{n}=b^{n+2}}$
+
+This equation is true for the two complex roots of $ Q(x)$ : $ z=\rho e^{i\theta}$ and $ \overline{z}=\rho e^{-i\theta}$. So :
+$ a_{n+2}+(p+z)a_{n+1}-\frac{r}{z}a_{n}=z^{n+2}$
+
+$ a_{n+2}+(p+\overline{z})a_{n+1}-\frac{r}{\overline{z}}a_{n}=\overline{z}^{n+2}$
+
+Subtracting these two equalities :
+$ (z-\overline{z})a_{n+1}-r(\frac{1}{z}-\frac{1}{\overline{z}})a_{n}=z^{n+2}-\overline{z}^{n+2}$
+
+$ a_{n+1}+\frac{r}{\rho^2}a_{n}=\frac{z^{n+2}-\overline{z}^{n+2}}{z-\overline{z}}$
+
+$ a_{n+1}+\frac{r}{\rho^2}a_{n}=\rho^{n+1}\frac{\sin((n+2)\theta)}{\sin(\theta)}$
+
+The right part of this equality reaches infinitely many negative values when $ n$ increases. So do the left part.
+So, since $ \frac{r}{\rho^2}>0$, at least one of $ a_n$ or $ a_{n+1}$ is negative for any such $ n$.
+
+Hence the result.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32726}{Differ}]
+	How did you get that $ Q(x)$ has roots $ z=\rho e^{i\theta}$ and $ \overline{z}=\rho e^{-i\theta}$?
+
+Also, how did you decide on your choice for $ u_n$?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}How did you get that $ Q(x)$ has roots $ z = \rho e^{i\theta}$ and $ \overline{z} = \rho e^{ - i\theta}$?\end{tcolorbox}
+
+If $ z\notin\mathbb{R}$ is a zero of $ P(x)\in\mathbb{R}[x]$, then $ P(z)=0$ $ \implies$ $ \overline{P(z)}=0$ $ \implies$ $ P(\overline{z})=0$ $ \implies$ $ \overline{z}$ is also a root
+
+\begin{tcolorbox} Also, how did you decide on your choice for $ u_n$?\end{tcolorbox}
+
+I tried to find some $ \alpha$, $ \beta$ and $ \gamma$ such that $ a_{n+3}+\alpha a_{n+2}+\beta a_{n+1}$ $ =\gamma(a_{n+2}+\alpha a_{n+1}+\beta a_{n})$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32726}{Differ}]
+	\begin{tcolorbox}[quote="Differ"]How did you get that $ Q(x)$ has roots $ z = \rho e^{i\theta}$ and $ \overline{z} = \rho e^{ - i\theta}$?\end{tcolorbox}
+
+If $ z\notin\mathbb{R}$ is a zero of $ P(x)\in\mathbb{R}[x]$, then $ P(z) = 0$ $ \implies$ $ \overline{P(z)} = 0$ $ \implies$ $ P(\overline{z}) = 0$ $ \implies$ $ \overline{z}$ is also a root
+
+\begin{tcolorbox} Also, how did you decide on your choice for $ u_n$?\end{tcolorbox}
+
+I tried to find some $ \alpha$, $ \beta$ and $ \gamma$ such that $ a_{n + 3} + \alpha a_{n + 2} + \beta a_{n + 1}$ $ = \gamma(a_{n + 2} + \alpha a_{n + 1} + \beta a_{n})$\end{tcolorbox}
+
+Thank you. :) I did not see the $ r > 0$ restriction in the original problem.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32645}{qwerty414}]
+	\begin{tcolorbox}$ x = 0$ does not lead to a root.
+
+Then $ Q(x) = x^4P(\frac {1}{x}) = x^3 + px^2 + qx + r = (x - d)(x - e)(x - f) = 0$, where d is real and e and f are imaginary. This means $ - p = d + e + f$, and ${ q = de + ef + fe}$.
+Our characteristic equation is also $ a^3 + pa^2 + qa + r = 0$. So $ a_n = Ad^n + Be^n + Cf^n$
+
+$ A + B + C = 1$
+$ Ad + Be + Cf = d + e + f$
+$ Ad^2 + Be^2 + Cf^2 = p^2 - q = d^2 + e^2 + f^2 - de - ef - fd$
+
+And now I do not even know how to show there are infinite real roots, not just negative roots...\end{tcolorbox}
+
+We can actually solve this equation!
+Look at it - it's 3 variables A,B,C, and three equations lol
+
+In fact, if you find the solution and substitute it into the original equation,
+you get $ a_n = \frac{(e-f)d^{n+3} + (f-d)e^{n+3} + (d-e)f^{n-3}}{(d-e)(e-f)(d-f)}$
+And by observing that d is negative and letting $ e=r(cos\theta + sin\theta ), f=r(cos\theta - sin\theta )$ the result follows.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/43015}{modularmarc101}]
+	Determine (with proof) all the polynomials $ P(x)$ with real coefficients such that $ P(x) \cdot P(x+1)=P(x^2)$ holds for all real $x$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h273598}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Determine (with proof) all the polynomials $ P(x)$ with coefficients such that $ P(x) * P(x + 1) = P(x^2)$ holds for all x.\end{tcolorbox}
+
+I suppose we are speaking about real coefficients.
+
+1) If $ P(x)$ has no roots in $ \mathbb{C}$, $ P(x)=a$ and $ a^2=a$ So :
+$ P(x)=0$
+$ P(x)=1$
+
+2) If $ P(x)$ has roots :
+Let $ r$ any complex root of $ P(x)$ 
+
+$ P(r)=0$ $ \implies$ $ p(r^2)=0$ and so $ P(r^{2^n})=0$, so $ |r|\in\{0,1\}$ (else we would have an infinite number of roots).
+$ P(r)=0$ $ \implies$ $ P(r-1)P(r)=P((r-1)^2)=0$ and so $ (r-1)^2$ is a root and so $ |r-1|\in\{0,1\}$ 
+
+So the only possible roots are $ 0$, $ 1$, and any complex number such that $ |r|=|r-1|=1$. But these two last roots cant fit the rules because we have real polynomials. So, if $ r$ is a root, $ \overline{r}$ is too and it's impossible to have $ |r|=|r-1|=1$ and $ |\overline{r}|=|\overline{r}-1|=1$.
+
+So the only possible polynomials are $ P(x)=ax^p(x-1)^q$
+$ P(x)P(x+1)=P(x^2)$ becomes $ a^2x^{p+q}(x-1)^q(x+1)^p=ax^{2p}(x^2-1)^q$
+
+So $ a=1$ and $ p=q$
+
+As a conclusion, the only solutions with real coefficients are :
+$ P(x)=0$
+$ P(x)=1$
+$ P(x)=x^p(x-1)^p$ for any natural $ p>0$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/51029}{mathVNpro}]
+	Let $ P(x) = x^3 + ax^2 + bx + c$, $ Q(x) = x^2 + x + 2007$, $ P,Q\in \mathbb {R}[x]$, such that, $ P(x)$ has exactly $ 3$ roots ($ 3$ roots are all distinct), and $ P(Q(x))$ has no root. Prove that: $ P(2007) > \frac {1}{4^3}$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h274252}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/16261}{Rust}]
+	You are wrong. Only $ P(2007)>\frac{1}{4^3}$ is true.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ P(x) = x^3 + ax^2 + bx + c$, $ Q(x) = x^2 + x + 2007$, $ P,Q\in \mathbb {R}[x]$, such that, $ P(x)$ has exactly $ 3$ roots ($ 3$ roots are all distinct), and $ P(Q(x))$ has no root. Prove that: $ P(2007) > \frac {1}{4}$.\end{tcolorbox}
+
+Let $ r_1$, $ r_2$ and $ r_3$ the three distinct real roots of $ P(x)$.
+
+$ P(Q(x))$ has no root $ \iff$  $ Q(x)=r_i$ has no root $ \iff$  so $ x^2 + x + 2007 - r_i = 0$ has no root $ \iff$ $ 2007-r_i>\frac{1}{4}$
+
+So $ P(2007)=\prod (2007 - r_i) > \frac{1}{4^3}$, as Rust previously said.
+
+As counter-example of your statement :
+$ P(x)= (x - 2007 + \frac{4}{8}) (x - 2007 + \frac{5}{8})(x - 2007 + \frac{6}{8})$
+
+$ P(Q(x))=0$ has no roots and $ P(2007)=\frac{15}{64} < \frac{1}{4}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/36373}{No Reason}]
+	Let $ p(x) = a_0 + a_1x + \cdots + a_nx^n,a_0a_n \neq 0$ and suppose that $p$ has $n$ real roots. Prove that the number of sign changes in the sequence $ (a_0,\ldots,a_n)$ is precisely the number of positive root of $p$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h275206}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ p(x) = a_0 + a_1x + ... + a_nx^n,a_0a_n \neq 0$ and suppose that p has n real root.Prove that the number of sign changes in the sequence $ (a_0,..,a_n)$ is precisely the number of positive root of p.\end{tcolorbox}
+
+Very nice proposition :)
+
+I suppose that "$ a_0a_n\neq 0$" means $ a_0...a_n\neq 0$ or, better, $ a_i\neq 0$ $ \forall i$ (in order to give sense to the expression "sign changes").
+
+1) this is obviously true for $ n=1$
+
+2) suppose this is true up to $ n-1$
+Let $ f(P)$ be the number of sign changes in the sequence of coefficients of $ P(x)$
+Let $ g(P)$ be the number of positive roots of $ P(x)$
+
+Let $ P(x)=a_0 + a_1x + ... + a_nx^n$ with $ n$ real roots. Wlog say $ a_0>0$ (else replace $ P(x)$ with $ -P(x)$)
+Let $ P'(x)=a_1 + 2a_2x + ... + na_nx^{n-1}$
+
+Since $ P(x)$ has $ n$ roots, we know that $ P'(x)$ has $ n-1$ roots and $ P(x)$ roots and $ P'(x)$ roots are interlaced.
+We also have $ f(P')=g(P')$ (induction rule).
+
+So, since $ P(0)>0$ :
+Either $ P'(0)>0$ and $ g(P')=g(P)$, but then $ a_0>0$ and $ a_1>0$ and so $ f(P)=f(P')$ and so $ f(P)=g(P)$
+Either $ P'(0)<0$ and $ g(P')=g(P)-1$, but then $ a_0>0$ and $ a_1<0$ and so $ f(P)=f(P')+1$ and so $ f(P)=g(P)$
+Q.E.D
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/54046}{SUPERMAN2}]
+	Find a polynomial $ P(n)$,with integer coefficients,such that $ P(n)+4^n$ is divisible by 27 for any positive integer $ n$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h276569}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find a polynomial $ P(n)$,with integer coefficients,such that $ P(n) + 4^n$ is divisible by 27 for any positive integer $ n$.\end{tcolorbox}
+
+Nice problem
+
+[hide="My solution"]
+We need to have $ P(0)=-1 \pmod {27}$ and $ P(x+1)=4P(x) \pmod {27}$ $ \forall x\in \mathbb N$
+
+Trying $ P(x)=ax-1$ immediatly lead to an impossibility : $ 4P(x)-P(x+1)=3ax-a-3$ which cant be null for any $ x$ mod 27.
+Trying then $ P(x)=ax^2+bx-1$ implies $ 4P(x)-P(x+1)=4ax^2+4bx-4-ax^2-2ax-a-bx-b+1$
+So $ 4P(x)-P(x+1)=3ax^2+(3b-2a)x-a-b-3$
+
+We can then take $ a=9u$, then $ b$ such that $ 3b-18u=27v$, so $ b=6u+9v$ and $ a+b=-3\pmod {27}$ so $ 15u+9v=-3\pmod {27}$ or again $ 5u+3v=-1\pmod 9$
+
+So, we can take for example $ u=v=1$ which gives $ P(x)=9x^2+15x-1$
+
+We have $ P(0)=-1$ and $ 4P(x)-P(x+1)=27x^2+27x-27$
+
+And so $ 9n^2+15n-1+4^n=0\pmod {27}$ $ \forall n\geq 0$
+[\/hide]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/20342}{ssbmplayer-leo}]
+	Indeed, nice problem.
+
+My solution:
+[hide]
+By Newton's Binomial formula, $4^n=(3+1)^n=\sum_{k=0}^n{\binom{n}{k}3^k}\equiv 1+\binom{n}{1}3+\binom{n}{2}3^2 \pmod{27}=1+3n+\frac{n(n-1)}{2}3^2$.
+
+Notice how the division by $2$ is the only problem. We multiply by $28$, because it solves this problem and preserves the equality mod $27$.
+
+Therefore, $p(x)=-28(1+3n+\frac{n(n-1)}{2}3^2)$ is a polinomial which works.
+
+[\/hide]
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/20925}{khashi70}]
+	Find all polynomials $ P(x,y)$ such that for all reals $ x$ and $y$,
+\[P(x^{2},y^{2}) =P\left(\frac {(x + y)^{2}}{2},\frac {(x - y)^{2}}{2}\right).\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h277105}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find All Polynomials $ P(x,y)$ such that for all real $ x,y$ we have :
+$ P(x^{2},y^{2}) = P(\frac {(x + y)^{2}}{2},\frac {(x - y)^{2}}{2})$\end{tcolorbox}
+
+The equation may be written $ P(\frac {x^2 + y^2}{2} + \frac {x^2 - y^2}{2},$ $ \frac {x^2 + y^2}{2} - \frac {x^2 - y^2}{2})$ $ = P(\frac {x^2 + y^2}{2} + xy,$ $ \frac {x^2 + y^2}{2} - xy)$
+
+And so : $ P(x + y,x - y) = P(x + \sqrt {x^2 - y^2},x - \sqrt {x^2 - y^2)}$ $ \forall x,y$ such that $ x\geq |y|$
+
+Let then $ Q(x,y) = P(x + y,x - y)$ We have $ Q(x,y) = Q(x,\sqrt {x^2 - y^2})$ $ \forall x,y$ such that $ x\geq |y|$
+
+So $ Q(x,y) = Q(x, - y)$ $ \forall x,y$ such that $ x\geq |y|$ and so $ \forall x,y$ ($ Q$ is a polynomial). So $ \exists$ $ R(x,y)$ such that $ Q(x,y) = R(x,y^2)$ And :
+
+$ R(x,y^2) = R(x,x^2 - y^2)$ $ \forall x,y$ such that $ x\geq |y|$ and so $ \forall x,y$ ($ R$ is a polynomial). 
+
+And a general solution of such an equation is $ R(x,y) = H(x,y) + H(x,x^2 - y)$ With $ H(x,y)$ any polynomial.
+
+And so a general solution of initial equation : $ P(x,y) = H(\frac {x + y}{2},(\frac {x - y}{2})^2) + H(\frac {x + y}{2},(\frac {x + y}{2})^2 - (\frac {x - y}{2})^2)$
+
+Which may be written in a simplier manner : $ P(x,y) = H(x + y,(x - y)^2) + H(x + y,4xy)$ (for any polynomial $ H(x,y)$)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/114585}{anonymouslonely}]
+	we have $ P(x^{2},(-y)^{2})=P(x^{2},y^{2})=P(\frac{(x+y)^{2}}{2},\frac{(x-y)^{2}}{2})=P(\frac{(x-y)^{2}}{2},\frac{(x+y)^{2}}{2}) $. so $ P(x,y) $ is symmetric.
+then we can write $ P $ in the form $ P(x,y)=Q(x+y)+xyR(x,y) $.
+then we obtain that $ R(x,y)=\frac{(x-y)^{2}}{4}S(x,y) $ with $ S $ satisfying the initial equation.
+how can I finish the problem now?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/218699}{TheBeatlesVN}]
+	\begin{tcolorbox}[quote="khashi70"]Find All Polynomials $ P(x,y)$ such that for all real $ x,y$ we have :
+$ P(x^{2},y^{2}) = P(\frac {(x + y)^{2}}{2},\frac {(x - y)^{2}}{2})$\end{tcolorbox}
+And a general solution of such an equation is $ R(x,y) = H(x,y) + H(x,x^2 - y)$ With $ H(x,y)$ any polynomial.
+
+And so a general solution of initial equation : $ P(x,y) = H(\frac {x + y}{2},(\frac {x - y}{2})^2) + H(\frac {x + y}{2},(\frac {x + y}{2})^2 - (\frac {x - y}{2})^2)$
+
+Which may be written in a simplier manner : $ P(x,y) = H(x + y,(x - y)^2) + H(x + y,4xy)$ (for any polynomial $ H(x,y)$)\end{tcolorbox}
+how can we get the general solution ?????
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}how can we get the general solution ?????\end{tcolorbox}
+We have to solve $R(x,y)=R(x,x^2-y)$ $\forall x,y$
+
+1) Any $R(x,y)=H(x,y)+H(x,x^2-y)$ is a solution, whatever is $H(x,y)$
+Trivial result : just check
+
+2) any such polynomial may be written as $R(x,y)=H(x,y)+H(x,x^2-y)$ for some $H(x,y)$
+Trivial result : just set $H(x,y)=\frac 12R(x,y)$
+
+And so $R(x,y)=H(x,y)+H(x,x^2-y)$ indeed is a general solution for such an equation.
+Q.E.D.
+
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/49444}{Xaenir}]
+	Find all polynomials $ P(x)$ such that
+$ P(x^2-y^2)=P(x+y)P(x-y)$
+	\flushright \href{https://artofproblemsolving.com/community/c6h277424}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all polynomials $ P(x)$ such that
+$ P(x^2 - y^2) = P(x + y)P(x - y)$\end{tcolorbox}
+
+If $ z\in\mathbb C$ is a root of $ P(x)$, then $ P(z(2x - z)) = P(x^2 - (z - x)^2) = P(z)P(2x - z) = 0$ and so $ z(2x - z)$ is also a root $ \forall x$ 
+
+And so the only root of $ P(x)$ is $ 0$ (else, any complex number would be a root of $ P(x)$).
+
+Plugging this back in the original equation, we get $ a^2 = a$ and so the only solutions :
+
+$ P(x) = 0$
+$ P(x) = x^n$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/409588}{JamshidxonUzb}]
+	x+y=a, x-y=b;
+P(x)=kx^n+ ......+c; ==》k=1;
+Hence 
+P(x)=x^n+R(x);   deg(R)<n;
+==》 R(ab)=a^nR(b)+b^nR(a)+R(a)R(b)  
+==》 deg(R)=0  ; ==》 R(x)=0;
+P(x)= x^n or P(x)=0
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/45085}{Maxim Bogdan}]
+	Let $ n$ and $ k$ be two positive integers. Determine all monic polynomials $ f\in\mathbb{Z}[X],$ of degree $ n,$ having the property that $ f(n)$ divides $ f\left (2^{k}\cdot a\right ),$ forall $ a\in\mathbb{Z},$ with $ f(a)\neq 0.$
+	\flushright \href{https://artofproblemsolving.com/community/c6h278012}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ n$ and $ k$ be two positive integers. Determine all monic polynomials $ f\in\mathbb{Z}[X],$ of degree $ n,$ having the property that $ f(n)$ divides $ f\left (2^{k}\cdot a\right ),$ forall $ a\in\mathbb{Z},$ with $ f(a)\neq 0.$\end{tcolorbox}
+
+Lemma\end{underlined} : if $ P\in\mathbb Z[X]$ and $ d|P(x)$ $ \forall x\in\mathbb Z\backslash\{$ some finite subset of $ \mathbb Z\}$, then $ d$ divides all coefficients of $ P(x)$
+Obvious (thru induction on degree, for instance)
+
+Let then $ h(x) = f(2^kx)$ : $ f(n)$ divides $ h(x)$ $ \forall x$ such that $ f(x)\neq 0$. So, thru lemma, $ f(n)$ divides all coefficients of $ h(x)$, so $ f(n)|2^{kn}$ (coefficient of $ x^n$, since $ f(x)$ is monic). 
+So $ f(n) = \pm2^u$ (for some $ u\leq kn$)
+
+Since $ f(0) = 0$ or $ f(n)|f(0)$, we get $ f(0) = 2^ub$ for some $ b\in\mathbb Z$
+
+Let $ f(x) = xg(x) + 2^ub$. We know that : 
+1) $ \pm2^u = ng(n) + 2^ub$ and so $ 2^u | ng(n)$
+2) $ 2^u | 2^kag(2^ka)$ $ \forall a$ such that $ f(a)\neq 0$ and so, thru lemma, $ 2^{\max(0,u - k)}$ divides all coefficients of $ g(2^kx)$.
+
+Hence all the solutions :
+
+Let any $ g(x) = \sum_{i = 0}^{n - 1}a_ix^i\in\mathbb Z[X]$ with $ a_{n - 1} = 1$ and let $ u\leq \min(v_2(ng(n)),k + ki + v_2(a_i))$ $ \forall i\in[0,n - 1]$. Then $ \boxed{f(x) = xg(x) \pm 2^u - ng(n)}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/114585}{anonymouslonely}]
+	sorry,pco...but about your lemma...what about $ d=2,P(x)=x^{2}+x $? :maybe:
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/40002}{Ahiles}]
+	$ f(x)$ and $ g(x)$ are two polynomials with nonzero degrees and integer coefficients, such that $ g(x)$ is a divisor of $ f(x)$ and the polynomial $ f(x)+2009$ has $ 50$ integer roots. Prove that the degree of $ g(x)$ is at least $ 5$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h279980}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/53406}{stephencheng}]
+	\begin{tcolorbox}[color=darkblue]$ f(x)$ and $ g(x)$ are two polynomials with nonzero degrees and integer coefficients, such that $ g(x)$ is a divisor of $ f(x)$ and the polynomial $ f(x) + 2009$ has $ 50$ integer roots. Prove that the degree of $ g(x)$ is at least $ 5$.[\/color]\end{tcolorbox}
+
+What do you mean by $ g(x)$ is a divisor of $ f(x)$?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/154}{Myth}]
+	Apparently bad translation.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/40002}{Ahiles}]
+	What do you mean by "bad translation"????
+
+I ment $ f(x) = g(x)h(x)$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/154}{Myth}]
+	I meant the following thing:
+ does the example $ f(x)=(x-1)^{50}(x+2009)-2009$, $ g(x)=x$ satisfy the condition and $ deg\ g=1$ ?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/40002}{Ahiles}]
+	Of course not
+
+We can't gave
+
+$ (x-1)^{50}(x+2009)-2009=x h(x)$
+
+And those roots are different...
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/3236}{test20}]
+	\begin{tcolorbox}Apparently bad translation.\end{tcolorbox}
+Yes.
+I guess that when he writes "[...] and the polynomial f(x)+2009 has 50 integer roots"
+he actually wants to say "[...] and the polynomial f(x)+2009 has 50 PAIRWISE DISTINCT integer roots"
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/10233}{caffeineboy}]
+	Write $ f(x) = g(x)h(x)$ and $ h$ has integer coefficients. Then for the 50 integer roots of $ f$, $ g(x)$ is one of the twelve integers dividing 2009. By pidgeonhole, g takes on one of those 12 integers 5 times. Since $ g$ is non constant, g must have degree $ \geq 5$.
+
+PS: Basically the same as http://www.artofproblemsolving.com/Forum/viewtopic.php?t=217338
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Write $ f(x) = g(x)h(x)$ and $ h$ has integer coefficients.\end{tcolorbox}
+
+I dont understand why $ h$ has integer coefficients. We know that $ f(x)$ and $ g(x)$ have, but all we know so far is that $ h(x)$ has rational coefficients
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Of course not
+
+We can't gave
+
+$ (x - 1)^{50}(x + 2009) - 2009 = x h(x)$
+
+\end{tcolorbox}
+
+Btw, we can obviously write $ f(x)=(x - 1)^{50}(x + 2009) - 2009 = x h(x)$ since $ f(0)=0$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/10233}{caffeineboy}]
+	\begin{tcolorbox}I dont understand why $ h$ has integer coefficients. We know that $ f(x)$ and $ g(x)$ have, but all we know so far is that $ h(x)$ has rational coefficients\end{tcolorbox}
+
+I'm assuming that (as in the IMC problem) divisibility meant divisibility in $ \mathbb{Z}[x]$, because if $ h$ doesn't need to have integer coefficients, I think the problem is false. (We needed $ h$ to take integer values on those 50 roots because otherwise we have no restrictions on $ g$ other then being a divisor $ f$ and having integer coefficients, which isn't enough to determine anything about $ g$)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox} I'm assuming that (as in the IMC problem) divisibility meant divisibility in $ \mathbb{Z}[x]$\end{tcolorbox}
+
+So, as Stephencheng said, maybe Ahiles could rewrite his problem :
+
+Must we consider all roots are different pairwise ?
+
+Must we consider that "divisor" means that all three polynomial $ f,g$ and $ h$ are in $ \mathbb Z[X]$, and not only $ f$ and $ g$ ?
+
+Ahiles ? :?:
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/40002}{Ahiles}]
+	[color=darkblue]\begin{bolded}pco\end{bolded}, \begin{bolded}test20\end{bolded}'
+
+CLEARLY roots are different.. we don't say that $ (x - 1)^{50}$ has $ 50$ roots equal to 1... It has just one root....[\/color]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}[color=darkblue]\begin{bolded}pco\end{bolded}, \begin{bolded}test20\end{bolded}'
+
+CLEARLY roots are different.. we don't say that $ (x - 1)^{50}$ has $ 50$ roots equal to 1... It has just one root....[\/color]\end{tcolorbox}
+
+ 
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/53406}{stephencheng}]
+	\begin{tcolorbox}[quote="caffeineboy"] I'm assuming that (as in the IMC problem) divisibility meant divisibility in $ \mathbb{Z}[x]$\end{tcolorbox}
+
+So, as Stephencheng said, maybe Ahiles could rewrite his problem :
+
+Must we consider all roots are different pairwise ?
+
+Must we consider that "divisor" means that all three polynomial $ f,g$ and $ h$ are in $ \mathbb Z[X]$, and not only $ f$ and $ g$ ?
+
+Ahiles ? :?:\end{tcolorbox}
+
+Actually , just like pco, I also thought that $ h(x)$ was not given to be of integer coefficients. And to prove that $ k h(x)$, where $ k$ is the gcd of the coefficients of $ g(x)$,  must be of integer coefficients is exactly the same as to prove the Gauss's Lemma.
+
+[url]http://en.wikipedia.org\/wiki\/Gauss%27s_lemma_(polynomial)[\/url]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/3236}{test20}]
+	\begin{tcolorbox}[color=darkblue]\begin{bolded}pco\end{bolded}, \begin{bolded}test20\end{bolded}'
+CLEARLY roots are different.. we don't say that $ (x - 1)^{50}$ has $ 50$ roots equal to 1... It has just one root....[\/color]\end{tcolorbox}
+
+My dear child, it seems that for you there is still a lot of mathematics to learn....
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/40002}{Ahiles}]
+	\begin{tcolorbox}[quote="Ahiles"][color=darkblue]\begin{bolded}pco\end{bolded}, \begin{bolded}test20\end{bolded}'
+CLEARLY roots are different.. we don't say that $ (x - 1)^{50}$ has $ 50$ roots equal to 1... It has just one root....[\/color]\end{tcolorbox}
+
+My dear child, it seems that for you there is still a lot of mathematics to learn....\end{tcolorbox}
+
+[size=150][color=darkblue]It's not very polite to be so sarcastic......[\/color][\/size]
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	OK, calm down. We are sorry.
+
+You must know that very often, when one say that a polynomial has $ n$ roots, these roots may be identical. For example, it's very often said that a polynomial of degree $ n$ always has $ n$ roots in $ \mathbb C$, which obviously includes identical roots.
+
+So, when you want to avoid such a confusion, just try to be more precise and write "distinct roots", for example.
+
+Now, it's clear that your problem deals with distinct roots.
+
+Then, could you say us if the divisibility is considered in $ \mathbb Z[X]$ or not ? (for example, do you consider that $ 2x - 2$ is a "divisor" of $ (x - 1)(x + 1)$ ?)
+
+I suggest you try to avoid be bothered when someone ask some precisions on a problem statement. We all are from different countries and some "not so precise" statements may not be understood in the same way everywhere.
+
+Thanks for your attention, and sorry again if we bothered you.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/40002}{Ahiles}]
+	I've only translated the proposed problem... I don't now why, but all contestants understood the problem... 
+Of course $ h \in \mathbb{Z}[x]$. A don't think that the problem can be solved if it is not....
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/53406}{stephencheng}]
+	\begin{tcolorbox}I've only translated the proposed problem... I don't now why, but all contestants understood the problem... 
+Of course $ h \in \mathbb{Z}[x]$. A don't think that the problem can be solved if it is not....\end{tcolorbox}
+
+Even if it is not, the problem can still be solved.  :D
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox} I don't now why, but all contestants understood the problem... \end{tcolorbox}
+
+Ok, sorry for my remarks. The only conclusion is that my level is quite below the level of all contestants. I'll avoid any remark on your posts in the future. And I'll keep in mind that "a polynomial with degree $ n$ always has $ n$ roots in $ \mathbb C$" is wrong, since, for example, $ (z-1)^{50}$ only has one root. 
+
+Thanks for your clever advices.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/44083}{jgnr}]
+	[hide="Solution"]Let $ f(x)+2009=(x-a_1)(x-a_2)(x-a_3)\ldots(x-a_{50})$ and $ f(x)=g(x)h(x)$. So $ g(x)h(x)=(x-a_1)(x-a_2)\ldots(x-a_{50})-2009$.
+
+So $ g(a_1),g(a_2),\ldots,g(a_{50})$ divides 2009. But $ 2009=7^2\cdot41$ has $ 2\cdot(3\cdot2)=12$ integer divisors (including the negative divisors). By pigeonhole principle, there exist $ \left\lceil\frac{50}{12}\right\rceil=5$ values $ a_i,a_j,a_k,a_l,a_m$ such that $ g(a_i)=g(a_j)=g(a_k)=g(a_l)=g(a_m)$. Thus $ g(x)=k(x)(x-a_i)(x-a_j)(x-a_k)(x-a_l)(x-a_m)$, so the degree of $ g(x)$ is at least 5.[\/hide]
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/51029}{mathVNpro}]
+	Find all polynomials $ P\in \mathbb {R}[x]$ such that \[ P(x^2+2x+1)=(P(x))^2+1\] for all real $x$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h282534}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all polynomial $ P\in \mathbb {R}[x]$ such that: $ P(x^2 + 2x + 1) = (P(x))^2 + 1$\end{tcolorbox}
+
+Hello MathVNpro !
+
+First, we can see that we have no constant solution and that the only degree $ 1$ solution is $ P(x) = x + 1$
+
+Then let $ Q(x) = P(x) - (x + 1)$ : $ Q((x + 1)^2) = P((x + 1)^2) - (x + 1)^2 - 1$ $ = P(x)^2 - (x + 1)^2$ $ = Q(x)(P(x) + x + 1)$
+So, if $ r$ is a real root of $ Q(x)$, $ (r + 1)^2$ is too a root of $ Q(x)$ and so $ Q(x)$ as infinitely many real roots.
+So either $ Q(x) = 0$, either $ Q(x)$ is a polynomial whose degree is even with no real roots.
+So, solutions $ P(x)$ different from $ x + 1$ have an even degree.
+
+$ P((x + 1)^2) = P(x)^2 + 1$ $ \implies$ $ P((( - x - 2) + 1)^2) = P( - x - 2)^2 + 1$ $ \implies$ $ P(x)^2 = P( - x - 2)^2$ and so $ P(x) = P( - x - 2)$ since degree of $ P(x)$ is even.
+So $ P(x) = H((x + 1)^2)$ for some polynomial $ H(x)$ and we have $ H(((x + 1)^2 + 1)^2) = (H((x + 1)^2))^2 + 1$ $ \forall x$
+$ \implies$ $ H((x + 1)^2) = (H(x))^2 + 1$ $ \forall x\geq 0$
+$ \implies$ $ H((x + 1)^2) = (H(x))^2 + 1$ $ \forall x$
+And so $ H(x)$ is also a solution.
+At the end of this descent processus, we get the unique degree $ 1$ solution $ x + 1$
+
+And so the solutions are the polynomials $ P_n(x)$ defined as :
+$ P_1(x) = x + 1$
+$ P_{n + 1}(x) = P_n((x + 1)^2)$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/32725}{SAPOSTO}]
+	Let $ n\ge 3$ be a natural number. Find all nonconstant polynomials with real coeficcietns $ f_{1}\left(x\right),f_{2}\left(x\right),\ldots,f_{n}\left(x\right)$, for which
+\[ f_{k}\left(x\right)f_{k+ 1}\left(x\right) = f_{k +1}\left(f_{k + 2}\left(x\right)\right), \quad  1\le k\le n,\]
+for every real $ x$ (with $ f_{n +1}\left(x\right)\equiv f_{1}\left(x\right)$ and $ f_{n + 2}\left(x\right)\equiv f_{2}\left(x\right)$).
+	\flushright \href{https://artofproblemsolving.com/community/c6h283701}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ n\ge 3$ be a natural number. Find all nonconstant polynomials with real coeficcietns $ f_{1}\left(x\right),f_{2}\left(x\right),\ldots,f_{n}\left(x\right)$, for which
+$ f_{k}\left(x\right)f_{k + 1}\left(x\right) = f_{k + 1}\left(f_{k + 2}\left(x\right)\right)$,$ 1\le k\le n$,
+for every real $ x$ (with $ f_{n + 1}\left(x\right)\equiv f_{1}\left(x\right)$ and $ f_{n + 2}\left(x\right)\equiv f_{2}\left(x\right)$).\end{tcolorbox}
+
+Let $ d_k>0$ the degree of $ f_k(x)$. The equation implies $ d_k+d_{k+1}=d_{k+1}d_{k+2}$ and so $ d_k=d_{k+1}(d_{k+2}-1)$
+If $ d_{k+2}=1$, $ d_k=0$, which is impossible. So $ d_{k+2}>1$ and so $ d_k\geq d_{k+1}$
+So, the cyclic equality implies $ d_k=$constant, and so $ d_k=2$ $ \forall k$
+
+So $ f_k(x)=a_kx^2+b_kx+c_k$ and the equation becomes :
+$ (a_kx^2+b_kx+c_k)(a_{k+1}x^2+b_{k+1}x+c_{k+1})$ $ =a_{k+1}(a_{k+2}x^2+b_{k+2}x+c_{k+2})^2+$ $ b_{k+1}(a_{k+2}x^2+b_{k+2}x+c_{k+2})$ $ +c_{k+1}$
+
+Equating coefficients of $ x^4$ in this equality implies $ a_ka_{k+1}=a_{k+1}a_{k+2}^2$ and so $ a_k=a_{k+2}^2$ (since $ a_{k+1}\neq 0$, else $ d_k=0$). And so $ a_k=a_k^{2^n}$ and so $ a_k=1$ and the equation becomes :
+$ (x^2+b_kx+c_k)(x^2+b_{k+1}x+c_{k+1})$ $ =(x^2+b_{k+2}x+c_{k+2})^2+$ $ b_{k+1}(x^2+b_{k+2}x+c_{k+2})$ $ +c_{k+1}$
+
+Equating coefficients of $ x^3$ in this equality implies $ b_k+b_{k+1}=2b_{k+2}$ and so $ b_k=b_{k+1}$ else $ b_{n+1}\neq b_1$. 
+So $ b_k=b$ $ \forall k$ and the equation becomes :
+$ (x^2+bx+c_k)(x^2+bx+c_{k+1})$ $ =(x^2+bx+c_{k+2})^2+$ $ b(x^2+bx+c_{k+2})$ $ +c_{k+1}$
+
+Equating coefficients of $ x^2$ in this equality implies $ c_k+c_{k+1}+b^2=b^2+2c_{k+2}+b$ and so $ c_k+c_{k+1}=2c_{k+2}+b$
+Adding the $ n$ equalities $ c_k+c_{k+1}=2c_{k+2}+b$ implies $ b=0$ and then $ c_k=c$ constant and the equation becomes :
+$ (x^2+c)(x^2+c)$ $ =(x^2+c)^2+c$ and so $ c=0$
+
+So, the only solution is $ f_k(x)=x^2$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/34380}{math10}]
+	Let $ n$ be an integer greater than $3$. Prove that all roots of the polynomial :
+\[P(x)=x^n-5x^{n-1}+12x^{n-2}-15x^{n-3}+a_{n-4}x^{n-4}+\cdots+a_0\] 
+can't be both real and positive.
+	\flushright \href{https://artofproblemsolving.com/community/c6h286480}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ n$ be an integer greater than 3.Prove that all roots of the polynomial :
+$ P(x) = x^n - 5x^{n - 1} + 12x^{n - 2} - 15x^{n - 3} + a_{n - 4}x^{n - 4} + ... + a_0$ can't be both real and positive.\end{tcolorbox}
+
+I surely misunderstand something.
+Are you asking to show that $ P(x)$ has no real positive roots ?
+
+If so, it's obviously wrong : Choose any $ a_1,a_2, ....a_{n-4}$ and $ a_0<0$ and you obtain at least one positive real root.
+
+Could you be more precise ?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/34380}{math10}]
+	\begin{tcolorbox}[quote="math10"]Let $ n$ be an integer greater than 3.Prove that all roots of the polynomial :
+$ P(x) = x^n - 5x^{n - 1} + 12x^{n - 2} - 15x^{n - 3} + a_{n - 4}x^{n - 4} + ... + a_0$ can't be both real and positive.\end{tcolorbox}
+
+I surely misunderstand something.
+Are you asking to show that $ P(x)$ has no real positive roots ?
+
+If so, it's obviously wrong : Choose any $ a_1,a_2, ....a_{n - 4}$ and $ a_0 < 0$ and you obtain at least one positive real root.
+
+Could you be more precise ?\end{tcolorbox}
+No,polynomial root can't both $ REAL$ and $ POSITIVE$(If all roots is real then can't all positive)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/3236}{test20}]
+	\begin{tcolorbox}
+I surely misunderstand something.
+Are you asking to show that $ P(x)$ has no real positive roots ?\end{tcolorbox}
+
+I think that he just got his quantifiers wrong. 
+He stated that ................ $ \forall$ roots $ r$: Not($ r$ real and $ r$ positive)
+But he meant that ......... Not$ \big($ $ \forall$ roots $ r$: ($ r$ real and $ r$ positive) $ \big)$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	@test20 : you're right, thanks
+
+@math10 :
+We have :
+$ S_1 = \sum_ir_i = 5$
+$ S_2 = \sum_{i\neq j}r_ir_j = 12$
+$ S_3 = \sum_{i,j,k\text{ pairwise different }}r_ir_jr_k = 15$
+
+So $ \sum_ir_i^3 = S_1^3 - 3S_1S_2 + 3S_3 = - 10 < 0$ and so $ P(x)$ cant have $ n$ real positive roots.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/34380}{math10}]
+	Let $ n$ be a positive integer, $ P(z)$ be an $ n$-order polynomial with complex coefficients:
+ \[ P(z)= a_nx^n + a_{n - 1}x^{n - 1} + .. + a_1z + a_0.\]
+Suppose that the absolute value of all the roots of $P$ is less than $1$. Prove that the absolute value of all the roots of the polynomial
+ \[Q(z) = na_nz^n + (n - 2)a_{n - 1}z^{n - 1} + \cdots + (2 - n)a_1z + ( - n)a_0\] 	
+is also all $1$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h286665}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/15105}{rohitsingh0812}]
+	One can observe that
+
+$ Q(z) = \left[ \frac{\partial}{\partial x}\left( \frac{P(x^2z)}{x^n}\right) \right]_{x=1}$
+
+which simplifies to 
+
+$ Q(z) = 2zP'(z) -nP(z)$
+
+Let $ \alpha$ be a root of the equation $ Q(z)=0$ and also let $ \alpha_1,\alpha_2,...,\alpha_n$ be roots of the $ n$-degree polynomial equation $ P(z)=0$ (some roots may repeat).
+
+suppose that $ |\alpha| \neq 1$ then definitely $ \alpha \neq \alpha_i$ $ \forall$ $ i \in \{1,2,...,n\}$
+Also, $ \alpha \neq 0$ since $ Q(0) = -nP(0) \neq 0$
+Now,
+
+$ Q(\alpha) = 0$
+$ \implies \frac{P'(\alpha)}{P(\alpha)} = \frac{n}{2\alpha}$
+$ \implies \sum_{i=1}^n \left( \frac{1}{\alpha -\alpha_i} - \frac{1}{2\alpha}\right) = 0$
+$ \implies \sum_{i=1}^n  \frac{(\alpha + \alpha_i)(\overline{\alpha} -\overline{\alpha_i})}{|\alpha -\alpha_i|^2}  = 0$
+$ \implies \sum_{i=1}^n  \frac{(|\alpha|^2 - |\alpha_i|^2) + 2i Im(\overline{\alpha}\alpha_i)}{|\alpha -\alpha_i|^2}  = 0$
+
+Looking at real parts on both sides we get,
+
+$ (|\alpha|^2 - 1)\sum_{i=1}^n  \frac{1}{|\alpha -\alpha_i|^2}  = 0$
+$ \implies |\alpha| = 1$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	Very nice !
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/36435}{Poincare}]
+	No calculus....right? no?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/15105}{rohitsingh0812}]
+	\begin{tcolorbox}No calculus....right? no?\end{tcolorbox}
+
+Yeah...calculus is just for motivation... one can easily get the main steps without calculus... (it reminds me of the proof of gauss-lucas theorem)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/34380}{math10}]
+	This problem is problem 3,IMC 1995,Day 2.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/46787}{moldovan}]
+	Determine all polynomials $ P_n(x)=x^n+a_1 x^{n-1}+...+a_{n-1} x+a_n$ with integer coefficients whose $ n$ zeros are precisely the numbers $ a_1,...,a_n$ (counted with their respective multiplicities).
+	\flushright \href{https://artofproblemsolving.com/community/c6h287626}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Determine all polynomials $ P_n(x) = x^n + a_1 x^{n - 1} + ... + a_{n - 1} x + a_n$ with integer coefficients whose $ n$ zeros are precisely the numbers $ a_1,...,a_n$ (counted with their respective multiplicities).\end{tcolorbox}
+
+Very nice !
+
+First consider that if $ P(x)$ fits the rule, $ x^kP(x)$ also fits. So let us look for polynomials with $ a_n\neq 0$
+
+Then $ \prod a_i=(-1)^na_n$ and, since $ a_n\neq 0$, $ a_i=\pm 1$ $ \forall i\in[1,n)$
+
+So $ P(x)=(x-1)^p(x+1)^q(x-a)$
+Sum of roots gives $ p-q+a=\pm 1$
+Sum of inverse of roots gives $ p-q+\frac 1a=\pm\frac 1a$ and so either $ p=q$ and so $ a=\pm 1$, either $ p-q=-\frac 2a$ and so $ a\in\{-2,-1,1,2\}$. So :
+
+1) $ p=q$ and $ a=\pm 1$
+$ P(x)=(x^2-1)^p(x-a)$ (with $ a=\pm 1$)
+If $ p=0$, $ P(x)=x-a$ and the root need to be $ a_1=-a$, which is impossible if $ a_n\neq 0$
+Then $ p>0$ and the coefficient of $ x^{2p-1}$ is $ -p$ and so $ p=1$ and $ P(x)=(x^2-1)(x-a)=x^3-ax^2-x+a$ and the roots are $ -a,a,-1$. But we know that the roots are $ -1,1,a$ and so $ a=-1$
+So we got the solution $ P(x)=(x^2-1)(x+1)=x^3+x^2-x-1$
+
+2) $ a=-2$ and $ p-q=1$
+Then $ p-q-2=\pm 1$ and $ p-q=1$ and $ P(x)=(x^2-1)^q(x-1)(x+2)$ but then the coefficient of $ x^{2q}$ is $ q+2$ and the only solution would we $ q=0$
+And we got the solution $ P(x)=(x-1)(x+2)=x^2+x-2$
+
+3) $ a=-1$ and $ p-q=2$
+Then $ P(x)=(x-1)^{q+2}(x+1)^q(x+1)$ $ =(x^2-1)^{q+1}(x-1)$ then the coefficients of $ x^{2q+1}$ is $ -(q+1)$ and $ q=0$
+Then $ P(x)=(x^2-1)(x-1)=x^3-x^2-x+1$ and this does not respect the requirements
+
+4) $ a=1$ and $ p-q=-2$
+Then $ P(x)=(x-1)^p(x+1)^{p+2}(x-1)$ $ =(x^2-1)^{p+1}(x+1)$ then the coefficients of $ x^{2p+1}$ is $ -(pq+1)$ and $ p=0$
+Then $ P(x)=(x^2-1)(x+1)=x^3+x^2-x-1$ and we already got this solution
+
+5) $ a=2$ and $ p-q=-1$
+Then $ P(x)=(x-1)^p(x+1)^{p+1}(x-2)$ $ =(x^2-1)^p(x+1)(x-2)$ but then the coefficient of $ x^{2p}$ is $ -(p+2)$ and so $ p=0$
+Then $ P(x)=(x+1)(x-2)=x^2-x-2$ and this does not respect the requirements
+
+
+Hence the solutions :
+$ P(x)=x^n$
+$ P(x)=x^{n-3}(x^2-1)(x+1)=x^n+x^{n-1}-x^{n-2}-x^{n-3}$
+$ P(x)=x^{n-2}(x-1)(x+2)=x^n+x^{n-1}-2x^{n-2}$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/46787}{moldovan}]
+	Determine all monic polynomials $ p(x)$ of fifth degree having real coefficients and the following property: Whenever $ a$ is a (real or complex) root of $ p(x)$, then so are $ \frac{1}{a}$ and $ 1-a$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h287636}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Determine all monic polynomials $ p(x)$ of fifth degree having real coefficients and the following property: Whenever $ a$ is a (real or complex) root of $ p(x)$, then so are $ \frac {1}{a}$ and $ 1 - a$.\end{tcolorbox}
+
+If $ a$ is a root, then so are $ \{a, \frac 1a,$ $ 1-a, \frac{a-1}{a},$ $ \frac{1}{1-a}, \frac{a}{a-1}\}$ and so $ a\notin\{0,1\}$ and at least two of these six numbers must be identical. So :
+
+1) $ a=\frac 1a$. Then $ a=-1$ and the set is $ \{-1, -1, 2, 2, \frac 12, \frac 12\}$
+
+2) $ a=1-a$. Then $ a=\frac 12$ and we have the same set as 1) above
+
+3) $ a=\frac{a-1}{a}$ then one set : $ \{\frac{1-i\sqrt 3}{2}$, $ \frac{1+i\sqrt 3}{2}$, $ \frac{1+i\sqrt 3}{2}$, $ \frac{1-i\sqrt 3}{2}$, $ \frac{1-i\sqrt 3}{2}$, $ \frac{1+i\sqrt 3}{2}\}$ 
+
+4) $ a=\frac{1}{1-a}$ and we have the same set as 3) above.
+
+5) $ a=\frac{a}{a-1}$ and we have the same set as 1) above.
+
+Result :
+
+We cant have a polynomial with roots only in the second set since we have real coefficients. So the solutions are :
+
+Roots only in first set : $ P(x)=(x+1)^p(x-2)^q(x-\frac 12)^r$ with $ p,q,r>0$ and $ p+q+r=5$
+
+Roots in both sets : $ P(x)=(x+1)(x-2)(x-\frac 12)(x^2-x+1)$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/46787}{moldovan}]
+	Determine all positive integers $ n$ such that $ g|f$, where:
+
+$ f=X^n+X+1$ and $ g=X^3-X^2+1.$
+	\flushright \href{https://artofproblemsolving.com/community/c6h292364}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Determine all positive integers $ n$ such that $ g|f$, where:
+
+$ f = X^n + X + 1$ and $ g = X^3 - X^2 + 1.$\end{tcolorbox}
+
+Let the reminder of the polynomial division of $ x^n$ by $ x^3-x^2+1$ be $ a_nx^2+b_nx+c_n$
+
+We get the induction rules : $ a_{n+1}=a_n+b_n$ and $ b_{n+1}=c_n$ and $ c_{n+1}=-a_n$
+
+So we can write this reminder as $ a_nx^2-a_{n-2}x-a_{n-1}$ with sequence $ a_n$ defined as $ a_0=0$, $ a_1=0$, $ a_2=1$ and $ a_{n+3}=a_{n+2}-a_n$
+
+Then $ g|f$ $ \iff$ $ (a_{n-2},a_{n-1},a_n)=(1,1,0)$ $ \iff$ $ (a_{n-5},a_{n-4},a_{n-3})=(0,0,1)$ $ =(a_0,a_1,a_2)$
+
+So we have a first solution for $ n=5$ and we can have other solutions only if $ \{a_n\}$ is a periodic sequence.
+
+But $ a_n=a.r_0^n+b.r_1^n+c.r_2^n$ with $ r_i$ roots of $ x^3-x^2+1=0$ and $ a_n$ periodic with period $ p$ would mean $ a_{n+p}=a_n$ $ \forall n$ and so $ a.r_0^n(r_0^p-1)+b.r_1^n(r_1^p-1)+c.r_2^n(r_2^p-1)=0$ $ \forall n$ and this implies $ a=b=c=0$ if $ r_i$ are pairwise distincts and different from roots of $ 1$.
+
+So our sequence is not periodic and the only solution is $ n=5$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/369}{Leon}]
+	If $ a_0,a_1,\dots,a_{50}$ are the coefficients of the polynomial 
+\[ \left(1+x+x^2\right)^{25}\]
+show that $ a_0+a_2+a_4+\cdots+a_{50}$ is even.
+	\flushright \href{https://artofproblemsolving.com/community/c6h295397}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}If $ a_0,a_1,\dots,a_{50}$ are the coefficients of the polynomial
+\[ \left(1 + x + x^2\right)^{25}\]
+show that $ a_0 + a_2 + a_4 + \cdots + a_{50}$ is even.\end{tcolorbox}
+
+Let $ P(x)=\left(1 + x + x^2\right)^{25}$. Then $ a_0 + a_2 + a_4 + \cdots + a_{50}=\frac{P(1)+P(-1)}{2}$ $ =\frac{3^{25}+1}{2}$
+
+And, since $ 3^{25}=(-1)^{25}=-1\pmod 4$, we get that  $ \frac{3^{25}+1}{2}$ is even.
+
+Q.E.D.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/6927}{Hong Quy}]
+	$a_0+a_2+a_4+\cdots+a_{50}= \frac{P(1)+P(-1)}{2} =\frac{3^{25}+1}}{2}$
+Because of, $ 3^{25}+1 $ device by $4$. Therefore, $a_0+a_2+a_4+\cdots+a_{50}$ is even.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/89144}{sumanguha}]
+	$\ (1+x+x^{2})^{25}=a_{0}+a_{1}x+..+a_{50}x^{50}$
+put x=-1 and x=1 and add to get
+$\ 1+3^{25}=2(a_{0}+a_{2}+..+a_{50})$
+now $ \ (x+y) $ is a factor of $\ x^{n}+y^{n} $ if n is odd.
+so $\ 4| 1+3^{25} $
+so $\ a_{0}+a_{2}+..+a_{50} $ is even
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/55393}{makar}]
+	Let $ a,b,c$ and $ d$ be any four real numbers, not all equal to zero. Prove that the roots of the polynomial $ f(x) = x^{6} + ax^{3} + bx^{2} + cx + d$ can't all be real.
+	\flushright \href{https://artofproblemsolving.com/community/c6h298781}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Problem 2:
+Let $ a,b,c$ and $ d$ be any four real numbers, not all equal to zero. Prove that the roots of the polynomial $ f(x) = x^{6} + ax^{3} + bx^{2} + cx + d$ can't all be real.\end{tcolorbox}
+
+If $ f(x)$ has 6 real roots, $ f'(x)$ has 5, $ f^{(2)}(x)$ has 4, and $ f^{(3)}(x)$ has 3 real roots.
+
+$ f^{(3)}(x)=120x^3+6a$ can have 3 real roots only if $ a=0$
+Then $ f^{(2)}(x)=30x^4+2b$ can have 4 real roots only if $ b=0$
+Then $ f'(x)=6x^5+c$ can have 5 real roots only if $ c=0$
+But then $ f(x)=x^6+d$ can have 6 real roots only if $ d=0$
+
+So $ f(x)$ can have  6 real roots only if $ a=b=c=d=0$ 
+Hence the result.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/32886}{dgreenb801}]
+	What about $ (x - 1)^6$? Or what if we just multiply $ (x-1)(x-2)(x-3)(x-4)(x-5)(x-6)$?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}What about $ (x - 1)^6$? Or what if we just multiply $ (x - 1)(x - 2)(x - 3)(x - 4)(x - 5)(x - 6)$?\end{tcolorbox}
+
+In the original problem, the key is that there are no $ x^5$ and $ x^4$ terms.
+
+In your two examples, we have such terms.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/35243}{earldbest}]
+	\begin{tcolorbox}
+If $ f(x)$ has 6 real roots, $ f'(x)$ has 5, $ f^{(2)}(x)$ has 4, and $ f^{(3)}(x)$ has 3 real roots.
+
+\end{tcolorbox}
+
+why?  :blush:
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}[quote="pco"]
+If $ f(x)$ has 6 real roots, $ f'(x)$ has 5, $ f^{(2)}(x)$ has 4, and $ f^{(3)}(x)$ has 3 real roots.
+
+\end{tcolorbox}
+
+why?  :blush:\end{tcolorbox}
+
+There is always at least a zero of $ f'(x)$ between two zeroes of $ f(x)$ (Rolle's theorem)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/35243}{earldbest}]
+	\begin{tcolorbox}[quote="earldbest"]\begin{tcolorbox}
+If $ f(x)$ has 6 real roots, $ f'(x)$ has 5, $ f^{(2)}(x)$ has 4, and $ f^{(3)}(x)$ has 3 real roots.
+
+\end{tcolorbox}
+
+why?  :blush:\end{tcolorbox}
+
+There is always at least a zero of $ f'(x)$ between two zeroes of $ f(x)$ (Rolle's theorem)\end{tcolorbox}
+
+oh, thx :D
+
+\begin{bolded}my solution\end{bolded}
+
+suppose all the roots are real.
+
+let $ r_i$ $ (i = 1,2,...,6)$ be the roots.
+
+then
+\[ \sum_{i = 1}^{6} r_{i} = 0\]
+
+\[ \sum_{1 \le i < j \le 6} r_{i}r_{j} = 0\]
+combining these two yields $ \sum_{i = 1}^{6}r_{i}^{2} = 0$ :pilot:
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/63998}{zool007}]
+	\begin{tcolorbox}\end{tcolorbox}[quote="pco"]\begin{tcolorbox}[quote="pco"]
+If $ f(x)$ has 6 real roots, $ f'(x)$ has 5, $ f^{(2)}(x)$ has 4, and $ f^{(3)}(x)$ has 3 real roots.
+
+\end{tcolorbox}
+
+why?  :blush:\end{tcolorbox}
+
+There is always at least a zero of $ f'(x)$ between two zeroes of $ f(x)$ (Rolle's theorem)\end{tcolorbox}\begin{tcolorbox}
+
+oh, thx :D
+
+\begin{bolded}my solution\end{bolded}
+
+suppose all the roots are real.
+
+let $ r_i$ $ (i = 1,2,...,6)$ be the roots.
+
+then
+\[ \sum_{i = 1}^{6} r_{i} = 0\]
+
+\[ \sum_{1 \le i < j \le 6} r_{i}r_{j} = 0\]
+combining these two yields $ \sum_{i = 1}^{6}r_{i}^{2} = 0$ :pilot:\end{tcolorbox}
+why?  :blush:
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/35243}{earldbest}]
+	\begin{tcolorbox}[quote="earldbest"]
+\begin{bolded}my solution\end{bolded}
+
+suppose all the roots are real.
+
+let $ r_i$ $ (i = 1,2,...,6)$ be the roots.
+
+then
+\[ \sum_{i = 1}^{6} r_{i} = 0\]
+
+\[ \sum_{1 \le i < j \le 6} r_{i}r_{j} = 0\]
+combining these two yields $ \sum_{i = 1}^{6}r_{i}^{2} = 0$ :pilot:\end{tcolorbox}
+why?  :blush:\end{tcolorbox}
+
+by Vieta's relations, and the fact that the square of a real number is non-negative. :pilot:
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/55393}{makar}]
+	Let $ P(x)$ be a given polynomial with integer coefficients. Prove that there exist two polynomials $ Q(x)$ and $ R(x)$, again with integer coefficients, such that (i) $ P(x)Q(x)$ is a polynomial in $ x^{2}$; and (ii) $ P(x)R(x)$ is a polynomial in $ x^{3}$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h298820}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ P(x)$ be a given polynomial with integer coefficients. Prove that there exist two polynomials $ Q(x)$ and $ R(x)$, again with integer coefficients, such that \begin{bolded}(i)\end{bolded} $ P(x)Q(x)$ is a polynomial in $ x^{2}$; and \begin{bolded}(ii)\end{bolded} $ P(x)R(x)$ is a polynomial in $ x^{3}$.\end{tcolorbox}
+
+(i) : $ P(x)P(-x)$ is an even polynomial and so may be written as $ H(x^2)$ and so $ \boxed{Q(x)=P(-x)}$
+
+(ii) : If degree of $ P(x)$ is $ n$, if coefficient of $ x^n$ is $ a_n$ and if $ z_i$, for $ i\in[1,n]$ are all roots of $ P(x)$, then :
+$ P(x)P(\frac{-1-i\sqrt 3}2x)P(\frac{-1+i\sqrt 3}2x)$ $ =a_n^3\prod(x^3-z_i^3)$
+
+And, obviously, in $ P(\frac{-1-i\sqrt 3}2x)P(\frac{-1+i\sqrt 3}2x)$ :
+All $ i$ terms disappear (since the two factors are conjugate terms)
+All $ \sqrt 3$ terms disappear (since attached to $ i$ : all their odd powers disappear)
+We can make all $ \frac 12$ terms disappear too when multiplying by $ 2^{2n}$ and we get a polynomial with integer coefficients : $ \boxed{R(x)=2^{2n}P(\frac{-1-i\sqrt 3}2x)P(\frac{-1+i\sqrt 3}2x)}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/55393}{makar}]
+	http://www.mathlinks.ro/viewtopic.php?search_id=1727452854&t=245968
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/62475}{hqthao}]
+	pco, you have a nice solution, with your method, this problem can prove with x^k.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/47085}{micf}]
+	Let $ P(x)$ be a fourth degree polynomial with four positive real roots. Prove that equation 
+\[ (1-4x) \frac{P(x)-P'(x)}{x^2} + P'(x)-P''(x)=0\]
+has four positive real roots too.
+
+Does the problem holds with condition, that roots of $ P$ and roots of equation are real?
+	\flushright \href{https://artofproblemsolving.com/community/c6h300702}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/47085}{micf}]
+	Noone can do this?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ P(x)$ be a fourth degree polynomial with four positive real roots. Prove that equation
+\[ (1 - 4x) \frac {P(x) - P'(x)}{x^2} + P'(x) - P''(x) = 0\]
+has four positive real roots too.\end{tcolorbox}
+
+Let $ f(x)=P(x)e^{-x}$ : this function has $ 4$ positive real zeroes and its limit is zero at $ +\infty$. So $ f'(x)=(P'(x)-P(x))e^{-x}$ has at least $ 4$ positive real roots.
+
+So $ P(x)-P'(x)$ has at least $ 4$ positive real roots. Since this is a fourth degree polynomial, it has exactly $ 4$ positive real roots.
+
+Let then $ g(x)=(P(x)-P'(x))\frac{e^{-\frac 1x}}{x^4}$ : this function has $ 4$ positive real zeroes and its limit is zero at $ +\infty$. So $ g'(x)=(1-4x)(P(x)-P'(x))+x^2(P'(x)-P''(x))\frac{e^{-\frac 1x}}{x^6}$ has at least $ 4$ positive real roots.
+
+So $ (1-4x)(P(x)-P'(x))+x^2(P'(x)-P''(x))$ has at least $ 4$ positive real roots. Since this is a fourth degree polynomial, it has exactly $ 4$ positive real roots.
+
+Hence the result.
+
+\begin{tcolorbox}Does the problem holds with condition, that roots of $ P$ and roots of equation are real?\end{tcolorbox}
+
+I dont undertstand at all what you mean.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/47085}{micf}]
+	I mean this: 
+
+[color=blue]Let $ P(x)$ be a fourth degree polynomial with four real roots. Prove that equation
+\[ (1 - 4x) \frac {P(x) - P'(x)}{x^2} + P'(x) - P''(x) = 0\]
+has four real roots too.[\/color]
+
+And obviously thanks for replying  :D
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}I mean this: 
+
+[color=blue]Let $ P(x)$ be a fourth degree polynomial with four real roots. Prove that equation
+\[ (1 - 4x) \frac {P(x) - P'(x)}{x^2} + P'(x) - P''(x) = 0\]
+has four real roots too.[\/color]
+
+And obviously thanks for replying  :D\end{tcolorbox}
+
+Are you joking ?
+
+I understood this phrase, since I answered (and, btw, repeating exactly the same text without any change would not help me to understand).
+
+What I did not understand is the second question : "Does the problem holds with condition, that roots of $ P$ and roots of equation are real?"
+
+I thought it was clear in my post.
+Obviously I was wrong :(
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/54772}{enndb0x}]
+	Polynomial of $ 5$th degree $ P(x)$ is such that $ P(x)+1$ is dividable by $ (x-1)^3$ and $ P(x)-1$ is dividable by $ (x+1)^3$.
+Find $ P(x)$ .
+	\flushright \href{https://artofproblemsolving.com/community/c6h300769}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Polynomial of $ 5$th degree $ P(x)$ is such that $ P(x) + 1$ is dividable by $ (x - 1)^3$ and $ P(x) - 1$ is dividable by $ (x + 1)^3$.
+Find $ P(x)$ .\end{tcolorbox}
+
+$ (ax^2+bx+c)(x-1)^3-1=(ux^2+vx+w)(x+1)^3+1$
+
+Changing $ x\to\-x$ gives $ (ax^2-bx+c)(x+1)^3+1=(ux^2-vx+w)(x-1)^3-1$ and so $ (u,v,w)=(a,-b,c)$ and the equation is :
+
+$ (ax^2+bx+c)(x-1)^3-1=(ax^2-bx+c)(x+1)^3+1$
+
+Setting $ x=0$ gives $ c=-1$ and the equation becomes $ (ax^2+bx-1)(x-1)^3-1=(ax^2-bx-1)(x+1)^3+1$
+
+So $ (ax^2+bx-1)(x^3-3x^2+3x-1)-1=(ax^2-bx-1)(x^3+3x^2+3x+1)+1$
+
+So $ ax^5+(b-3a)x^4+(3a-3b-1)x^3+(-a+3b+3)x^2+(-b-3)x$ $ =ax^5+(3a-b)x^4+(3a-3b-1)x^3+(a-3b-3)x^2+(-b-3)x$
+
+So $ b=3a$ and $ a-3b-3=0$ and so $ a=-\frac 38$ and $ b=-\frac 98$
+
+And $ P(x)=-\frac 38x^5+\frac 54x^3-\frac {15}8x$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/63660}{Victory.US}]
+	let $ P(x)$ be polynomial with real coefficients such that $ P(x) \ge P'(x)$ for all$ x \in \mathbb R$ and the equation $ P(x)=0$ does not have any real roots. Prove that $ P(x) \ge 0$ for all real $x$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h303472}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}let $ P(x) = R_{[x]}$ be polynomial such that $ P(x) \ge P'(x)$ , $ \forall x \in R$ and the equation $ P(x) = 0$ does not have any real root.
+Prove that $ P(x) \ge 0$
+
+this is my result  :roll:\end{tcolorbox}
+
+Since $ P(x)\neq 0$, either $ P(x)>0$ $ \forall x$, either $ P(x)<0$ $ \forall x$
+
+But if $ P(x)<0$ $ \forall x$, and since $ P(x) \geq P'(x)$, then $ P'(x)<0$ and $ P(x)$ is strictly decreasing.
+
+But "$ P(x)<0$ $ \forall x$" and "$ P(x)$ strictly decreasing" would imply $ P(x)=a <0$ (look at $ \lim_{x\to -\infty}P(x)$). and then $ P(x)<P'(x)$
+
+So $ P(x)>0$ $ \forall x$ (and such polynomials exist : $ P(x)=a>0$, for example).
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/63660}{Victory.US}]
+	\begin{tcolorbox}[quote="Victory.US"]let $ P(x) = R_{[x]}$ be polynomial such that $ P(x) \ge P'(x)$ , $ \forall x \in R$ and the equation $ P(x) = 0$ does not have any real root.
+Prove that $ P(x) \ge 0$
+
+this is my result  :roll:\end{tcolorbox}
+
+Since $ P(x)\neq 0$, either $ P(x) > 0$ $ \forall x$, either $ P(x) < 0$ $ \forall x$
+
+But if $ P(x) < 0$ $ \forall x$, and since $ P(x) \geq P'(x)$, then $ P'(x) < 0$ and $ P(x)$ is strictly decreasing.
+
+But "$ P(x) < 0$ $ \forall x$" and "$ P(x)$ strictly decreasing" would imply $ P(x) = a < 0$ (look at $ \lim_{x\to - \infty}P(x)$). and then $ P(x) < P'(x)$
+
+So $ P(x) > 0$ $ \forall x$ (and such polynomials exist : $ P(x) = a > 0$, for example).\end{tcolorbox}
+
+it 's very nice, pco.  :roll:  :idea: 
+
+in my problem, we can rewrite :
+let $ P(x) = R_{[x]}$ be polynomial such that $ P(x) \ge P'(x) , \forall x \in R$ .show that Prove that $ P(x) \ge 0$ . because if  $ P(x) \ ge P'(x) , \forall x \in R$ . we can prove that the equation $ P(x) = 0$does not have any real root by \begin{bolded}Lagrage\end{bolded} theorem  :oops:
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/45762}{FelixD}]
+	Let $ a$, $ b$, $ c$ be real numbers such that for every two of the equations
+\[ x^2+ax+b=0, \quad x^2+bx+c=0, \quad x^2+cx+a=0\]
+there is exactly one real number satisfying both of them. Determine all possible values of $ a^2+b^2+c^2$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h303627}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/40926}{rachid}]
+	\begin{tcolorbox}Let $ a$, $ b$, $ c$ be real numbers such that for every two of the equations
+\[ x^2 + ax + b = 0, \quad x^2 + bx + c = 0, \quad x^2 + cx + a = 0\]
+there is exactly one real number satisfying both of them. Determine all possible values of $ a^2 + b^2 + c^2$.\end{tcolorbox}
+If I'm not mistaken,the possible values of $ a^2 + b^2 + c^2$ are $ 0$ and $ 6$.If my answer is correct ( however,I'm not sure about it,because I'm a bit tired now and I did all the work in mind  ),I may  post my solution tomorrow, since It's already time to sleep now  :P
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ a$, $ b$, $ c$ be real numbers such that for every two of the equations
+\[ x^2 + ax + b = 0, \quad x^2 + bx + c = 0, \quad x^2 + cx + a = 0\]
+there is exactly one real number satisfying both of them. Determine all possible values of $ a^2 + b^2 + c^2$.\end{tcolorbox}
+
+We have two possibilities :
+
+1) All three equations share a common root and so :
+$ x^2+ax+b=(x-u)(x-v)$
+$ x^2+bx+c=(x-u)(x-w)$
+$ x^2+cx+a=(x-u)(x-t)$
+
+Solving this implies $ v=w=t=\frac{-u^3+u^2-u}{u^3+1}$ ad so no solution because we want exactly one common root between any two equations and not two).
+
+2) All three equation share three roots in a circular manner and so :
+$ x^2+ax+b=(x-u)(x-v)$
+$ x^2+bx+c=(x-v)(x-w)$
+$ x^2+cx+a=(x-w)(x-u)$
+
+Solving this gives $ u^4+u^3-4u^2-3u+2=0$ $ \iff$ $ (u+2)(u^3-u^2-2u+1)=0$
+
+$ u=-2$ implies $ u=v=w=-2$ and does not fit the requirement "$ u,v,w$ pairwise different". And so $ u,v,w$ are the three roots of $ u^3-u^2-2u+1=0$
+
+So $ u+v+w=1$ and $ uv+vw+wu=-2$
+
+Then $ a^2+b^2+c^2=(u+v)^2+(v+w)^2+(w+u)^2$ $ =2(u+v+w)^2-2(uv+vw+wu)$ $ =6$
+
+Hence the result : If such $ a,b,c$ exist, then $ \boxed{a^2+b^2+c^2=6}$
+
+(and, indeed, they exist : choose $ (u,v,w)=(2\sin(\frac{\pi}{14}),2\sin(\frac{5\pi}{14}),-2\sin(\frac{3\pi}{14}))$)
+Notice also that $ a^2+b^2+c^2=0$ cant be an answer since then $ a=b=c=0$ and all equation have two roots in common ($ 0$ and $ 0$) and not exactly one
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/40926}{rachid}]
+	\begin{tcolorbox}Notice also that $ a^2 + b^2 + c^2 = 0$ cant be an answer since then $ a = b = c = 0$ and all equation have two roots in common ($ 0$ and $ 0$) and not exactly one\end{tcolorbox}
+My solution is very similar to yours pco ( a bit simpler,I must say  :P  ).However,I still can't understand this last point.If $ a^2 + b^2 + c^2 = 0$ ( $ \Rightarrow a = b = c = 0$ ),then for every two of the equations : $ x^2 = 0,x^2 = 0$ and $ x^2 = 0$ there is exactly one real number which satisfies both of them,namely $ 0$  :roll:
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/66275}{Rafikafi}]
+	Then $ a=b=c=4$ works also, which means $ a^2+b^2+c^2=48$ is also a solution
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Then $ a = b = c = 4$ works also, which means $ a^2 + b^2 + c^2 = 48$ is also a solution\end{tcolorbox}
+
+Quite good response, thanks :)
+
+The problem is always the same : does $ x^2 = 0$ have one root or two roots (one double).
+
+If you agree that $ x^2 = 0$ has two roots (as all quadratic, if we consider them in $ \mathbb C$), then all pair of equations have both roots equal.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/40926}{rachid}]
+	\begin{tcolorbox}Then $ a = b = c = 4$ works also, which means $ a^2 + b^2 + c^2 = 48$ is also a solution\end{tcolorbox}
+You're right,thank you ( BTW,$ a^2 + b^2 + c^2 = 48$ is the only left solution ) ! Indeed,in my solution I used uncarefully $ a = b = c \Rightarrow a = b = c = 0$ which is not true ( Note that I did all the work in mind and I was really tired as noted above :D  ),because $ a = b = c \Rightarrow$ The equation $ x^2 + ax + a = 0$ has only one real  solution $ \Rightarrow$ The discriminant $ = a^2 - 4a = 0 \Rightarrow a = 0$ or $ a = 4 \Rightarrow a = b = c = 0$ or $ a = b = c = 4$.
+ 
+In conclusion,the only possible values of $ a^2 + b^2 + c^2$ are $ 0,6$ and $ 48$ ( I consider that the equation $ (x - a)^2 = 0$ has only one solution $ a$ )
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/61709}{mkn19}]
+	Show that the product of the two real roots of the equation $ x^4+x^3-1=0$ is a root of the equation $ x^6+x^4+x^3-x^2-1=0$
+	\flushright \href{https://artofproblemsolving.com/community/c6h303643}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Show that the product of the two real roots of the equation $ x^4 + x^3 - 1 = 0$ is a root of the equation $ x^6 + x^4 + x^3 - x^2 - 1 = 0$\end{tcolorbox}
+
+Let $ x^4+x^3-1=(x^2+ax+b)(x^2+cx+d)$
+We get :
+$ a+c=1$
+$ b+d+ac=0$
+$ ad+bc=0$
+$ bd=-1$
+
+So :
+First line implies $ c=1-a$ and last line implies $ d=-\frac 1b$. Setting this in third line, we get $ a(-\frac 1b)+b-ab=0$ and so $ a=\frac{b^2}{b^2+1}$ and $ c=\frac{1}{b^2+1}$
+
+Setting these values in second line, we get $ b-\frac 1b+\frac{b^2}{(b^2+1)^2}=0$ and so 
+
+$ b^6+b^4+b^3-b^2-1=0$
+
+Hence the result (which is true for the product of any two roots of the original equation, not only the real ones).
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/64682}{KDS}]
+	Find all polynomials $ P(x)$ with real coefficients such that $ P(x^2)P(x^3)=(P(x))^5$ holds for every real number $ x$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h305577}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/47280}{Aumn}]
+	if $ x\neq0$ is one of p(x)'s roots(x can be complex number)
+$ x = r(cos\alpha + isin\alpha),0\le \alpha < 2\pi$
+so it's easy to show that $ \sqrt [3]{r}(cos\frac {\alpha}{3} + isin\frac {\alpha}{3})$ is it's root
+then for all n,$ \sqrt [3^{n}]{r}(cos\frac {\alpha}{3^{n}} + isin\frac {\alpha}{3^{n}})$ is root too  
+it's a contradiction,so p(x) only has zero root
+$ p(x) = x^{n}$or$ p(x) = 0$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}if $ x\neq0$ is one of p(x)'s roots(x can be complex number)
+$ x = r(cos\alpha + isin\alpha),0\le \alpha < 2\pi$
+so it's easy to show that $ \sqrt [3]{r}(cos\frac {\alpha}{3} + isin\frac {\alpha}{3})$ is it's root
+then for all n,$ \sqrt [3^{n}]{r}(cos\frac {\alpha}{3^{n}} + isin\frac {\alpha}{3^{n}})$ is root too  
+it's a contradiction,so p(x) only has zero root
+$ p(x) = x^{n}$or$ p(x) = 0$\end{tcolorbox}
+
+including $ n=0$ leading to $ P(x)=1$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/44887}{Mathias_DK}]
+	\begin{tcolorbox}if $ x\neq0$ is one of p(x)'s roots(x can be complex number)
+$ x = r(cos\alpha + isin\alpha),0\le \alpha < 2\pi$
+so it's easy to show that $ \sqrt [3]{r}(cos\frac {\alpha}{3} + isin\frac {\alpha}{3})$ is it's root
+then for all n,$ \sqrt [3^{n}]{r}(cos\frac {\alpha}{3^{n}} + isin\frac {\alpha}{3^{n}})$ is root too  
+it's a contradiction,so p(x) only has zero root
+$ p(x) = x^{n}$or$ p(x) = 0$\end{tcolorbox}
+A little detail: You should decide $ 0 < \alpha \le 2\pi$ instead, so that $ x = 1 \Rightarrow \alpha = 0, r = 1$ doesn't occur :)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/55230}{dvtvd}]
+	Denoting $ \deg P(x)=n$ and
+\[ P\left( x \right) = {x^n} + Q\left( x \right)\]
+then we have $ \deg Q\left( x \right) = k < n$
+So
+\[ \left( {Q\left( {{x^2}} \right) + {x^{2n}}} \right)\left( {Q\left( {{x^3}} \right) + {x^{3n}}} \right) = {\left( {Q\left( x \right) + {x^n}} \right)^5}\]
+Simplify the equation and compare the degrees of two hand sides, we reach the contradiction
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/65863}{jackie-chan01}]
+	If $x_1 ,x_2, \ldots ,x_n$  are the roots of the equation \[x^n+p_1 x^{n-1}+p_2 x^{n-2}+ \cdots +p_{n-1}x+p_n=0,\] where $p_1,p_2, \ldots, p_n \in \mathbb R$. Prove that \[ (1+x_1 ^2)(1+x_2 ^2)\cdots (1+x_n ^2)=(1-p_2+p_4-p_6+\cdots)^2+(p_1-p_3+p_5-p_7+\cdots)^2.\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h307056}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$ If x_1 ,x_2,...,x_n \ are \ nth \ roots \ of \ equation \ x^n + p_1 x^{n - 1} + p_2 x^{n - 2} + ... + p_{n - 1}x + p_n = 0 \ where \ p_1,p_2...p_n \in R$ .
+Prove that $ (1 + x_1 ^2)(1 + x_2 ^2)..(1 + x_n ^2) = (1 - p_2 + p_4 - p_6 + ...)^2 + (p_1 - p_3 + p_5 - p_7 + ..)^2$\end{tcolorbox}
+
+Let $ P(x)=\prod_{k=1}^n(x-x_k)=x^n+p_1x^{n-1}+p_2x^{n-2}+...+p_n$
+
+$ P(i)=i^n(1-ip_1-p_2+ip_3+p_4-ip_5 ...)$
+$ P(-i)=(-1)^ni^n(1+ip_1-p_2-ip_3+p_4+ip_5...)$
+
+So $ 1-p_2+p_4-p_6...=\frac{P(i)+(-1)^nP(-i)}{2i^n}$ and $ p_1-p_3+p_5-p_7...=\frac{P(i)-(-1)^nP(-i)}{(-2i)i^n}$
+
+So $ (1-p_2+p_4-p_6..)^2+(p_1-p_3+p_5-p_7...)^2$ $ =\frac{(P(i)+(-1)^nP(-i))^2}{4(-1)^n}$ - $ \frac{(P(i)-(-1)^nP(-i))^2}{4(-1)^n}$
+
+So $ (1-p_2+p_4-p_6..)^2+(p_1-p_3+p_5-p_7...)^2$ $ =P(i)P(-i)$ $ =\prod_{k=1}^n(i-x_k)\prod_{k=1}^n(-i-x_k)$ $ =\prod_{k=1}^n(1+x_k^2)$
+
+Q.E.D.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/65863}{jackie-chan01}]
+	thank you  :)
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/63660}{Victory.US}]
+	Determine a polynomial $ P(x)$ with integer coefficients such that $ P(10) = 400$, $ P(14) = 440$, and $ P(18) = 520$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h307264}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Determine the polynomial $ P(x)$ with integer coefficient such that $ P(10) = 400$ ; $ P(14) = 440$; $ P(18) = 520$\end{tcolorbox}
+
+If such a polynomial exists, so infinitely many exist (just add $ (x-10)(x-14)(x-18)Q(x)$ for any $ Q\in\mathbb Z[X]$ and so the question  "Determine \begin{bolded}the \end{bolded}\end{underlined}polynomial ..." need to be clarified.
+
+IMHO.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/67201}{PhilG}]
+	No such polynomial exists
+
+Let $ Q(x) = P(x) - 10x - 300 \implies Q(10) = Q(14) = 0$ and $ Q(18) = 40$
+
+$ \therefore Q(x) = (x-10)(x-14)R(x)$ where $ R(x)$ has integer coefficients and $ 32 R(18) = 40 \implies R(18) = \frac{5}{4}$
+but if $ R(x)$ has integer coefficients it cannot take on fractional values for integer arguments, contradiction.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/63660}{Victory.US}]
+	if $ P(x)$ exist
+
+WLOG , we can write $ P(x)=(x-10)(x-14)(x-18)Q(x)+R(x)$ with $ R(x) =ax^2+bx+c$
+
+rewrite $ R(x)=R(x-4)+R(x+4)-2R(x)-32a$ with $ x=14$ . it follow $ 32a=40$ which is contradiction
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/36998}{sandu2508}]
+	Find all polynomials that satisfy the following relation for all real $ x>0$:
+\[P^2\bigg(\dfrac1x\bigg)+P^2(x)=P(x^2)P\bigg(\dfrac1{x^2}\bigg).\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h307439}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all polynomials that satisfy the following relation:
+
+$ P^2\bigg(\dfrac1x\bigg) + P^2(x) = P(x^2)P\bigg(\dfrac1{x^2}\bigg)$ for all real $ x > 0$\end{tcolorbox}
+$ P(x)=0$ is a trivial solution. Let's now look for non zero solutions 
+
+Obviously, we have $ P(1)=0$. Let then $ m$ the greatest integer such that $ P^2(x)=P^2(z_mx)$ $ \forall x\in\mathbb C$, $ \forall z_m\in\mathbb C$ such that $ z_m^m=1$ ($ m^{th}$ roots of unity).
+We know that such a $ m$ exists since $ m=1$ fits and no $ m>2n$ (where $ n=$degree of $ P$) would fit (else, since $ P^2(\frac 1{z_m})=P^2(1)=0$, the polynomial $ P^2(x)$ would be a nonzero polynomial of degree $ 2n$ and would have at least $ m>2n$ complex roots).
+
+$ P^2(z_mx)=P^2(x)$ $ \forall x$ implies either $ P(z_mx)=P(x)$ $ \forall x$, either $ P(z_mx)=-P(x)$ $ \forall x$ (remember these are polynomials)
+
+Consider then $ k=2m$ and $ z_k$ such that $ z_k^k=1$. Using $ z_kx$ in the required equation, we see that $ P^2(\frac 1{z_kx})+P^2(z_kx)=P^2(\frac 1{x})+P^2(x)$ and so clearly $ P^2(z_kx)=P^2(x)$, hence a contradiction.
+
+So we got a unique solution $ P(x)=0$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/38553}{Agr_94_Math}]
+	Prove that the equation $ x^4-x^3-1=0$ has exactly two roots. If $ a$ and $ b$ denote their sum and product respectively, prove that $ b<-\frac{11}{10}$ and $ a> \frac{6}{11}$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h309803}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/38553}{Agr_94_Math}]
+	Can someone please post a solution for this problem?
+I can't seem to link the bounds for $ a,b,c$ with the condition for the occurence of a pair of complex conjugates as roots.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/16261}{Rust}]
+	Let $ x^4-x^3-1=(x^2-ax+b)(x^2-(1-a)x-\frac 1b)$.
+Then $ a(1-a)+b-\frac 1b =0$ and $ \frac ab=b(1-a)$ or 
+$ b^2=\frac{a}{1-a}, \frac 1b -b=a(1-a)$. Therefore $ 0<a<1$ and $ 0<\frac 1b -b=c=a(1-a)\le\frac 14$
+If $ b>0$, then $ \frac{\sqrt{67}-1}{8}\le b<1$. It give $ 4b>a^2$ and $ x^2-ax+b$ had not solution. Therefore $ b<0$ and $ \frac{-1-\sqrt{67}}{8}\le b<-1$. It give $ (1-a)^2+\frac{4}{b}<0$ - only 2 real solution.
+Therefore $ 1<\frac{a}{1-a}\le \frac{34+\sqrt{67}}{68+\sqrt{67}}<\frac 59$. Therefore $ \frac{20}{81}<\frac 1b -b\le \frac 14$.
+It give $ b<-\frac{10+\sqrt{6661}}{81}=-1.131048761...<-\frac 98<-\frac{11}{10}$ and $ a=\frac{b^2}{1+b^2}>\frac{1}{2}+\frac{5}{\sqrt{6661}}$ or $ a>0.561263286..>\frac 59 >\frac{6}{11}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Prove that the equation $ x^4 - x^3 - 1 = 0$ has exactly two roots. If $ a$ and $ b$ denote their sum and product respectively, prove that $ b < - \frac {11}{10}$ and $ a > \frac {6}{11}$.\end{tcolorbox}
+
+Let $ P(x)=x^4-x^3-1$ 
+
+1) two real roots
+$ P'(x)=4x^3-3x^2=4x^2(x-\frac 34)$ and so $ P(x)$ is decreasing on $ (-\infty,\frac 34)$ and increasing on $ (\frac 34,+\infty)$
+Since $ \lim_{x\to-\infty}P(x)=+\infty$ and $ \lim_{x\to+\infty}P(x)=+\infty$ and $ P(\frac 34)=-\frac{283}{256}<0$, we have exacty two real roots $ x_1<\frac 34<x_2$
+
+2) bounds
+$ P(\frac {91}{66})=-\frac{135461}{66^4}<0$ $ \implies$ $ x_2>\frac{91}{66}$
+
+$ P(-\frac 45)=-\frac{49}{5^4}<0$ $ \implies$ $ x_1<-\frac 45$
+
+$ P(-\frac {55}{66})=\frac{9559}{2376^2}>0$ $ \implies$ $ x_1>-\frac {55}{66}$
+
+So $ a=x_1+x_2>\frac{91}{66}-\frac {55}{66}=\frac 6{11}$
+
+And $ b=x_1x_2<-\frac{91}{66}\frac 45<-\frac {11}{10}$
+
+Q.E.D.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/48278}{Dimitris X}]
+	\begin{tcolorbox}
+2) bounds
+$ P(\frac {91}{66}) = - \frac {135461}{66^4} < 0$ $ \implies$ $ x_2 > \frac {91}{66}$
+
+$ P( - \frac 45) = - \frac {49}{5^4} < 0$ $ \implies$ $ x_1 < - \frac 45$
+
+$ P( - \frac {55}{66}) = \frac {9559}{2376^2} > 0$ $ \implies$ $ x_1 > - \frac {55}{66}$
+
+\end{tcolorbox}
+How these numbers came to your mind dear \begin{bolded}pco\end{bolded}???
+
+Dimitris
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}How these numbers came to your mind dear \begin{bolded}pco\end{bolded}???\end{tcolorbox}
+
+ :blush: I computed the exact roots thru calculus and then looked for approx values not too complicated to use
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/46488}{Raja Oktovin}]
+	Find all pairs of function $ f: \mathbb{N} \rightarrow \mathbb{N}$ and polynomial with integer coefficients $ p$ such that:
+(i) $ p(mn) = p(m)p(n)$ for all positive integers $ m,n > 1$ with $ \gcd(m,n) = 1$, and
+(ii) $ \sum_{d|n}f(d) = p(n)$ for all positive integers $ n$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h312088}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all pairs of function $ f: \mathbb{N} \rightarrow \mathbb{N}$ and polynomial with integer coefficients $ p$ such that:
+(i). $ p(mn) = p(m)p(n)$ for all positive integers $ m,n > 1$ with $ \gcd(m,n) = 1$, and
+(ii). $ \sum_{d|n}f(d) = p(n)$ for all positive integers $ n$.\end{tcolorbox}
+
+$ P(2n)=P(2)P(n)$ $ \forall$ odd $ n>1$ and so $ P(2x)=aP(x)$ $ \forall x$ (else non zero polynomial $ P(2x)-P(2)P(x)$ would have infinitely many roots).
+
+As a consequence, we get $ P(x)=0$ or $ P(x)=x^k$ for some $ k$ but, since $ f(d)>0$ ($ 0\notin\mathbb N$), we get only $ P(x)=x^k$ for some $ k$ 
+
+Using then the second formula for $ n=1$, we get $ f(1)=1$
+Using then the second formula for $ n=p$ prime, we get $ f(1)+f(p)=p^k$ and so $ f(p)=p^k-1$
+Using then the second formula for $ n=p^2$ with $ p$ prime, we get $ f(1)+f(p)+f(p^2)=p^{2k}$ and so $ f(p^2)=p^{2k}-p^k$
+
+An immediate induction gives $ f(p^n)=p^{nk}-p^{(n-1)k}$ for any prime $ p$ and positive integer $ n$.
+
+Using then the second formula for $ n=pq$ with $ p,q$ prime, we get $ f(1)+f(p)+f(q)+f(pq)=(pq)^k$ and so $ f(pq)=p^kq^k-p^k-q^k+1$ and so $ f(pq)=(p^k-1)(q^k-1)$
+
+And so, with many successive inductions, it's rather easy to show that $ f(\prod p_i^{n_i})=\prod(p_i^{n_ik}-p_i^{(n_i-1)k})$
+
+Hence the result :
+
+$ P(x)=x^k$ and $ f(\prod p_i^{n_i})=\prod(p_i^{n_ik}-p_i^{(n_i-1)k})$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/72308}{inio}]
+	Determine if there exist four polynomials such that the sum of any three of them has a real root while the sum of any two of them does not.
+	\flushright \href{https://artofproblemsolving.com/community/c6h312613}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Determine if there exist four polynomials such that the sum of any three of them has a real root while the sum of any two of them does not.\end{tcolorbox}
+
+Let $ p,q,r,s$ be the four polynomials. Each sum of any two must have a constant sign over R.
+
+$ p + q$, $ p + r$ and $ q + r$ cant have all the same sign, else $ p + q + r$ would have the same constant sign, and so no root.
+
+wlog say $ p + q > 0$, $ p + r > 0$ and $ q + r < 0$. Then :
+
+If $ p + s > 0$, we get $ q + s < 0$ (else $ p + q + s > 0$ has no root) and also $ r + s < 0$ (else $ p + r + s > 0$ has no root) but then $ q + r + s < 0$ has no root
+
+So $ p + s < 0$, then $ (p + r) - (p + s) = r - s > 0$ and so $ q + s < 0$ (else $ (q + s) - (q + r) = s - r > 0$, so contradiction), then $ r + s > 0$ (else $ q + r + s < 0$ has no root)
+
+But then $ (p + q) - (p + s) = q - s > 0$ and $ (r + s) - (q + r) = s - q > 0$ so contradiction.
+
+So such polynomials do not exist.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/29191}{zaya_yc}]
+	Find all polynomials $P(x)$ such that
+\[(x +1)P(x-1)+(x-1)P(x+1)=2xP(x)\]
+for all real numbers $x$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h314492}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$ (x + 1)P(x - 1) + (x - 1)P(x + 1) = 2xP(x)$ .Find all polynamial $ P(x)$.\end{tcolorbox}
+
+Let $ P(x),Q(x)$ solutions and $ \lambda,\mu\in\mathbb R$ : $ \lambda P(x)+\mu Q(x)$ is a solution and so the set of solutions is a $ \mathbb R$-vector space.
+
+Assume $ \exists P(x),Q(x),R(x)$ three independant solutions. It's possible (since independant) to find $ a\notin\mathbb Z$ and $ \alpha,\beta,\gamma\in\mathbb R$ not all zero such that :
+$ H(a)=H(a-1)=0$ with $ H(x)=\alpha P(x)+\beta Q(x) +\gamma R(x)$
+
+But then, since $ (x-1)H(x+1)=2xH(x)-(x+1)H(x-1)$, we get thru induction $ H(a+n)=0$ $ \forall n\in\mathbb N$ and so $ H(x)=0$ (since polynomial with infinitely many roots), which is impossible since $ P(x),Q(x),R(x)$ are three independant solution.
+
+So the dimension of the vector space is at most $ 2$ and since $ 1$ and $ x^3-x$ are clearly two independant solutions, the dimension is $ 2$ and we got a basis.
+
+Hence the general solution : $ \boxed{P(x)=ax^3-ax+b}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/48320}{aadil}]
+	\begin{tcolorbox}and so the set of solutions is a $ \mathbb{R}$-vector space. \end{tcolorbox}
+sorry but what is a vector space?
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox} sorry but what is a vector space?\end{tcolorbox}
+
+See http://en.wikipedia.org\/wiki\/Vector_space
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/25405}{AndrewTom}]
+	Let $ f(x)$ be a polynomial with integer coefficients. Suppose that there exist distinct integers $ a, b, c$ and $ d$ with $ f(a)=f(b)=f(c)=f(d)=7$. Prove that there is no integer $ e$ with $ f(e) = 14$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h316322}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Let $ f(x)$ be a polynomial with integer coefficients. Suppose that there exist distinct integers $ a, b, c$ and $ d$ with $ f(a) = f(b) = f(c) = f(d) = 7$. Prove that there is no integer $ e$ with $ f(e) = 14$.\end{tcolorbox}
+
+$ f(x) = 7 + (x - a)(x - b)(x - c)(x - d)h(x)$ where $ h(x)$ is also a polynomial with integer coefficients
+
+If $ f(e) = 14$ then $ 14 = 7 + (e - a)(e - b)(e - c)(e - d)h(e)$ and so  $ 7 = (e - a)(e - b)(e - c)(e - d)h(e)$ which is impossible since it is impossible to have $ 7$ divisible by at least $ 4$ different integers.
+
+Hence the result.
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/68719}{MJ GEO}]
+	Find all polynomials $ P(x)\in\mathbb R[x]$ such that \[ P(P(x)+x)=P(x)P(x+1)\] for all $x \in \mathbb R$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h316385}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all polynomial $ P(x)\in\mathbb R[X]$ such that $ P(P(x)+x)=P(x)P(x+1)$ $ \forall x$\end{tcolorbox}
+
+Let $ n=\text{degree}(P(x))$
+
+If $ n\ge 2$, $ \text{degree}(P(x)+x)=n$ and $ \text{degree}(LHS)=n^2$ while $ \text{degree}(RHS)=2n$ and so $ n=2$
+
+So $ n\in\{0,1,2\}$
+
+1) $ n=0$ : $ P(x)=c$ and so $ c=c^2$ and two solutions $ P(x)=0$ and $ P(x)=1$
+
+2) $ n=1$ : $ \text{degree}(LHS)\le 1$ while $ \text{degree}(RHS)=2$ so no solution
+
+3) $ n=2$ : $ P(x)=ax^2+bx+c$ 
+The equation becomes $ a(P(x)+x)^2+b(P(x)+x)+c=P(x)P(x+1)$
+So $ aP(x)^2+2axP(x)+ax^2+bP(x)+bx+c=P(x)P(x+1)$
+So $ aP(x)+2ax+b+1=P(x+1)$
+So $ a^2x^2+abx+ac+2ax+b+1=a(x^2+2x+1)+b(x+1)+c$
+So $ a(a-1)x^2+(a-1)bx+(a-1)c-(a-1)=0$
+
+and so $ a=1$
+
+Hence the three solutions (it's easy to check that these necessary conditions are sufficient) :
+
+$ P(x)=0$
+$ P(x)=1$
+$ P(x)=x^2+bx+c$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/68719}{MJ GEO}]
+	WHAT DO YOU MEAN   LHS  OR RHS
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}WHAT DO YOU MEAN   LHS  OR RHS\end{tcolorbox}
+
+LHS = Left Hand Side (left part of an equality \/ inequality)
+
+RHS = Right Hand Side (right part of an equality \/ inequality)
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/68719}{MJ GEO}]
+	YES I UNDERSTANT YOU ARE SO GOOD IN ALGEBRA CAN YOU SOLVE MY OTHER PROBLEMS THANKS
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/68719}{MJ GEO}]
+	Find all polynomials $ P(x)\in\mathbb R[x]$ such that \[ P(x)P(x+1)=P(x^2)\] for all $x \in \mathbb R$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h316390}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}P(X)P(X+1)=P(X^2)\end{tcolorbox}
+
+Let $ A(x)$ be the assertion $ P(x)P(x+1)=P(x^2)$
+$ P(x)=0$ is a solution. So consider from now non-zero polynomials.
+
+Let $ z\in\mathbb C$ any root of $ P(x)$
+
+$ A(z)$ $ \implies$ $ P(z^2)=0$. So $ z$ root $ \implies$ $ z^2$ root $ \implies$ $ |z|=0$ or $ |z|=1$ (else $ P(x)$ would have infinitely many roots).
+
+$ A(z-1)$ $ \implies$ $ P((z-1)^2)=0$. So $ z$ root $ \implies$ $ (z-1)^2$ root and so $ |z-1|=0$ or $ |z-1|=1$
+
+So the only roots may be $ 0,1,e^{i\frac{\pi}3}$ and $ e^{-i\frac{\pi}3}$
+
+So $ P(x)=x^m(x-1)^n(x^2-x+1)^p$
+
+Plugging back in the original equation, we get $ x^m(x-1)^n(x^2-x+1)^p(x+1)^mx^n(x^2+x+1)^p$ $ =x^{2m}(x^2-1)^{n}(x^4-x^2+1)^{p}$
+
+and so $ m=n$ and $ p=0$ 
+
+Hence the result : 
+$ P(x)=0$
+$ P(x)=x^n(x-1)^n$
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/68719}{MJ GEO}]
+	For any polynomial $ p \in \mathbb R[x]$, prove that there exist polynomials $ p_1(x),\ldots,p_{100}(x)$ such that 
+\[ p(x)=(p_1(x))^3+\cdots+(p_{100}(x))^3.\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h316460}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}for all $ p(x)$ prove that there are polynmial $ p1(x),...,p100(x)$ that $ p(x) = (p1(x))^3 + ... + (p100(x))^3$\end{tcolorbox}
+
+$ \left(\frac{x}{\sqrt[3]{12}}\right)^3$ $ +\left(\frac{1-x}{\sqrt[3]{12}}\right)^3$ $ +\left(\frac{x-3}{\sqrt[3]{12}}\right)^3$ $ +\left(\frac{2-x}{\sqrt[3]{12}}\right)^3$ $ +\left(\frac{\sqrt[3]{18}}{\sqrt[3]{12}}\right)^3$ $ =x$
+
+And so :
+
+$ P(x)=\left(\frac{P(x)}{\sqrt[3]{12}}\right)^3$ $ +\left(\frac{1-P(x)}{\sqrt[3]{12}}\right)^3$ $ +\left(\frac{P(x)-3}{\sqrt[3]{12}}\right)^3$ $ +\left(\frac{2-P(x)}{\sqrt[3]{12}}\right)^3$ $ +\left(\frac{\sqrt[3]{18}}{\sqrt[3]{12}}\right)^3$
+
+And just take the $ 95$ other polynomials as $ 0$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/68719}{MJ GEO}]
+	how did you fid that strange solution.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}how did you fid that strange solution.\end{tcolorbox}
+
+I tried to eliminate $ x^3$ between $ (ax+b)^3+(cx+d)^3$ and so $ c=-a$. I took then :
+
+$ (x+c)^3+(d-x)^3=3x^2(c+d)+3x(c^2-d^2)+c^3+d^3$
+
+Hence a first sum : $ x^3+(1-x)^3=3x^2-3x+1$
+
+Then, I need to find another couple to eliminate $ 3x^2$, so such that $ c+d=-1$
+
+Hence a second sum : $ (x-3)^3+(2-x)^3=-3x^2+15x-19$
+
+Summing : $ x^3+(1-x)^3+(x-3)^3+(2-x)^3=12x-18$
+
+And so $ x^3+(1-x)^3+(x-3)^3+(2-x)^3+18=12x$
+
+Hence the result
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/68719}{MJ GEO}]
+	very very very beati :) ful
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/68719}{MJ GEO}]
+	Find all polynomials $P$ with real coefficients such that \[ P(x)P(2x^2-1)=P(x^2)P(2x-1)\] for all $x \in \mathbb R$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h317528}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/10745}{Kondr}]
+	Every constant polynomial satisfies given condition. Further we suppose P is not constant.
+
+Let $ f(x) = \frac {P(2x - 1)}{P(x)}$. Let $ t\not\in\{ - 1,1\}$ satisfy $ P(t^n)\neq 0$ for all positive integers n (such t clearly exists). We have $ f(t) = f(t^2) = f(t^4) = \cdots = y$ for some y, thus $ P(2t^{2^n} - 1) = yP(t^{2^n})$ for all positive integers n. This is polynomial equation and has infinitely many roots, therefore for all real x
+$ P(2x - 1) = yP(x)$. Now let P(x)=Q(x-1), so 
+$ Q(2x - 2) = yQ(x - 1)$.
+If r is (complex) root of Q, so is 2r, 4r, etc. which means the only root of Q is 0, $ Q = ax^m$, $ P = a(x - 1)^m$.
+
+Condition $ P = a(x - 1)^m$ is also sufficient and for m=0 includes the constant functions excluded in the begining.
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/68719}{MJ GEO}]
+	thanks.my solution is exactly like you
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}thanks.my solution is exactly like you\end{tcolorbox}
+
+Cool, and could you, please, give us the solutions you promised us one week ago ?
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/54882}{hxy09}]
+	Find all integers $ n$ for which there exists a polynomial $f$ with integer coefficients such that \[ f(i)=2^i,\] for $ 1\le i\le n$.
+	\flushright \href{https://artofproblemsolving.com/community/c6h318073}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}Find all $ n$,so that there exists an integer-coefficient polynomial $ f(x)$ and $ f(i) = 2^i$ for $ 1\le i\le n$\end{tcolorbox}
+
+For $ n\le 3$, we have $ f(x)=x^2-x+2$
+
+For $ n=4$ : $ f(x)-(x^2-x+2)=(x-1)(x-2)(x-3)g(x)$ with $ g(x)\in\mathbb Z[X]$ and $ 2^4-14=6g(4)$ and so $ g(4)=\frac 13$, impossible.
+
+And, since existence of polynomial for $ n$ implies existence for $ p\le n$, the answer is $ \boxed{n\in\{1,2,3\}}$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/54882}{hxy09}]
+	Hi my friend,thank you for your nice solution :) 
+A similar way:if $ n\ge 4$ then $ 4-1|f(4)-f(1)$ which implies $ 3|14$ impossible :D
+\end{solution}
+*******************************************************************************
+-------------------------------------------------------------------------------
+
+\begin{problem}[Posted by \href{https://artofproblemsolving.com/community/user/61814}{caubetoanhoc94}]
+	Find all polynomials $P(x)$ with no real roots and $ 1 \le \deg P \le 5$ such that
+\[ P(x) \cdot P(-x) = P(x^2).\]
+	\flushright \href{https://artofproblemsolving.com/community/c6h320959}{(Link to AoPS)}
+\end{problem}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox}$ P(x)$ is a polynomial no has root and $ 1 \le degP(x) \le 5$.Find all $ P(x)$ such that: $ P(x).P( - x) = P(x^2)$
+My solution very long  :( .I need find nice solution!\end{tcolorbox}
+I suppose that "no has root" means "with no real root".
+So "no real root" and degree$ \le 5$ means degree=$ 0,2$ or $ 4$
+
+1) degree 0 : $ P(x) = a$ and $ a^2 = a$ hence two solutions :
+$ P(x) = 0$
+$ P(x) = 1$
+
+2) degree 2 : clearly $ P(x)$ is a monic polynomial (just look at equality of highest degree terms) 
+If $ x$ is a root, then $ x^2$ is too, and so $ x^4,x^8, ...$ and so all roots are $ 0$ or complex with modulus $ 1$.
+Then the roots are $ e^{i\theta}$ and $ e^{ - i\theta}$ and we need $ e^{2i\theta} = e^{ - i\theta}$ and so $ \theta = \frac {2\pi}3$
+
+So the solution $ P(x) = x^2 + x + 1$
+
+3) degree 4 : clearly $ P(x)$ is a monic polynomial (just look at equality of highest degree terms)
+And, once again, roots are complex with modulus $ 1$ and so :
+$ e^{i\theta_1}$, $ e^{ - i\theta_1}$, $ e^{i\theta_2}$ and $ e^{ - i\theta_2}$ and :
+
+either $ 2\theta_1 = - \theta_1\pmod{2\pi}$ and the solution $ (x^2 + x + 1)^2$
+either $ 2\theta_1 = \theta_2\pmod{2\pi}$ and $ 2\theta_2 = \theta_1\pmod{2\pi}$ and the same solution.
+either $ 2\theta_1 = \theta_2\pmod{2\pi}$ and $ 2\theta_2 = - \theta_1\pmod{2\pi}$ and the solution $ (x^2 - 2\cos(\frac {2\pi}5)x + 1)(x^2 - 2\cos(\frac {4\pi}5)x + 1)$
+
+
+Hence the *\begin{bolded}edited\end{bolded}\end{underlined}* four \end{underlined}solutions (no real roots and degree at most 5) :
+$ P(x) = 0$ \begin{bolded}edited \end{bolded}\end{underlined}: is not a solution since it has infinitely many real roots 
+$ P(x) = 1$
+$ P(x) = x^2 + x + 1$
+$ P(x) = (x^2 + x + 1)^2$
+$ P(x) = (x^2 - 2\cos(\frac {2\pi}5)x + 1)(x^2 - 2\cos(\frac {4\pi}5)x + 1)$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/61814}{caubetoanhoc94}]
+	[color=blue][Useless quote deleted. There is no need to quote the entire post immediately preceding yours.][\/color]
+
+Why degree=$ 0,2$ or $ 4$
+I think degree$ 0,1,2,3,4,5$
+\end{solution}
+
+
+
+\begin{solution}[by \href{https://artofproblemsolving.com/community/user/29428}{pco}]
+	\begin{tcolorbox} Why degree=$ 0,2$ or $ 4$
+I think degree$ 0,1,2,3,4,5$\end{tcolorbox}
+
+But if degree is $ 1$ or $ 3$, $ P(x)$ has at least one real root and the problem specified "no real root", so ... .
+\end{solution}
+*******************************************************************************
